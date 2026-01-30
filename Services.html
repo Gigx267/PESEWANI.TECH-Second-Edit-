@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Pesewani.tech - Smart ICT & Secure Spaces</title>
+    <link rel="icon" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="LOGO 2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="LOGO 2.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F59E0B" />
+    <meta name="msapplication-TileColor" content="#F59E0B" />
+    <meta name="theme-color" content="#0F2A44" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#0F2A44',
+                        tealBlue: '#1FA2A6',
+                        safetyOrange: '#F59E0B',
+                        safetyOrangeHover: '#D97706',
+                        charcoal: '#1F2933',
+                        softGray: '#F5F7FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        heavy: ['Syncopate', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1F2933; background-color: #F5F7FA; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: #0F2A44; }
+        .font-heavy { font-family: 'Syncopate', sans-serif; text-transform: uppercase; }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(15, 42, 68, 0.15);
+        }
+        
+        .shops-card {
+            border-left-color: #F59E0B;
+        }
+        
+        .security-card {
+            border-left-color: #1FA2A6;
+        }
+        
+        .policy-card {
+            border-left-color: #0F2A44;
+        }
+        
+        .ergonomics-card {
+            border-left-color: #D97706;
+        }
+        
+        .healthcare-card {
+            border-left-color: #10B981;
+        }
+        
+        .fade-up { 
+            opacity: 0; 
+            transform: translateY(20px) scale(.98); 
+            transition: opacity .7s cubic-bezier(.2,.9,.2,1), transform .7s cubic-bezier(.2,.9,.2,1); 
+            will-change: opacity, transform; 
+        }
+        .fade-up.in-view { opacity: 1; transform: none; }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        
+        .checklist li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+        }
+        
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #F59E0B;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-softGray">
+    <!-- Navigation -->
+    <nav class="absolute inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="flex justify-between h-20 items-center">
+            <div class="flex items-center gap-10">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-heavy tracking-tighter text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="index.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Home</a>
+                    <div class="relative group">
+                        <button class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase flex items-center gap-2">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block bg-white border border-deepBlue/10 shadow-2xl rounded-lg overflow-hidden min-w-[280px] z-50">
+                            <div class="p-1">
+                                <a href="shop-office.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Shops & Office Setup
+                                </a>
+                                <a href="Security-Solution.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Security Solutions
+                                </a>
+                                <a href="ICT.HTML" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    ICT Governance & Data Policy
+                                </a>
+                                <a href="Healthcare.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Healthcare ICT Solutions
+                                </a>
+                                <a href="Ergonomics.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Ergonomics
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </div> <a href="Industries.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Industries </a>
+                    <a href="about.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">About Us</a>
+                    <a href="Contact.html" class="text-[10px] font-heavy tracking-[0.3em] text-charcoal hover:text-safetyOrange transition uppercase">Contact</a>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-2">
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest bg-safetyOrange text-white hover:skew-x-[-12deg] transition-transform">GET_STARTED</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobileMenuBtn" aria-expanded="false" class="p-2 text-safetyOrange">
+                    <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke-width="3"/></svg>
+                    <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="3"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="h-[2px] w-full bg-gradient-to-r from-safetyOrange via-transparent to-transparent opacity-30"></div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-40 -translate-y-full transform transition-transform duration-300">
+        <div class="absolute inset-0 bg-black/85"></div>
+        <div class="relative max-w-md mx-auto mt-20 bg-white border border-deepBlue/10 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl font-heavy text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                    </div>
+                    <button id="mobileClose" class="p-2 text-charcoal hover:text-deepBlue">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" stroke-width="2"/></svg>
+                    </button>
+                </div>
+
+                <nav class="flex flex-col gap-2">
+                    <a href="index.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Home</a>
+                    
+                    <div class="relative group">
+                        <button class="w-full text-left text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition flex items-center justify-between">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="hidden group-hover:block pl-4 bg-deepBlue/5 rounded-lg mt-1">
+                            <a href="shop-office.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Shops & Office Setup</a>
+                            <a href="ICT.HTML" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">ICT Governance & Data Policy</a>
+                            <a href="Security-Solution.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Security Solutions</a>
+                            <a href="Healthcare.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Healthcare ICT Solutions</a>
+                            <a href="Ergonomics.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Ergonomics</a>
+                        </div>
+                    </div>
+
+                    <a href="Industries.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Industries</a>
+                    <a href="about.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">About Us</a>
+                    <a href="Contact.html" class="text-sm font-heavy tracking-widest text-charcoal uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Contact</a>
+                </nav>
+
+                <div class="mt-6 flex flex-col gap-3">
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 rounded-lg text-center hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest bg-safetyOrange text-white rounded-lg text-center hover:skew-x-[-8deg] transition-transform">GET_STARTED</a>
+                </div>
+
+                <div class="mt-6 text-xs text-charcoal font-mono tracking-widest">© PESEWANI.TECH</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+    </script>
+</nav>
+    
+    
+    
+    <!-- Hero Section -->
+    <header class="relative py-24 lg:py-32 bg-deepBlue overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block px-4 py-2 bg-safetyOrange/20 rounded-full mb-8" data-anim data-anim-delay="0s">
+                    <span class="text-safetyOrange text-sm font-heavy tracking-widest">OUR SOLUTIONS</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-heavy leading-tight mb-8 text-white" data-anim data-anim-delay="0.06s">
+                    Complete <span class="text-safetyOrange">ICT</span> & Workspace Solutions
+                </h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed" data-anim data-anim-delay="0.12s">
+                    We provide end-to-end technology solutions for shops, offices, and organizations—ensuring reliable connectivity, security, and productivity from day one.
+                </p>
+                <div class="flex justify-center" data-anim data-anim-delay="0.18s">
+                    <a href="#services" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-safetyOrange hover:bg-safetyOrangeHover transition transform hover:scale-105">
+                        Explore Our Services
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Services Overview -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    What <span class="text-safetyOrange">We Offer</span>
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    Comprehensive solutions that go beyond equipment installation—we architect resilient, efficient, and secure digital environments.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Overview Cards -->
+                <div class="bg-softGray p-8 rounded-2xl border border-deepBlue/10" data-anim data-anim-delay="0.18s">
+                    <div class="service-icon bg-safetyOrange/20 text-safetyOrange mb-6">
+                        🏢
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Shops & Office Setup</h3>
+                    <p class="text-charcoal mb-6">Complete ICT infrastructure and workspace design for reliable operations from day one.</p>
+                    <a href="#shops-office" class="text-safetyOrange font-semibold inline-flex items-center gap-2">
+                        Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                
+                <div class="bg-softGray p-8 rounded-2xl border border-deepBlue/10" data-anim data-anim-delay="0.24s">
+                    <div class="service-icon bg-tealBlue/20 text-tealBlue mb-6">
+                        🔐
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Security Solutions</h3>
+                    <p class="text-charcoal mb-6">Comprehensive security systems for homes and offices with modern surveillance and access control.</p>
+                    <a href="#security" class="text-safetyOrange font-semibold inline-flex items-center gap-2">
+                        Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                
+                <div class="bg-softGray p-8 rounded-2xl border border-deepBlue/10" data-anim data-anim-delay="0.30s">
+                    <div class="service-icon bg-deepBlue/20 text-deepBlue mb-6">
+                        📜
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">ICT Governance & Data Policy</h3>
+                    <p class="text-charcoal mb-6">Practical policies that protect systems, data, and your business from operational risks.</p>
+                    <a href="#policy" class="text-safetyOrange font-semibold inline-flex items-center gap-2">
+                        Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                
+                <div class="bg-softGray p-8 rounded-2xl border border-deepBlue/10" data-anim data-anim-delay="0.36s">
+                    <div class="service-icon bg-safetyOrangeHover/20 text-safetyOrangeHover mb-6">
+                        🪑
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Ergonomics</h3>
+                    <p class="text-charcoal mb-6">Workspace design that improves comfort, health, and overall productivity.</p>
+                    <a href="#ergonomics" class="text-safetyOrange font-semibold inline-flex items-center gap-2">
+                        Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                
+                <div class="bg-softGray p-8 rounded-2xl border border-deepBlue/10" data-anim data-anim-delay="0.42s">
+                    <div class="service-icon bg-green-500/20 text-green-500 mb-6">
+                        🏥
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Healthcare ICT Solutions</h3>
+                    <p class="text-charcoal mb-6">Specialized technology solutions for healthcare environments and medical facilities.</p>
+                    <a href="#healthcare" class="text-safetyOrange font-semibold inline-flex items-center gap-2">
+                        Learn More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+                
+                <div class="bg-safetyOrange p-8 rounded-2xl text-white" data-anim data-anim-delay="0.48s">
+                    <h3 class="text-2xl font-heavy mb-4">Need a Custom Solution?</h3>
+                    <p class="mb-6">We tailor our services to your specific business needs and operational requirements.</p>
+                    <a href="Contact.html" class="inline-flex items-center gap-3 px-6 py-3 rounded-xl font-semibold text-safetyOrange bg-white hover:bg-gray-100 transition">
+                        Contact Our Experts
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Detailed Services -->
+    <section id="services" class="py-24 bg-softGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Shops & Office Setup -->
+            <div id="shops-office" class="service-card shops-card bg-white p-10 rounded-2xl mb-16 shadow-lg" data-anim data-anim-delay="0.06s">
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <div class="lg:w-2/3">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="service-icon bg-safetyOrange/20 text-safetyOrange mb-0">
+                                🏢
+                            </div>
+                            <div>
+                                <h2 class="text-3xl font-heavy text-deepBlue">Shops & Office Setup</h2>
+                                <p class="text-safetyOrange font-heavy text-sm tracking-widest">Complete ICT & Workspace Solutions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6 mb-10">
+                            <p class="text-lg text-charcoal">
+                                We provide complete ICT and workspace setup for shops and offices ensuring reliable connectivity, smooth operations, and a professional working environment from day one.
+                            </p>
+                            <p class="text-charcoal">
+                                Our solutions go beyond equipment. We assess your space, design the right infrastructure, and deploy systems that support efficiency, security, and future growth.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-xl font-semibold mb-6 text-deepBlue">What We Offer</h3>
+                                <ul class="checklist text-charcoal">
+                                    <li>Structured cabling & network design</li>
+                                    <li>Wi-Fi & internet setup</li>
+                                    <li>POS systems & peripherals</li>
+                                    <li>Desktop & laptop setup</li>
+                                    <li>Servers & shared storage</li>
+                                    <li>UPS & power backup solutions</li>
+                                    <li>Smart office and home layout planning</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-xl font-semibold mb-6 text-deepBlue">Ideal For</h3>
+                                <div class="flex flex-wrap gap-3">
+                                    <span class="px-4 py-2 bg-safetyOrange/10 text-safetyOrange rounded-full text-sm font-semibold">Retail shops</span>
+                                    <span class="px-4 py-2 bg-safetyOrange/10 text-safetyOrange rounded-full text-sm font-semibold">Startups & SMEs</span>
+                                    <span class="px-4 py-2 bg-safetyOrange/10 text-safetyOrange rounded-full text-sm font-semibold">Corporate offices</span>
+                                    <span class="px-4 py-2 bg-safetyOrange/10 text-safetyOrange rounded-full text-sm font-semibold">New business setups</span>
+                                    <span class="px-4 py-2 bg-safetyOrange/10 text-safetyOrange rounded-full text-sm font-semibold">Smart homes</span>
+                                    <span class="px-4 py-2 bg-safetyOrange/10 text-safetyOrange rounded-full text-sm font-semibold">Warehouses</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/3">
+                        <div class="bg-deepBlue p-8 rounded-2xl text-white h-full">
+                            <h3 class="text-xl font-heavy mb-6">Ready to Setup?</h3>
+                            <p class="mb-8">Get a professional workspace that supports your business growth from day one.</p>
+                            <a href="Contact.html" class="inline-flex items-center justify-center gap-3 w-full px-6 py-4 rounded-xl font-semibold text-deepBlue bg-safetyOrange hover:bg-safetyOrangeHover transition">
+                                Request an Office Setup Consultation
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ICT Governance & Data Policy -->
+            <div id="policy" class="service-card policy-card bg-white p-10 rounded-2xl mb-16 shadow-lg" data-anim data-anim-delay="0.12s">
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <div class="lg:w-2/3">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="service-icon bg-deepBlue/20 text-deepBlue mb-0">
+                                📜
+                            </div>
+                            <div>
+                                <h2 class="text-3xl font-heavy text-deepBlue">ICT Governance & Data Policy Services</h2>
+                                <p class="text-deepBlue font-heavy text-sm tracking-widest">Policies That Protect Systems, Data, and Your Business</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6 mb-10">
+                            <p class="text-lg text-charcoal">
+                                Technology without clear policy and data governance exposes organizations to misuse, data breaches, regulatory penalties, and operational risk.
+                            </p>
+                            <p class="text-charcoal">
+                                We design practical, easy-to-understand ICT and Data Governance policies that define how technology and data are used, protected, and managed across your organization. Our policies guide staff behavior, safeguard sensitive information, and support regulatory and governance requirements without unnecessary complexity.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-xl font-semibold mb-6 text-deepBlue">ICT Policies</h3>
+                                <ul class="checklist text-charcoal">
+                                    <li>Acceptable Use Policy</li>
+                                    <li>Internet & Email Policy</li>
+                                    <li>Device & Access Control Policy</li>
+                                    <li>Remote Work & BYOD Policy</li>
+                                    <li>Incident & Access Management Policy</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-xl font-semibold mb-6 text-deepBlue">Data Governance & Protection Policies</h3>
+                                <ul class="checklist text-charcoal">
+                                    <li>Data Protection & Privacy Policy</li>
+                                    <li>Data Classification & Handling Policy</li>
+                                    <li>Data Retention & Disposal Policy</li>
+                                    <li>Data Access & Ownership Framework</li>
+                                    <li>Third-Party & Data Processing Policy</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 pt-8 border-t border-deepBlue/10">
+                            <h3 class="text-xl font-semibold mb-6 text-deepBlue">Additional Services</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                        <span class="text-safetyOrange font-bold">✓</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-deepBlue">Policy Customization</h4>
+                                        <p class="text-sm text-charcoal">Tailored to your business operations and specific needs</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                        <span class="text-safetyOrange font-bold">✓</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-deepBlue">Framework Design</h4>
+                                        <p class="text-sm text-charcoal">Complete data governance framework design</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                        <span class="text-safetyOrange font-bold">✓</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-deepBlue">Staff Training</h4>
+                                        <p class="text-sm text-charcoal">Awareness & compliance training for your team</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                        <span class="text-safetyOrange font-bold">✓</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-deepBlue">Policy Review</h4>
+                                        <p class="text-sm text-charcoal">Regular updates and alignment with regulatory changes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/3">
+                        <div class="bg-deepBlue p-8 rounded-2xl text-white h-full">
+                            <h3 class="text-xl font-heavy mb-6">Key Outcomes</h3>
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-start gap-3">
+                                    <span class="text-safetyOrange">•</span>
+                                    <span>Improved staff accountability and policy adherence</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-safetyOrange">•</span>
+                                    <span>Stronger data protection and privacy controls</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-safetyOrange">•</span>
+                                    <span>Reduced legal, security, and operational risk</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-safetyOrange">•</span>
+                                    <span>Clear ICT and data governance structure</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="text-safetyOrange">•</span>
+                                    <span>Increased regulatory and audit readiness</span>
+                                </li>
+                            </ul>
+                            
+                            <a href="Contact.html" class="inline-flex items-center justify-center gap-3 w-full px-6 py-4 rounded-xl font-semibold text-deepBlue bg-safetyOrange hover:bg-safetyOrangeHover transition">
+                                Request an ICT & Data Governance Policy Draft
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Security Solutions -->
+            <div id="security" class="service-card security-card bg-white p-10 rounded-2xl mb-16 shadow-lg" data-anim data-anim-delay="0.18s">
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <div class="lg:w-2/3">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="service-icon bg-tealBlue/20 text-tealBlue mb-0">
+                                🔐
+                            </div>
+                            <div>
+                                <h2 class="text-3xl font-heavy text-deepBlue">Home & Office Security Solutions</h2>
+                                <p class="text-tealBlue font-heavy text-sm tracking-widest">Security You Can See. Protection You Can Trust.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6 mb-10">
+                            <p class="text-lg text-charcoal">
+                                We design and install reliable security systems that give you control, visibility, and peace of mind whether at home or at work.
+                            </p>
+                            <p class="text-charcoal">
+                                Our security solutions provide visibility, control, and peace of mind through modern surveillance, access control, and monitoring systems.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-xl font-semibold mb-6 text-deepBlue">Solutions Include</h3>
+                                <ul class="checklist text-charcoal">
+                                    <li>CCTV (IP & Analog)</li>
+                                    <li>Access control (biometric, card, keypad)</li>
+                                    <li>Alarm systems</li>
+                                    <li>Smart locks</li>
+                                    <li>Remote monitoring</li>
+                                    <li>Maintenance & upgrades</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-xl font-semibold mb-6 text-deepBlue">Benefits</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-tealBlue/20 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-tealBlue font-bold">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-deepBlue">Theft and intrusion deterrence</h4>
+                                            <p class="text-sm text-charcoal">Visible security systems prevent unauthorized access</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-tealBlue/20 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-tealBlue font-bold">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-deepBlue">Real-time monitoring</h4>
+                                            <p class="text-sm text-charcoal">24/7 surveillance and remote access capabilities</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-tealBlue/20 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-tealBlue font-bold">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-deepBlue">Secure access control</h4>
+                                            <p class="text-sm text-charcoal">Manage who enters your premises and when</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-tealBlue/20 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-tealBlue font-bold">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-deepBlue">24/7 security awareness</h4>
+                                            <p class="text-sm text-charcoal">Continuous protection and rapid response capability</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/3">
+                        <div class="bg-deepBlue p-8 rounded-2xl text-white h-full">
+                            <h3 class="text-xl font-heavy mb-6">Get Protected Today</h3>
+                            <p class="mb-8">Secure your premises with professional security systems tailored to your needs.</p>
+                            <a href="Contact.html" class="inline-flex items-center justify-center gap-3 w-full px-6 py-4 rounded-xl font-semibold text-deepBlue bg-safetyOrange hover:bg-safetyOrangeHover transition">
+                                Get a Security Assessment
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ergonomics -->
+            <div id="ergonomics" class="service-card ergonomics-card bg-white p-10 rounded-2xl mb-16 shadow-lg" data-anim data-anim-delay="0.24s">
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <div class="lg:w-2/3">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="service-icon bg-safetyOrangeHover/20 text-safetyOrangeHover mb-0">
+                                🪑
+                            </div>
+                            <div>
+                                <h2 class="text-3xl font-heavy text-deepBlue">Ergonomics for Productivity</h2>
+                                <p class="text-safetyOrangeHover font-heavy text-sm tracking-widest">Comfort That Drives Performance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6 mb-10">
+                            <p class="text-lg text-charcoal">
+                                A well-designed workspace improves comfort, health, and productivity.
+                            </p>
+                            <p class="text-charcoal">
+                                Poor workspace ergonomics leads to fatigue, discomfort, and reduced productivity.
+                                We help organizations and individuals design ergonomic workspaces that improve comfort, focus, and overall performance supporting both health and productivity.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-xl font-semibold mb-6 text-deepBlue">Our Ergonomic Services</h3>
+                                <ul class="checklist text-charcoal">
+                                    <li>Ergonomic chair & desk selection</li>
+                                    <li>Monitor & equipment positioning</li>
+                                    <li>Workspace layout optimization</li>
+                                    <li>Lighting & posture recommendations</li>
+                                    <li>Ergonomic accessory selection</li>
+                                    <li>Workstation assessments</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-xl font-semibold mb-6 text-deepBlue">Benefits</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-safetyOrangeHover/20 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-safetyOrangeHover font-bold">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-deepBlue">Reduced fatigue & injuries</h4>
+                                            <p class="text-sm text-charcoal">Minimize musculoskeletal disorders and work-related pain</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-safetyOrangeHover/20 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-safetyOrangeHover font-bold">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-deepBlue">Improved focus and efficiency</h4>
+                                            <p class="text-sm text-charcoal">Comfortable workspaces enhance concentration and output</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-safetyOrangeHover/20 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-safetyOrangeHover font-bold">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-deepBlue">Higher productivity</h4>
+                                            <p class="text-sm text-charcoal">Optimized environments lead to better performance</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-safetyOrangeHover/20 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-safetyOrangeHover font-bold">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-deepBlue">Better employee well-being</h4>
+                                            <p class="text-sm text-charcoal">Support physical and mental health in the workplace</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-safetyOrangeHover/20 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-safetyOrangeHover font-bold">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-deepBlue">Better long-term performance</h4>
+                                            <p class="text-sm text-charcoal">Sustainable productivity through comfortable workspaces</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/3">
+                        <div class="bg-deepBlue p-8 rounded-2xl text-white h-full">
+                            <h3 class="text-xl font-heavy mb-6">Optimize Your Workspace</h3>
+                            <p class="mb-8">Create a comfortable, productive environment that supports your team's health and performance.</p>
+                            <a href="Contact.html" class="inline-flex items-center justify-center gap-3 w-full px-6 py-4 rounded-xl font-semibold text-deepBlue bg-safetyOrange hover:bg-safetyOrangeHover transition">
+                                Request an Ergonomic Assessment
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Healthcare ICT Solutions -->
+            <div id="healthcare" class="service-card healthcare-card bg-white p-10 rounded-2xl shadow-lg" data-anim data-anim-delay="0.30s">
+                <div class="flex flex-col lg:flex-row gap-10">
+                    <div class="lg:w-2/3">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="service-icon bg-green-500/20 text-green-500 mb-0">
+                                🏥
+                            </div>
+                            <div>
+                                <h2 class="text-3xl font-heavy text-deepBlue">Healthcare ICT Solutions</h2>
+                                <p class="text-green-500 font-heavy text-sm tracking-widest">Specialized Technology for Healthcare Environments</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-6 mb-10">
+                            <p class="text-lg text-charcoal">
+                                We provide specialized ICT solutions tailored for healthcare facilities, clinics, and medical offices.
+                            </p>
+                            <p class="text-charcoal">
+                                Our healthcare ICT solutions ensure reliable, secure, and compliant technology infrastructure that supports patient care, medical data management, and operational efficiency in healthcare environments.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-xl font-semibold mb-6 text-deepBlue">Our Healthcare Solutions</h3>
+                                <ul class="checklist text-charcoal">
+                                    <li>Medical record system setup</li>
+                                    <li>HIPAA/GDPR-compliant infrastructure</li>
+                                    <li>Telemedicine platform integration</li>
+                                    <li>Medical device networking</li>
+                                    <li>Patient data security systems</li>
+                                    <li>Healthcare facility network design</li>
+                                    <li>Emergency power and backup solutions</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-xl font-semibold mb-6 text-deepBlue">Benefits for Healthcare</h3>
+                                <div class="space-y-4">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-green-500 font-bold">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-deepBlue">Regulatory Compliance</h4>
+                                            <p class="text-sm text-charcoal">Meet healthcare data protection requirements</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-green-500 font-bold">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-deepBlue">Patient Data Security</h4>
+                                            <p class="text-sm text-charcoal">Protect sensitive medical information</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-green-500 font-bold">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-deepBlue">Operational Efficiency</h4>
+                                            <p class="text-sm text-charcoal">Streamline healthcare workflows and processes</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-green-500 font-bold">✓</span>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-semibold text-deepBlue">Reliable Infrastructure</h4>
+                                            <p class="text-sm text-charcoal">Ensure continuous operation of critical systems</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/3">
+                        <div class="bg-deepBlue p-8 rounded-2xl text-white h-full">
+                            <h3 class="text-xl font-heavy mb-6">Healthcare Technology Solutions</h3>
+                            <p class="mb-8">Secure, compliant ICT infrastructure for healthcare providers and facilities.</p>
+                            <a href="Contact.html" class="inline-flex items-center justify-center gap-3 w-full px-6 py-4 rounded-xl font-semibold text-deepBlue bg-safetyOrange hover:bg-safetyOrangeHover transition">
+                                Discuss Healthcare Solutions
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-24 bg-deepBlue relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-heavy mb-8 text-white" data-anim data-anim-delay="0.06s">
+                Ready to Transform Your <span class="text-safetyOrange">Workspace</span>?
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                Whether you're setting up a new office, securing your premises, or implementing effective ICT policies—we have the expertise to deliver solutions that work.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center" data-anim data-anim-delay="0.18s">
+                <a href="Contact.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-safetyOrange hover:bg-safetyOrangeHover transition transform hover:scale-105">
+                    Get a Free Consultation
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                </a>
+                <a href="Assessment.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white border-2 border-white hover:bg-white hover:text-deepBlue transition">
+                    Request Site Assessment
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+  <footer class="bg-deepBlue text-white/80 py-16 border-t border-white/20">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center mb-12 pb-8 border-b border-white/20">
+            <h2 class="text-3xl font-heavy tracking-tighter mb-2"><span class="text-safetyOrange">PESEWANI.TECH</span></h2>
+            <p class="text-sm font-bold tracking-widest uppercase text-white/60">Smart ICT. Secure Spaces. Productive Workplaces.</p>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <!-- About Us -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">About Us</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Company Overview</a></li>
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Mission & Vision</a></li>
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Core Values</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Services</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Shops & Offices</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• ICT Policy</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Security Solutions</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Ergonomics</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal & Compliance -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Legal & Compliance</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="PrivacyPolicy.html" class="hover:text-safetyOrange transition">• Privacy Policy</a></li>
+                    <li><a href="Acceptable.html" class="hover:text-safetyOrange transition">• Terms of Service</a></li>
+                    <li><a href="cookie.html" class="hover:text-safetyOrange transition">• Cookie Policy</a></li>
+                    <li><a href="Acceptable.html" class="hover:text-safetyOrange transition">• Acceptable Use</a></li>
+                </ul>
+            </div>
+
+            <!-- Support & Contact + Trust & Security -->
+            <div>
+                <div class="mb-8">
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Support & Contact</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Contact Us</a></li>
+                        <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Help / Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Trust & Security</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Security Practices</a></li>
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Compliance</a></li>
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Data Protection</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/20 pt-8 flex justify-between items-center text-[10px] font-heavy tracking-[0.2em] uppercase text-white/60">
+            <span>© 2026 PESEWANI TECH</span>
+            <span>© 2026 Pesewani Tech. All Rights Reserved. </span>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Mobile menu functionality
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+        
+        // Animation observer
+        (function () {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('in-view');
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('[data-anim]').forEach(el => {
+                el.classList.add('fade-up');
+                io.observe(el);
+                
+                // Add delay based on data attribute
+                const delay = el.getAttribute('data-anim-delay');
+                if (delay) {
+                    el.style.transitionDelay = delay;
+                }
+            });
+        })();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

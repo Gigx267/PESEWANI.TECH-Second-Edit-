@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Pesewani.tech - Smart ICT & Secure Spaces</title>
+    <link rel="icon" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="LOGO 2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="LOGO 2.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F59E0B" />
+    <meta name="msapplication-TileColor" content="#F59E0B" />
+    <meta name="theme-color" content="#0F2A44" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#0F2A44',
+                        tealBlue: '#1FA2A6',
+                        safetyOrange: '#F59E0B',
+                        safetyOrangeHover: '#D97706',
+                        charcoal: '#1F2933',
+                        softGray: '#F5F7FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        heavy: ['Syncopate', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1F2933; background-color: #F5F7FA; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: #0F2A44; }
+        .font-heavy { font-family: 'Syncopate', sans-serif; text-transform: uppercase; }
+        
+        .fade-up { 
+            opacity: 0; 
+            transform: translateY(20px) scale(.98); 
+            transition: opacity .7s cubic-bezier(.2,.9,.2,1), transform .7s cubic-bezier(.2,.9,.2,1); 
+            will-change: opacity, transform; 
+        }
+        .fade-up.in-view { opacity: 1; transform: none; }
+        
+        .graffiti-bg {
+            position: absolute;
+            font-size: 12rem;
+            font-weight: 900;
+            color: rgba(15, 42, 68, 0.05);
+            z-index: 0;
+            pointer-events: none;
+            user-select: none;
+            line-height: 0.8;
+        }
+        
+        .value-card {
+            transition: all 0.4s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .value-card:hover {
+            border-left-color: #F59E0B;
+            transform: translateX(8px);
+            box-shadow: 0 10px 30px rgba(15, 42, 68, 0.1);
+        }
+        
+        .mission-card {
+            background: linear-gradient(135deg, #0F2A44 0%, #1FA2A6 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .graffiti-bg {
+                font-size: 6rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-softGray">
+<nav class="absolute inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="flex justify-between h-20 items-center">
+            <div class="flex items-center gap-10">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-heavy tracking-tighter text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="index.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Home</a>
+                    <div class="relative group">
+                        <button class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase flex items-center gap-2">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block bg-white border border-deepBlue/10 shadow-2xl rounded-lg overflow-hidden min-w-[280px] z-50">
+                            <div class="p-1">
+                                <a href="shop-office.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Shops & Office Setup
+                                </a>
+                                <a href="Security-Solution.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Security Solutions
+                                </a>
+                                <a href="ICT.HTML" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    ICT Governance & Data Policy
+                                </a>
+                                <a href="Healthcare.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Healthcare ICT Solutions
+                                </a>
+                                <a href="Ergonomics.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Ergonomics
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </div> <a href="Industries.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Industries </a>
+                    <a href="about.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">About Us</a>
+                    <a href="Contact.html" class="text-[10px] font-heavy tracking-[0.3em] text-charcoal hover:text-safetyOrange transition uppercase">Contact</a>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-2">
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest bg-safetyOrange text-white hover:skew-x-[-12deg] transition-transform">GET_STARTED</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobileMenuBtn" aria-expanded="false" class="p-2 text-safetyOrange">
+                    <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke-width="3"/></svg>
+                    <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="3"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="h-[2px] w-full bg-gradient-to-r from-safetyOrange via-transparent to-transparent opacity-30"></div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-40 -translate-y-full transform transition-transform duration-300">
+        <div class="absolute inset-0 bg-black/85"></div>
+        <div class="relative max-w-md mx-auto mt-20 bg-white border border-deepBlue/10 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl font-heavy text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                    </div>
+                    <button id="mobileClose" class="p-2 text-charcoal hover:text-deepBlue">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" stroke-width="2"/></svg>
+                    </button>
+                </div>
+
+                <nav class="flex flex-col gap-2">
+                    <a href="index.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Home</a>
+                    
+                    <div class="relative group">
+                        <button class="w-full text-left text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition flex items-center justify-between">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="hidden group-hover:block pl-4 bg-deepBlue/5 rounded-lg mt-1">
+                            <a href="shop-office.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Shops & Office Setup</a>
+                            <a href="ICT.HTML" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">ICT Governance & Data Policy</a>
+                            <a href="Security-Solution.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Security Solutions</a>
+                            <a href="Healthcare.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Healthcare ICT Solutions</a>
+                            <a href="Ergonomics.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Ergonomics</a>
+                        </div>
+                    </div>
+
+                    <a href="Industries.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Industries</a>
+                    <a href="about.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">About Us</a>
+                    <a href="Contact.html" class="text-sm font-heavy tracking-widest text-charcoal uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Contact</a>
+                </nav>
+
+                <div class="mt-6 flex flex-col gap-3">
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 rounded-lg text-center hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest bg-safetyOrange text-white rounded-lg text-center hover:skew-x-[-8deg] transition-transform">GET_STARTED</a>
+                </div>
+
+                <div class="mt-6 text-xs text-charcoal font-mono tracking-widest">© PESEWANI.TECH</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+    </script>
+</nav>
+    
+    <!-- Hero Section -->
+    <header class="relative py-24 lg:py-32 bg-deepBlue overflow-hidden">
+        <div class="graffiti-bg -right-20 top-10 opacity-10">ABOUT US</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block px-4 py-2 bg-safetyOrange/20 rounded-full mb-8" data-anim data-anim-delay="0s">
+                    <span class="text-safetyOrange text-sm font-heavy tracking-widest">WHO WE ARE</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-heavy leading-tight mb-8 text-white" data-anim data-anim-delay="0.06s">
+                    Building <span class="text-safetyOrange">Smarter</span><br>Digital Foundations
+                </h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed" data-anim data-anim-delay="0.12s">
+                    Pesewani Tech is a technology and workplace solutions company dedicated to delivering smart ICT systems, secure spaces, and productive workplaces across Ghana and beyond.
+                </p>
+                <div class="flex justify-center" data-anim data-anim-delay="0.18s">
+                    <a href="#mission" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-safetyOrange hover:bg-safetyOrangeHover transition transform hover:scale-105">
+                        Explore Our Mission
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-softGray to-transparent"></div>
+    </header>
+    
+    <!-- Company Overview -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="graffiti-bg -left-20 top-1/3 opacity-5">TECHNOLOGY</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-anim data-anim-delay="0.06s">
+                    <div class="inline-flex items-center gap-3 mb-8">
+                        <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                        <span class="text-safetyOrange font-heavy text-xs tracking-[0.3em]">OUR STORY</span>
+                    </div>
+                    
+                    <h2 class="text-4xl font-heavy mb-8 leading-tight text-deepBlue" data-anim data-anim-delay="0.12s">
+                        Designing <span class="text-safetyOrange">Reliable</span> Technology Environments
+                    </h2>
+                    
+                    <div class="space-y-6 text-charcoal text-lg leading-relaxed" data-anim data-anim-delay="0.18s">
+                        <p>
+                            We support businesses by designing, implementing, and managing technology environments that are <span class="text-deepBlue font-semibold">reliable, secure, and fit for modern operations</span>. Our work spans shop and office setup, ICT governance and policy development, integrated security solutions, and ergonomic workplace design.
+                        </p>
+                        <p>
+                            At Pesewani Tech, we ensure that <span class="text-deepBlue font-semibold">technology, people, and processes work seamlessly together</span>. From setting up digitally enabled shops and offices to establishing clear ICT policies and governance structures, we help organizations operate efficiently while managing risk and regulatory obligations.
+                        </p>
+                        <p>
+                            Our security solutions combine cyber and physical protection to safeguard data, systems, and people, while our ergonomic approach ensures workspaces promote health, comfort, and sustained productivity.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="relative" data-anim data-anim-delay="0.24s">
+                    <div class="bg-deepBlue/5 border border-deepBlue/10 p-10 rounded-2xl shadow-xl">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-white p-6 rounded-xl border-l-4 border-safetyOrange shadow-md">
+                                <div class="text-4xl font-bold text-deepBlue mb-2">100%</div>
+                                <div class="text-xs font-heavy text-charcoal/70 tracking-widest">FOCUS ON QUALITY</div>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl border-l-4 border-tealBlue shadow-md">
+                                <div class="text-4xl font-bold text-deepBlue mb-2">24/7</div>
+                                <div class="text-xs font-heavy text-charcoal/70 tracking-widest">SUPPORT READY</div>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl border-l-4 border-safetyOrange shadow-md">
+                                <div class="text-4xl font-bold text-deepBlue mb-2">360°</div>
+                                <div class="text-xs font-heavy text-charcoal/70 tracking-widest">SOLUTIONS</div>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl border-l-4 border-tealBlue shadow-md">
+                                <div class="text-4xl font-bold text-deepBlue mb-2">0</div>
+                                <div class="text-xs font-heavy text-charcoal/70 tracking-widest">COMPROMISE ON SECURITY</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 pt-8 border-t border-deepBlue/10">
+                            <p class="text-deepBlue font-semibold text-lg italic">
+                                "Security, compliance, and quality are embedded into every solution we deliver."
+                            </p>
+                            <p class="text-charcoal/70 text-sm mt-4">
+                                We align our practices with internationally recognized standards and best practices, enabling our clients to scale confidently in an increasingly digital and risk-conscious environment.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Mission & Vision -->
+    <section id="mission" class="py-24 bg-softGray relative overflow-hidden">
+        <div class="graffiti-bg -right-20 top-1/4 opacity-5">VISION</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    Our <span class="text-safetyOrange">Purpose</span> & Direction
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    Driven by a clear mission and vision, we're building the foundation for Africa's digital future
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Mission Card -->
+                <div class="mission-card p-10 rounded-2xl text-white shadow-2xl" data-anim data-anim-delay="0.18s">
+                    <div class="relative z-10">
+                        <div class="inline-flex items-center gap-3 mb-8">
+                            <div class="w-10 h-10 rounded-full bg-safetyOrange/30 flex items-center justify-center">
+                                <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <span class="text-safetyOrange font-heavy text-xs tracking-[0.3em]">OUR MISSION</span>
+                        </div>
+                        
+                        <h3 class="text-3xl font-heavy mb-6 leading-tight">
+                            To deliver secure, reliable, and scalable digital solutions
+                        </h3>
+                        
+                        <p class="text-white/90 text-lg leading-relaxed mb-8">
+                            We enable organizations to operate efficiently, manage risk effectively, and achieve sustainable growth in an increasingly digital environment.
+                        </p>
+                        
+                        <div class="bg-white/10 p-6 rounded-xl border border-white/20">
+                            <p class="text-white font-semibold">
+                                "Our mission is built on the principle that technology should empower, not complicate."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vision Card -->
+                <div class="bg-white p-10 rounded-2xl border-2 border-deepBlue/10 shadow-xl" data-anim data-anim-delay="0.24s">
+                    <div class="inline-flex items-center gap-3 mb-8">
+                        <div class="w-10 h-10 rounded-full bg-tealBlue/20 flex items-center justify-center">
+                            <svg class="w-5 h-5 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <span class="text-tealBlue font-heavy text-xs tracking-[0.3em]">OUR VISION</span>
+                    </div>
+                    
+                    <h3 class="text-3xl font-heavy mb-6 leading-tight text-deepBlue">
+                        To be a trusted technology partner recognized for excellence
+                    </h3>
+                    
+                    <p class="text-charcoal text-lg leading-relaxed mb-8">
+                        We strive to be the leading provider of governance, security, and operational excellence across Africa and global markets.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-tealBlue flex-shrink-0 mt-1"></div>
+                            <div>
+                                <h4 class="font-semibold text-deepBlue">African Innovation</h4>
+                                <p class="text-charcoal/80 text-sm">Pioneering solutions tailored for Africa's unique challenges and opportunities</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-tealBlue flex-shrink-0 mt-1"></div>
+                            <div>
+                                <h4 class="font-semibold text-deepBlue">Global Standards</h4>
+                                <p class="text-charcoal/80 text-sm">Implementing internationally recognized practices with local expertise</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Core Values -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="graffiti-bg -left-20 top-1/4 opacity-5 rotate-12">VALUES</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    Our <span class="text-safetyOrange">Core Values</span>
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    The principles that guide every decision, solution, and partnership at Pesewani Tech
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <!-- Integrity -->
+                <div class="value-card bg-softGray p-8 rounded-xl" data-anim data-anim-delay="0.18s">
+                    <div class="text-5xl mb-6">⚖️</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Integrity</h3>
+                    <p class="text-charcoal/80 text-sm mb-6">
+                        We uphold the highest ethical standards, ensuring transparency, accountability, and compliance in all operations and decision-making.
+                    </p>
+                    <div class="text-xs font-heavy text-safetyOrange tracking-widest">ETHICAL FOUNDATION</div>
+                </div>
+                
+                <!-- Commitment -->
+                <div class="value-card bg-softGray p-8 rounded-xl" data-anim data-anim-delay="0.24s">
+                    <div class="text-5xl mb-6">🤝</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Commitment</h3>
+                    <p class="text-charcoal/80 text-sm mb-6">
+                        We are accountable for outcomes, consistently delivering on our obligations to clients, partners, and stakeholders.
+                    </p>
+                    <div class="text-xs font-heavy text-safetyOrange tracking-widest">ACCOUNTABILITY</div>
+                </div>
+                
+                <!-- Respect -->
+                <div class="value-card bg-softGray p-8 rounded-xl" data-anim data-anim-delay="0.30s">
+                    <div class="text-5xl mb-6">🙏</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Respect</h3>
+                    <p class="text-charcoal/80 text-sm mb-6">
+                        We foster a culture of professionalism, inclusivity, and data privacy, recognizing people and information as critical assets.
+                    </p>
+                    <div class="text-xs font-heavy text-safetyOrange tracking-widest">INCLUSIVITY</div>
+                </div>
+                
+                <!-- Excellence -->
+                <div class="value-card bg-softGray p-8 rounded-xl" data-anim data-anim-delay="0.36s">
+                    <div class="text-5xl mb-6">🏆</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Excellence</h3>
+                    <p class="text-charcoal/80 text-sm mb-6">
+                        We adhere to internationally recognized standards, continuously improving quality, performance, and resilience across our services.
+                    </p>
+                    <div class="text-xs font-heavy text-safetyOrange tracking-widest">QUALITY FOCUS</div>
+                </div>
+                
+                <!-- Innovation -->
+                <div class="value-card bg-softGray p-8 rounded-xl" data-anim data-anim-delay="0.42s">
+                    <div class="text-5xl mb-6">💡</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Innovation</h3>
+                    <p class="text-charcoal/80 text-sm mb-6">
+                        We apply disciplined innovation to develop secure, compliant, and future-ready solutions that create measurable value.
+                    </p>
+                    <div class="text-xs font-heavy text-safetyOrange tracking-widest">FUTURE-READY</div>
+                </div>
+            </div>
+            
+            <div class="mt-20 text-center" data-anim data-anim-delay="0.48s">
+                <div class="inline-block bg-deepBlue/5 p-10 rounded-2xl border border-deepBlue/10 max-w-3xl mx-auto">
+                    <p class="text-2xl font-heavy text-deepBlue mb-6">
+                        "Driven by integrity, commitment, respect, excellence, and innovation, Pesewani Tech partners with organizations to build smart ICT ecosystems, secure environments, and productive workplaces that support long-term growth."
+                    </p>
+                    <p class="text-safetyOrange font-heavy tracking-widest text-sm">— OUR COMMITMENT TO CLIENTS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What We Do -->
+    <section class="py-24 bg-softGray relative overflow-hidden">
+        <div class="graffiti-bg -right-20 bottom-1/4 opacity-5">SOLUTIONS</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-anim data-anim-delay="0.06s">
+                    <div class="inline-flex items-center gap-3 mb-8">
+                        <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                        <span class="text-safetyOrange font-heavy text-xs tracking-[0.3em]">OUR APPROACH</span>
+                    </div>
+                    
+                    <h2 class="text-4xl font-heavy mb-8 leading-tight text-deepBlue" data-anim data-anim-delay="0.12s">
+                        Integrated <span class="text-safetyOrange">Technology</span> Solutions
+                    </h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-deepBlue mb-2">Smart ICT Systems</h3>
+                                <p class="text-charcoal">Designing and implementing reliable digital infrastructure for shops, offices, and organizations of all sizes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 rounded-full bg-tealBlue/20 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-deepBlue mb-2">Secure Spaces</h3>
+                                <p class="text-charcoal">Combining cyber and physical security solutions to protect data, systems, and people.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-deepBlue mb-2">Productive Workplaces</h3>
+                                <p class="text-charcoal">Ergonomic design and optimized processes that promote health, comfort, and sustained productivity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative" data-anim data-anim-delay="0.18s">
+                    <div class="bg-white p-10 rounded-2xl border-2 border-deepBlue/10 shadow-xl">
+                        <h3 class="text-2xl font-heavy mb-8 text-deepBlue">Our Commitment to Clients</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between border-b border-deepBlue/10 pb-4">
+                                <span class="text-deepBlue font-semibold">Risk Management</span>
+                                <span class="text-safetyOrange font-heavy text-sm">PRIORITY</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between border-b border-deepBlue/10 pb-4">
+                                <span class="text-deepBlue font-semibold">Regulatory Compliance</span>
+                                <span class="text-safetyOrange font-heavy text-sm">INTEGRATED</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between border-b border-deepBlue/10 pb-4">
+                                <span class="text-deepBlue font-semibold">Scalable Solutions</span>
+                                <span class="text-safetyOrange font-heavy text-sm">DESIGNED IN</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between border-b border-deepBlue/10 pb-4">
+                                <span class="text-deepBlue font-semibold">Long-term Support</span>
+                                <span class="text-safetyOrange font-heavy text-sm">GUARANTEED</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 p-6 bg-deepBlue/5 rounded-xl">
+                            <p class="text-deepBlue font-semibold">
+                                "We don't just implement technology—we architect resilience for your organization's digital future."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-24 bg-deepBlue relative overflow-hidden">
+        <div class="graffiti-bg -left-20 top-1/4 opacity-10 text-white">PARTNER</div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-heavy mb-8 text-white" data-anim data-anim-delay="0.06s">
+                Ready to Build Your <span class="text-safetyOrange">Digital Foundation</span>?
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                Partner with Pesewani Tech to create smart ICT ecosystems, secure environments, and productive workplaces that support your long-term growth.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center" data-anim data-anim-delay="0.18s">
+                <a href="Contact.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-safetyOrange hover:bg-safetyOrangeHover transition transform hover:scale-105">
+                    Start a Conversation
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                </a>
+                <a href="Services.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white border-2 border-white hover:bg-white hover:text-deepBlue transition">
+                    Explore Our Services
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer (Same as homepage) -->
+  <footer class="bg-deepBlue text-white/80 py-16 border-t border-white/20">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center mb-12 pb-8 border-b border-white/20">
+            <h2 class="text-3xl font-heavy tracking-tighter mb-2"><span class="text-safetyOrange">PESEWANI.TECH</span></h2>
+            <p class="text-sm font-bold tracking-widest uppercase text-white/60">Smart ICT. Secure Spaces. Productive Workplaces.</p>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <!-- About Us -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">About Us</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Company Overview</a></li>
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Mission & Vision</a></li>
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Core Values</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Services</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Shops & Offices</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• ICT Policy</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Security Solutions</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Ergonomics</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal & Compliance -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Legal & Compliance</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="PrivacyPolicy.html" class="hover:text-safetyOrange transition">• Privacy Policy</a></li>
+                    <li><a href="Acceptable.html" class="hover:text-safetyOrange transition">• Terms of Service</a></li>
+                    <li><a href="cookie.html" class="hover:text-safetyOrange transition">• Cookie Policy</a></li>
+                    <li><a href="Acceptable.html" class="hover:text-safetyOrange transition">• Acceptable Use</a></li>
+                </ul>
+            </div>
+
+            <!-- Support & Contact + Trust & Security -->
+            <div>
+                <div class="mb-8">
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Support & Contact</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Contact Us</a></li>
+                        <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Help / Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Trust & Security</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Security Practices</a></li>
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Compliance</a></li>
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Data Protection</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/20 pt-8 flex justify-between items-center text-[10px] font-heavy tracking-[0.2em] uppercase text-white/60">
+            <span>© 2026 PESEWANI TECH</span>
+            <span>© 2026 Pesewani Tech. All Rights Reserved. </span>
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+        // Mobile menu functionality
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+        
+        // Animation observer
+        (function () {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('in-view');
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('[data-anim]').forEach(el => {
+                el.classList.add('fade-up');
+                io.observe(el);
+                
+                // Add delay based on data attribute
+                const delay = el.getAttribute('data-anim-delay');
+                if (delay) {
+                    el.style.transitionDelay = delay;
+                }
+            });
+        })();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

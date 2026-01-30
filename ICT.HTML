@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT Governance & Data Policy Services | Pesewani.tech - Secure Digital Governance</title>
+    <link rel="icon" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="LOGO 2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="LOGO 2.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F59E0B" />
+    <meta name="msapplication-TileColor" content="#F59E0B" />
+    <meta name="theme-color" content="#0F2A44" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#0F2A44',
+                        tealBlue: '#1FA2A6',
+                        safetyOrange: '#F59E0B',
+                        safetyOrangeHover: '#D97706',
+                        charcoal: '#1F2933',
+                        softGray: '#F5F7FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        heavy: ['Syncopate', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1F2933; background-color: #F5F7FA; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: #0F2A44; }
+        .font-heavy { font-family: 'Syncopate', sans-serif; text-transform: uppercase; }
+        
+        .policy-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid #0F2A44;
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(15, 42, 68, 0.15);
+        }
+        
+        .framework-card {
+            background: linear-gradient(135deg, #0F2A44 0%, #1FA2A6 100%);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .framework-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(15, 42, 68, 0.25);
+        }
+        
+        .fade-up { 
+            opacity: 0; 
+            transform: translateY(20px) scale(.98); 
+            transition: opacity .7s cubic-bezier(.2,.9,.2,1), transform .7s cubic-bezier(.2,.9,.2,1); 
+            will-change: opacity, transform; 
+        }
+        .fade-up.in-view { opacity: 1; transform: none; }
+        
+        .policy-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            background-color: #0F2A44;
+            color: white;
+            font-size: 28px;
+        }
+        
+        .checklist li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+        }
+        
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #F59E0B;
+            font-weight: bold;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .risk-item {
+            padding: 20px;
+            border-radius: 12px;
+            background-color: white;
+            border-left: 4px solid #F59E0B;
+        }
+        
+        @media (max-width: 768px) {
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .process-step {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .process-step:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #0F2A44;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 14px;
+        }
+        
+        .process-step.step-1:before { content: '1'; }
+        .process-step.step-2:before { content: '2'; }
+        .process-step.step-3:before { content: '3'; }
+        .process-step.step-4:before { content: '4'; }
+    </style>
+</head>
+<body class="bg-softGray">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-deepBlue/10">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-10">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-heavy tracking-tighter text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></a>
+                    </div>
+                    <div class="hidden md:flex items-center gap-6">
+                        <a href="index.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Home</a>
+                        <a href="Services.html" class="text-[10px] font-heavy tracking-[0.3em] text-safetyOrange border-b-2 border-safetyOrange transition uppercase">Services</a>
+                        <a href="Industries.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Industries</a>
+                        <a href="about.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">About Us</a>
+                        <a href="Contact.html" class="text-[10px] font-heavy tracking-[0.3em] text-charcoal hover:text-safetyOrange transition uppercase">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-2">
+                    <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="Contact.html" class="px-6 py-2 text-[10px] font-heavy tracking-widest bg-safetyOrange text-white hover:skew-x-[-12deg] transition-transform">GET_STARTED</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" aria-expanded="false" class="p-2 text-safetyOrange">
+                        <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke-width="3"/></svg>
+                        <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="3"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-40 -translate-y-full transform transition-transform duration-300">
+        <div class="absolute inset-0 bg-black/85"></div>
+        <div class="relative max-w-md mx-auto mt-20 bg-white border border-deepBlue/10 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl font-heavy text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                    </div>
+                    <button id="mobileClose" class="p-2 text-charcoal hover:text-deepBlue">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" stroke-width="2"/></svg>
+                    </button>
+                </div>
+                
+                <nav class="flex flex-col gap-2">
+                    <a href="index.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Home</a>
+                    <a href="Services.html" class="text-sm font-heavy tracking-widest text-safetyOrange uppercase px-4 py-3 rounded-lg bg-deepBlue/5 transition">Services</a>
+                    <a href="Industries.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Industries</a>
+                    <a href="about.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">About Us</a>
+                    <a href="Contact.html" class="text-sm font-heavy tracking-widest text-charcoal uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Contact</a>
+                </nav>
+                
+                <div class="mt-6 flex flex-col gap-3">
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 rounded-lg text-center hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="Contact.html" class="px-6 py-3 text-[12px] font-heavy tracking-widest bg-safetyOrange text-white rounded-lg text-center hover:skew-x-[-8deg] transition-transform">GET_STARTED</a>
+                </div>
+                
+                <div class="mt-6 text-xs text-charcoal font-mono tracking-widest">© PESEWANI.TECH</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <header class="relative py-24 lg:py-32 bg-deepBlue overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-deepBlue to-tealBlue/10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl">
+                <div class="inline-block px-4 py-2 bg-safetyOrange/20 rounded-full mb-8" data-anim data-anim-delay="0s">
+                    <span class="text-safetyOrange text-sm font-heavy tracking-widest">ICT GOVERNANCE</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-heavy leading-tight mb-8 text-white" data-anim data-anim-delay="0.06s">
+                    ICT Governance & <span class="text-safetyOrange">Data Policy</span> Services
+                </h1>
+                <p class="text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl" data-anim data-anim-delay="0.12s">
+                    Policies That Protect Systems, Data, and Your Business. We design practical ICT and Data Governance policies that define how technology and data are used, protected, and managed across your organization.
+                </p>
+                <div class="flex flex-wrap gap-4" data-anim data-anim-delay="0.18s">
+                    <a href="#consultation" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-safetyOrange hover:bg-safetyOrangeHover transition transform hover:scale-105">
+                        Request Policy Draft
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+                    <a href="#policies" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white border-2 border-white hover:bg-white hover:text-deepBlue transition">
+                        View Policy Frameworks
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Problem Statement -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-anim data-anim-delay="0.06s">
+                    <div class="inline-flex items-center gap-3 mb-8">
+                        <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                        <span class="text-safetyOrange font-heavy text-xs tracking-[0.3em]">THE CHALLENGE</span>
+                    </div>
+                    
+                    <h2 class="text-4xl font-heavy mb-8 leading-tight text-deepBlue" data-anim data-anim-delay="0.12s">
+                        Technology Without Clear Policy Exposes Your Business
+                    </h2>
+                    
+                    <div class="space-y-6 text-charcoal text-lg leading-relaxed" data-anim data-anim-delay="0.18s">
+                        <p>
+                            Technology without clear policy and data governance exposes organizations to <span class="text-deepBlue font-semibold">misuse, data breaches, regulatory penalties, and operational risk</span>.
+                        </p>
+                        <p>
+                            Without proper governance frameworks, businesses face increased vulnerability to cyber threats, compliance violations, and operational inefficiencies that can impact both reputation and profitability.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-10 p-8 bg-red-50 border-l-4 border-red-500 rounded-r-xl" data-anim data-anim-delay="0.24s">
+                        <h3 class="text-xl font-heavy mb-4 text-deepBlue">Common Risks Without Governance</h3>
+                        <div class="risk-matrix">
+                            <div class="risk-item">
+                                <h4 class="font-semibold text-deepBlue mb-2">Data Breaches</h4>
+                                <p class="text-sm text-charcoal">Unauthorized access to sensitive information</p>
+                            </div>
+                            <div class="risk-item">
+                                <h4 class="font-semibold text-deepBlue mb-2">Regulatory Penalties</h4>
+                                <p class="text-sm text-charcoal">Fines for non-compliance with data protection laws</p>
+                            </div>
+                            <div class="risk-item">
+                                <h4 class="font-semibold text-deepBlue mb-2">Operational Disruption</h4>
+                                <p class="text-sm text-charcoal">System misuse leading to downtime and productivity loss</p>
+                            </div>
+                            <div class="risk-item">
+                                <h4 class="font-semibold text-deepBlue mb-2">Reputation Damage</h4>
+                                <p class="text-sm text-charcoal">Loss of customer trust and business credibility</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative" data-anim data-anim-delay="0.30s">
+                    <div class="bg-deepBlue p-10 rounded-2xl text-white shadow-xl">
+                        <h3 class="text-2xl font-heavy mb-8">Our Solution</h3>
+                        
+                        <p class="text-xl mb-8">
+                            We design <span class="text-safetyOrange font-semibold">practical, easy-to-understand</span> ICT and Data Governance policies that:
+                        </p>
+                        
+                        <ul class="space-y-6 mb-10">
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Define Technology Usage</h4>
+                                    <p class="text-gray-300">Clear guidelines for how technology is used across your organization</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Protect Sensitive Information</h4>
+                                    <p class="text-gray-300">Safeguard data through classification and handling procedures</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Guide Staff Behavior</h4>
+                                    <p class="text-gray-300">Clear expectations for technology use and data handling</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Support Regulatory Compliance</h4>
+                                    <p class="text-gray-300">Align with GDPR, Data Protection Act, and other regulations</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="pt-8 border-t border-white/20">
+                            <p class="text-safetyOrange font-semibold text-lg italic">
+                                "Our policies bridge the gap between complex regulations and practical business operations."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Policy Frameworks -->
+    <section id="policies" class="py-24 bg-softGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    Comprehensive <span class="text-safetyOrange">Policy Frameworks</span>
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    We develop complete ICT and Data Governance policies tailored to your organization's specific needs and operational context.
+                </p>
+            </div>
+            
+            <!-- ICT Policies Section -->
+            <div class="mb-20" data-anim data-anim-delay="0.18s">
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="policy-icon">
+                        📱
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-heavy text-deepBlue">ICT Policies</h3>
+                        <p class="text-charcoal">Governance frameworks for technology use and management</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Policy 1 -->
+                    <div class="policy-card bg-white p-8 rounded-2xl">
+                        <h4 class="text-xl font-heavy mb-4 text-deepBlue">Acceptable Use Policy</h4>
+                        <p class="text-charcoal mb-6">Defines appropriate use of organizational technology resources including computers, networks, and internet access.</p>
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Authorized use guidelines</li>
+                            <li>• Prohibited activities</li>
+                            <li>• Personal use limitations</li>
+                            <li>• Enforcement procedures</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Policy 2 -->
+                    <div class="policy-card bg-white p-8 rounded-2xl">
+                        <h4 class="text-xl font-heavy mb-4 text-deepBlue">Internet & Email Policy</h4>
+                        <p class="text-charcoal mb-6">Governs use of internet services and corporate email systems for business communications.</p>
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Email security requirements</li>
+                            <li>• Internet usage monitoring</li>
+                            <li>• Social media guidelines</li>
+                            <li>• Confidentiality provisions</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Policy 3 -->
+                    <div class="policy-card bg-white p-8 rounded-2xl">
+                        <h4 class="text-xl font-heavy mb-4 text-deepBlue">Device & Access Control Policy</h4>
+                        <p class="text-charcoal mb-6">Manages organization-owned and personal device usage with appropriate access controls.</p>
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Device management standards</li>
+                            <li>• Authentication requirements</li>
+                            <li>• Access privilege management</li>
+                            <li>• Security configurations</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Policy 4 -->
+                    <div class="policy-card bg-white p-8 rounded-2xl">
+                        <h4 class="text-xl font-heavy mb-4 text-deepBlue">Remote Work & BYOD Policy</h4>
+                        <p class="text-charcoal mb-6">Establishes secure practices for remote work and Bring Your Own Device scenarios.</p>
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Remote access security</li>
+                            <li>• BYOD security requirements</li>
+                            <li>• Home network standards</li>
+                            <li>• Data protection measures</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Policy 5 -->
+                    <div class="policy-card bg-white p-8 rounded-2xl">
+                        <h4 class="text-xl font-heavy mb-4 text-deepBlue">Incident & Access Management Policy</h4>
+                        <p class="text-charcoal mb-6">Procedures for responding to security incidents and managing user access throughout employment lifecycle.</p>
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Incident response procedures</li>
+                            <li>• Access provisioning/deprovisioning</li>
+                            <li>• Role-based access controls</li>
+                            <li>• Audit and review processes</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Policy 6 -->
+                    <div class="policy-card bg-white p-8 rounded-2xl">
+                        <h4 class="text-xl font-heavy mb-4 text-deepBlue">Software & License Management</h4>
+                        <p class="text-charcoal mb-6">Governs software acquisition, installation, and license compliance across the organization.</p>
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Software approval process</li>
+                            <li>• License compliance tracking</li>
+                            <li>• Open source software guidelines</li>
+                            <li>• Update and patch management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Data Governance Policies Section -->
+            <div data-anim data-anim-delay="0.24s">
+                <div class="flex items-center gap-4 mb-10">
+                    <div class="policy-icon">
+                        🛡️
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-heavy text-deepBlue">Data Governance & Protection Policies</h3>
+                        <p class="text-charcoal">Comprehensive frameworks for data management, protection, and compliance</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Policy 1 -->
+                    <div class="policy-card bg-white p-8 rounded-2xl">
+                        <h4 class="text-xl font-heavy mb-4 text-deepBlue">Data Protection & Privacy Policy</h4>
+                        <p class="text-charcoal mb-6">Ensures compliance with data protection regulations and safeguards individual privacy rights.</p>
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Data processing principles</li>
+                            <li>• Privacy notice requirements</li>
+                            <li>• Individual rights management</li>
+                            <li>• Data Protection Officer role</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Policy 2 -->
+                    <div class="policy-card bg-white p-8 rounded-2xl">
+                        <h4 class="text-xl font-heavy mb-4 text-deepBlue">Data Classification & Handling Policy</h4>
+                        <p class="text-charcoal mb-6">Categorizes data based on sensitivity and defines appropriate handling procedures.</p>
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Data classification levels</li>
+                            <li>• Handling requirements per class</li>
+                            <li>• Labeling and marking standards</li>
+                            <li>• Storage and transmission rules</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Policy 3 -->
+                    <div class="policy-card bg-white p-8 rounded-2xl">
+                        <h4 class="text-xl font-heavy mb-4 text-deepBlue">Data Retention & Disposal Policy</h4>
+                        <p class="text-charcoal mb-6">Establishes timeframes for data retention and secure disposal methods.</p>
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Retention schedule by data type</li>
+                            <li>• Legal and regulatory requirements</li>
+                            <li>• Secure disposal procedures</li>
+                            <li>• Archive management</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Policy 4 -->
+                    <div class="policy-card bg-white p-8 rounded-2xl">
+                        <h4 class="text-xl font-heavy mb-4 text-deepBlue">Data Access & Ownership Framework</h4>
+                        <p class="text-charcoal mb-6">Defines data ownership, stewardship, and access control mechanisms.</p>
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Data ownership assignment</li>
+                            <li>• Stewardship responsibilities</li>
+                            <li>• Access request procedures</li>
+                            <li>• Authorization workflows</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Policy 5 -->
+                    <div class="policy-card bg-white p-8 rounded-2xl">
+                        <h4 class="text-xl font-heavy mb-4 text-deepBlue">Third-Party & Data Processing Policy</h4>
+                        <p class="text-charcoal mb-6">Manages data sharing with third parties and external data processors.</p>
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Vendor assessment criteria</li>
+                            <li>• Data processing agreements</li>
+                            <li>• Due diligence requirements</li>
+                            <li>• Monitoring and audit rights</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Policy 6 -->
+                    <div class="policy-card bg-white p-8 rounded-2xl">
+                        <h4 class="text-xl font-heavy mb-4 text-deepBlue">Breach Notification & Response Policy</h4>
+                        <p class="text-charcoal mb-6">Establishes procedures for detecting, reporting, and responding to data breaches.</p>
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Breach detection procedures</li>
+                            <li>• Notification timelines</li>
+                            <li>• Response team activation</li>
+                            <li>• Post-incident review</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Additional Services -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    <span class="text-safetyOrange">Additional Services</span> & Implementation Support
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    Beyond policy development, we provide comprehensive support to ensure successful implementation and ongoing compliance.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Left Column -->
+                <div data-anim data-anim-delay="0.18s">
+                    <div class="framework-card p-10 rounded-2xl mb-10">
+                        <h3 class="text-2xl font-heavy mb-6">Policy Customization</h3>
+                        <p class="mb-8">We tailor policies specifically to your business operations, industry requirements, and organizational culture—not generic templates.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="text-safetyOrange">•</span>
+                                <span>Industry-specific regulatory alignment</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-safetyOrange">•</span>
+                                <span>Organizational size and structure considerations</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-safetyOrange">•</span>
+                                <span>Integration with existing processes</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-safetyOrange">•</span>
+                                <span>Cultural and language adaptation</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-softGray p-10 rounded-2xl">
+                        <h3 class="text-2xl font-heavy mb-6 text-deepBlue">Data Governance Framework Design</h3>
+                        <p class="text-charcoal mb-6">Complete organizational data governance structure including roles, responsibilities, and decision-making processes.</p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-deepBlue mb-3">Framework Components</h4>
+                                <ul class="text-sm text-charcoal space-y-2">
+                                    <li>• Governance committee structure</li>
+                                    <li>• Decision rights matrix</li>
+                                    <li>• Data quality standards</li>
+                                    <li>• Metrics and reporting</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-deepBlue mb-3">Implementation Support</h4>
+                                <ul class="text-sm text-charcoal space-y-2">
+                                    <li>• Roadmap development</li>
+                                    <li>• Stakeholder engagement</li>
+                                    <li>• Change management</li>
+                                    <li>• Progress tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div data-anim data-anim-delay="0.24s">
+                    <div class="bg-softGray p-10 rounded-2xl mb-10">
+                        <h3 class="text-2xl font-heavy mb-6 text-deepBlue">Staff Awareness & Compliance Training</h3>
+                        <p class="text-charcoal mb-6">Effective training programs that ensure staff understand and adhere to policies.</p>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange text-xl">🎓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-deepBlue mb-2">Interactive Training Modules</h4>
+                                    <p class="text-sm text-charcoal">Engaging, scenario-based training tailored to different roles</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange text-xl">📊</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-deepBlue mb-2">Compliance Monitoring</h4>
+                                    <p class="text-sm text-charcoal">Tools and processes to track policy adherence</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange text-xl">🔄</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-deepBlue mb-2">Annual Refresher Training</h4>
+                                    <p class="text-sm text-charcoal">Ongoing education to maintain awareness</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="framework-card p-10 rounded-2xl">
+                        <h3 class="text-2xl font-heavy mb-6">Policy Review, Updates & Regulatory Alignment</h3>
+                        <p class="mb-8">Regular policy maintenance to ensure ongoing relevance and compliance with changing regulations.</p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-safetyOrange mb-3">Review Services</h4>
+                                <ul class="text-sm text-white/90 space-y-2">
+                                    <li>• Annual policy audits</li>
+                                    <li>• Regulatory change tracking</li>
+                                    <li>• Stakeholder feedback integration</li>
+                                    <li>• Version control management</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-safetyOrange mb-3">Update Support</h4>
+                                <ul class="text-sm text-white/90 space-y-2">
+                                    <li>• Revision management</li>
+                                    <li>• Communication planning</li>
+                                    <li>• Re-training coordination</li>
+                                    <li>• Implementation tracking</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Implementation Process -->
+    <section class="py-24 bg-softGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    Our <span class="text-safetyOrange">Implementation Process</span>
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    A structured approach to developing and implementing effective ICT and Data Governance policies.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Step 1 -->
+                <div class="process-step step-1" data-anim data-anim-delay="0.18s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Assessment & Discovery</h3>
+                    <p class="text-charcoal mb-4">We begin with a comprehensive analysis of your current state, regulatory requirements, and organizational needs.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-6">
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Activities Include</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Current policy review</li>
+                                <li>• Regulatory gap analysis</li>
+                                <li>• Stakeholder interviews</li>
+                                <li>• Risk assessment</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Deliverables</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Assessment report</li>
+                                <li>• Requirements document</li>
+                                <li>• Risk register</li>
+                                <li>• Implementation roadmap</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="process-step step-2" data-anim data-anim-delay="0.24s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Policy Development & Customization</h3>
+                    <p class="text-charcoal mb-4">Creating tailored policies that align with your business operations and regulatory requirements.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-6">
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Development Process</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Policy drafting and review</li>
+                                <li>• Legal and compliance alignment</li>
+                                <li>• Stakeholder feedback integration</li>
+                                <li>• Iterative refinement</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Output</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Complete policy suite</li>
+                                <li>• Implementation guidelines</li>
+                                <li>• Training materials</li>
+                                <li>• Communication templates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="process-step step-3" data-anim data-anim-delay="0.30s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Implementation & Training</h3>
+                    <p class="text-charcoal mb-4">Rolling out policies with comprehensive training and change management support.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-6">
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Implementation Support</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Policy communication planning</li>
+                                <li>• Role-specific training sessions</li>
+                                <li>• Change management support</li>
+                                <li>• Technical implementation guidance</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Training Delivery</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Executive briefings</li>
+                                <li>• Staff awareness sessions</li>
+                                <li>• Manager training</li>
+                                <li>• Ongoing support materials</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="process-step step-4" data-anim data-anim-delay="0.36s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Maintenance & Continuous Improvement</h3>
+                    <p class="text-charcoal mb-4">Ensuring policies remain effective, compliant, and aligned with business evolution.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-6">
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Ongoing Services</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Annual policy reviews</li>
+                                <li>• Regulatory change monitoring</li>
+                                <li>• Compliance audits</li>
+                                <li>• Incident response support</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Improvement Cycle</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Performance metrics tracking</li>
+                                <li>• Feedback collection and analysis</li>
+                                <li>• Continuous refinement</li>
+                                <li>• Best practice integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center" data-anim data-anim-delay="0.42s">
+                <div class="inline-block bg-safetyOrange/10 p-10 rounded-2xl border border-safetyOrange/20 max-w-3xl mx-auto">
+                    <p class="text-2xl font-heavy text-deepBlue mb-6">
+                        "Effective governance isn't about creating bureaucracy—it's about establishing clarity, accountability, and protection for your organization's most valuable assets."
+                    </p>
+                    <p class="text-safetyOrange font-heavy tracking-widest text-sm">— OUR APPROACH TO ICT GOVERNANCE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Key Outcomes -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    <span class="text-safetyOrange">Key Outcomes</span> & Business Value
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    The measurable benefits of implementing effective ICT and Data Governance policies.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Outcome 1 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.18s">
+                    <div class="text-4xl mb-6">👥</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Improved Staff Accountability</h3>
+                    <p class="text-charcoal">Clear expectations and guidelines lead to consistent policy adherence and responsible technology use across the organization.</p>
+                </div>
+                
+                <!-- Outcome 2 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.24s">
+                    <div class="text-4xl mb-6">🛡️</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Stronger Data Protection</h3>
+                    <p class="text-charcoal">Robust controls and procedures safeguard sensitive information from unauthorized access, loss, or misuse.</p>
+                </div>
+                
+                <!-- Outcome 3 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.30s">
+                    <div class="text-4xl mb-6">⚖️</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Reduced Legal & Operational Risk</h3>
+                    <p class="text-charcoal">Compliance with regulations minimizes legal exposure while standardized processes reduce operational vulnerabilities.</p>
+                </div>
+                
+                <!-- Outcome 4 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.36s">
+                    <div class="text-4xl mb-6">🏛️</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Clear Governance Structure</h3>
+                    <p class="text-charcoal">Well-defined roles, responsibilities, and decision-making processes create an accountable governance framework.</p>
+                </div>
+                
+                <!-- Outcome 5 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.42s">
+                    <div class="text-4xl mb-6">📋</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Increased Audit Readiness</h3>
+                    <p class="text-charcoal">Documented policies, procedures, and compliance evidence streamline internal and external audit processes.</p>
+                </div>
+                
+                <!-- Outcome 6 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.48s">
+                    <div class="text-4xl mb-6">💼</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Enhanced Business Reputation</h3>
+                    <p class="text-charcoal">Demonstrating commitment to data protection and responsible technology use builds trust with customers and partners.</p>
+                </div>
+                
+                <!-- Outcome 7 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.54s">
+                    <div class="text-4xl mb-6">📈</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Operational Efficiency</h3>
+                    <p class="text-charcoal">Standardized processes and clear guidelines reduce confusion, errors, and time spent on technology-related issues.</p>
+                </div>
+                
+                <!-- Outcome 8 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.60s">
+                    <div class="text-4xl mb-6">🎯</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Strategic Alignment</h3>
+                    <p class="text-charcoal">ICT and data governance frameworks that support and enable business objectives rather than hinder them.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section id="consultation" class="py-24 bg-deepBlue relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-deepBlue to-tealBlue/20"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-heavy mb-8 text-white" data-anim data-anim-delay="0.06s">
+                Ready to Implement <span class="text-safetyOrange">Effective Governance</span>?
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                Protect your organization from risks while enabling responsible technology use and data management. Get started with a comprehensive policy framework today.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center" data-anim data-anim-delay="0.18s">
+                <a href="Contact.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-safetyOrange hover:bg-safetyOrangeHover transition transform hover:scale-105">
+                    Request an ICT & Data Governance Policy Draft
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                </a>
+                <a href="tel:+233XXXXXXXXX" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white border-2 border-white hover:bg-white hover:text-deepBlue transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    Schedule Consultation Call
+                </a>
+            </div>
+            
+            <div class="mt-16 bg-white/10 p-8 rounded-2xl border border-white/20" data-anim data-anim-delay="0.24s">
+                <h3 class="text-2xl font-heavy mb-6 text-white">What You'll Receive</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-safetyOrange flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-semibold">Custom Policy Draft</p>
+                        <p class="text-gray-300 text-sm">Tailored to your organization</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-safetyOrange flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-semibold">Risk Assessment</p>
+                        <p class="text-gray-300 text-sm">Compliance gap analysis</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-safetyOrange flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-semibold">Implementation Plan</p>
+                        <p class="text-gray-300 text-sm">Step-by-step rollout strategy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-deepBlue text-white/80 py-16 border-t border-white/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-12 pb-8 border-b border-white/20">
+                <h2 class="text-3xl font-heavy tracking-tighter mb-2"><span class="text-safetyOrange">PESEWANI.TECH</span></h2>
+                <p class="text-sm font-bold tracking-widest uppercase text-white/60">Smart ICT. Secure Spaces. Productive Workplaces.</p>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- About Us -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">About Us</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Company Overview</a></li>
+                        <li><a href="about.html#mission" class="hover:text-safetyOrange transition">• Mission & Vision</a></li>
+                        <li><a href="about.html#values" class="hover:text-safetyOrange transition">• Core Values</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Services</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="shop-office.html" class="hover:text-safetyOrange transition">• Shops & Offices</a></li>
+                        <li><a href="ICT.HTML" class="text-safetyOrange hover:text-safetyOrange transition">• ICT Policy</a></li>
+                        <li><a href="Security-Solution.html" class="hover:text-safetyOrange transition">• Security Solutions</a></li>
+                        <li><a href="Ergonomics.html" class="hover:text-safetyOrange transition">• Ergonomics</a></li>
+                        <li><a href="Healthcare.html" class="hover:text-safetyOrange transition">• Healthcare ICT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Compliance -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Legal & Compliance</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Acceptable Use</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support & Contact + Trust & Security -->
+                <div>
+                    <div class="mb-8">
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Support & Contact</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Contact Us</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Help / Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Trust & Security</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Security Practices</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Compliance</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Data Protection</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] font-heavy tracking-[0.2em] uppercase text-white/60">
+                <span class="mb-4 md:mb-0">© 2026 PESEWANI TECH</span>
+                <span>ICT Governance & Data Policy Services</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+        
+        // Animation observer
+        (function () {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('in-view');
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('[data-anim]').forEach(el => {
+                el.classList.add('fade-up');
+                io.observe(el);
+                
+                // Add delay based on data attribute
+                const delay = el.getAttribute('data-anim-delay');
+                if (delay) {
+                    el.style.transitionDelay = delay;
+                }
+            });
+        })();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

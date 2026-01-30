@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare ICT Solutions | Pesewani.tech - Medical Technology Systems</title>
+    <link rel="icon" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="LOGO 2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="LOGO 2.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F59E0B" />
+    <meta name="msapplication-TileColor" content="#F59E0B" />
+    <meta name="theme-color" content="#0F2A44" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#0F2A44',
+                        tealBlue: '#1FA2A6',
+                        safetyOrange: '#F59E0B',
+                        safetyOrangeHover: '#D97706',
+                        charcoal: '#1F2933',
+                        softGray: '#F5F7FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        heavy: ['Syncopate', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1F2933; background-color: #F5F7FA; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: #0F2A44; }
+        .font-heavy { font-family: 'Syncopate', sans-serif; text-transform: uppercase; }
+        
+        .healthcare-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid #0F2A44;
+            background-color: #FFFFFF;
+        }
+        
+        .healthcare-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(15, 42, 68, 0.15);
+        }
+        
+        .compliance-card {
+            background: linear-gradient(135deg, #0F2A44 0%, #1FA2A6 100%);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .compliance-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(15, 42, 68, 0.25);
+        }
+        
+        .fade-up { 
+            opacity: 0; 
+            transform: translateY(20px) scale(.98); 
+            transition: opacity .7s cubic-bezier(.2,.9,.2,1), transform .7s cubic-bezier(.2,.9,.2,1); 
+            will-change: opacity, transform; 
+        }
+        .fade-up.in-view { opacity: 1; transform: none; }
+        
+        .healthcare-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            background-color: #0F2A44;
+            color: white;
+            font-size: 28px;
+        }
+        
+        .checklist li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+        }
+        
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #F59E0B;
+            font-weight: bold;
+        }
+        
+        .process-step {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .process-step:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #0F2A44;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 14px;
+        }
+        
+        .process-step.step-1:before { content: '1'; }
+        .process-step.step-2:before { content: '2'; }
+        .process-step.step-3:before { content: '3'; }
+        .process-step.step-4:before { content: '4'; }
+        
+        .compliance-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: #1FA2A6;
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .healthcare-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .grid-item {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        @media (max-width: 768px) {
+            .healthcare-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .emergency-badge {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        .data-protection {
+            background-color: rgba(31, 162, 166, 0.1);
+            border-left: 4px solid #1FA2A6;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body class="bg-softGray">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-deepBlue/10">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-10">
+                    <div class="flex-shrink-0">
+                        <a href="index.html" class="text-2xl font-heavy tracking-tighter text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></a>
+                    </div>
+                    <div class="hidden md:flex items-center gap-6">
+                        <a href="index.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Home</a>
+                        <a href="Services.html" class="text-[10px] font-heavy tracking-[0.3em] text-safetyOrange border-b-2 border-safetyOrange transition uppercase">Services</a>
+                        <a href="Industries.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Industries</a>
+                        <a href="about.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">About Us</a>
+                        <a href="Contact.html" class="text-[10px] font-heavy tracking-[0.3em] text-charcoal hover:text-safetyOrange transition uppercase">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-2">
+                    <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="Contact.html" class="px-6 py-2 text-[10px] font-heavy tracking-widest bg-safetyOrange text-white hover:bg-safetyOrangeHover transition-transform">GET_STARTED</a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" aria-expanded="false" class="p-2 text-safetyOrange">
+                        <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke-width="3"/></svg>
+                        <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="3"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-40 -translate-y-full transform transition-transform duration-300">
+        <div class="absolute inset-0 bg-black/85"></div>
+        <div class="relative max-w-md mx-auto mt-20 bg-white border border-deepBlue/10 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl font-heavy text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                    </div>
+                    <button id="mobileClose" class="p-2 text-charcoal hover:text-deepBlue">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" stroke-width="2"/></svg>
+                    </button>
+                </div>
+                
+                <nav class="flex flex-col gap-2">
+                    <a href="index.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Home</a>
+                    <a href="Services.html" class="text-sm font-heavy tracking-widest text-safetyOrange uppercase px-4 py-3 rounded-lg bg-deepBlue/5 transition">Services</a>
+                    <a href="Industries.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Industries</a>
+                    <a href="about.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">About Us</a>
+                    <a href="Contact.html" class="text-sm font-heavy tracking-widest text-charcoal uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Contact</a>
+                </nav>
+                
+                <div class="mt-6 flex flex-col gap-3">
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 rounded-lg text-center hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="Contact.html" class="px-6 py-3 text-[12px] font-heavy tracking-widest bg-safetyOrange text-white rounded-lg text-center hover:bg-safetyOrangeHover transition-transform">GET_STARTED</a>
+                </div>
+                
+                <div class="mt-6 text-xs text-charcoal font-mono tracking-widest">© PESEWANI.TECH</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <header class="relative py-24 lg:py-32 bg-deepBlue overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-deepBlue to-tealBlue/20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl">
+                <div class="inline-block px-4 py-2 bg-tealBlue/20 rounded-full mb-8" data-anim data-anim-delay="0s">
+                    <span class="text-tealBlue text-sm font-heavy tracking-widest">HEALTHCARE ICT</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-heavy leading-tight mb-8 text-white" data-anim data-anim-delay="0.06s">
+                    Healthcare <span class="text-safetyOrange">ICT Solutions</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl" data-anim data-anim-delay="0.12s">
+                    Specialized technology solutions for healthcare environments that ensure patient data security, regulatory compliance, and operational efficiency.
+                </p>
+                <div class="flex flex-wrap gap-4" data-anim data-anim-delay="0.18s">
+                    <a href="#consultation" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-safetyOrange hover:bg-safetyOrangeHover transition transform hover:scale-105">
+                        Request Healthcare Consultation
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+                    <a href="#solutions" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white border-2 border-white hover:bg-white hover:text-deepBlue transition">
+                        View Healthcare Solutions
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Healthcare Challenges Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-anim data-anim-delay="0.06s">
+                    <div class="inline-flex items-center gap-3 mb-8">
+                        <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                        <span class="text-tealBlue font-heavy text-xs tracking-[0.3em]">HEALTHCARE CHALLENGES</span>
+                    </div>
+                    
+                    <h2 class="text-4xl font-heavy mb-8 leading-tight text-deepBlue" data-anim data-anim-delay="0.12s">
+                        Technology in Healthcare: Unique Requirements
+                    </h2>
+                    
+                    <div class="space-y-6 text-charcoal text-lg leading-relaxed" data-anim data-anim-delay="0.18s">
+                        <p>
+                            Healthcare environments present <span class="text-deepBlue font-semibold">unique technological challenges</span> that require specialized solutions. From patient data protection to medical device integration, healthcare ICT demands reliability, security, and compliance.
+                        </p>
+                        <p>
+                            We understand that healthcare technology isn't just about connectivity—it's about <span class="text-deepBlue font-semibold">patient safety, data integrity, and operational continuity</span> in critical environments.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-10 p-8 bg-red-50 border-l-4 border-red-500 rounded-r-xl" data-anim data-anim-delay="0.24s">
+                        <h3 class="text-xl font-heavy mb-4 text-deepBlue">Common Healthcare ICT Challenges</h3>
+                        <div class="healthcare-grid">
+                            <div class="grid-item">
+                                <h4 class="font-semibold text-deepBlue mb-2">Data Security</h4>
+                                <p class="text-sm text-charcoal">Protecting sensitive patient information</p>
+                            </div>
+                            <div class="grid-item">
+                                <h4 class="font-semibold text-deepBlue mb-2">Regulatory Compliance</h4>
+                                <p class="text-sm text-charcoal">Meeting HIPAA, GDPR, and local regulations</p>
+                            </div>
+                            <div class="grid-item">
+                                <h4 class="font-semibold text-deepBlue mb-2">System Reliability</h4>
+                                <p class="text-sm text-charcoal">Ensuring 24/7 operational availability</p>
+                            </div>
+                            <div class="grid-item">
+                                <h4 class="font-semibold text-deepBlue mb-2">Device Integration</h4>
+                                <p class="text-sm text-charcoal">Connecting diverse medical equipment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative" data-anim data-anim-delay="0.30s">
+                    <div class="bg-deepBlue p-10 rounded-2xl text-white shadow-xl">
+                        <h3 class="text-2xl font-heavy mb-8">Our Healthcare ICT Approach</h3>
+                        
+                        <p class="text-xl mb-8">
+                            We deliver <span class="text-safetyOrange font-semibold">secure, compliant, and reliable</span> ICT solutions specifically designed for healthcare environments.
+                        </p>
+                        
+                        <ul class="space-y-6 mb-10">
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Healthcare-Specific Security</h4>
+                                    <p class="text-gray-300">Tailored data protection for medical environments</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Regulatory Compliance</h4>
+                                    <p class="text-gray-300">Solutions designed to meet healthcare regulations</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Medical Device Integration</h4>
+                                    <p class="text-gray-300">Seamless connectivity for healthcare equipment</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Emergency Readiness</h4>
+                                    <p class="text-gray-300">Systems designed for critical care continuity</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="pt-8 border-t border-white/20">
+                            <p class="text-tealBlue font-semibold text-lg italic">
+                                "In healthcare, technology isn't just about efficiency—it's about enabling better patient outcomes through reliable, secure systems."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Healthcare Solutions -->
+    <section id="solutions" class="py-24 bg-softGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    Specialized <span class="text-tealBlue">Healthcare Solutions</span>
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    Comprehensive ICT solutions designed specifically for healthcare environments and medical facilities.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Solution 1 -->
+                <div class="healthcare-card p-8 rounded-2xl" data-anim data-anim-delay="0.18s">
+                    <div class="healthcare-icon">
+                        🏥
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Medical Record System Setup</h3>
+                    <p class="text-charcoal mb-6">Secure electronic medical record (EMR) systems with proper access controls and data protection.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• EMR/EHR system implementation</li>
+                        <li>• Patient data migration</li>
+                        <li>• Access control configuration</li>
+                        <li>• Audit trail setup</li>
+                        <li>• Backup and recovery systems</li>
+                        <li>• Staff training and support</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 2 -->
+                <div class="healthcare-card p-8 rounded-2xl" data-anim data-anim-delay="0.24s">
+                    <div class="healthcare-icon">
+                        🛡️
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">HIPAA/GDPR-Compliant Infrastructure</h3>
+                    <p class="text-charcoal mb-6">Healthcare-specific security infrastructure that meets regulatory requirements.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Data encryption implementation</li>
+                        <li>• Access control and authentication</li>
+                        <li>• Audit and monitoring systems</li>
+                        <li>• Compliance documentation</li>
+                        <li>• Risk assessment services</li>
+                        <li>• Regular compliance audits</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 3 -->
+                <div class="healthcare-card p-8 rounded-2xl" data-anim data-anim-delay="0.30s">
+                    <div class="healthcare-icon">
+                        📱
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Telemedicine Platform Integration</h3>
+                    <p class="text-charcoal mb-6">Secure telemedicine solutions for remote consultations and virtual care delivery.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Telemedicine platform setup</li>
+                        <li>• Video consultation systems</li>
+                        <li>• Secure messaging platforms</li>
+                        <li>• Remote patient monitoring</li>
+                        <li>• Integration with EMR systems</li>
+                        <li>• Staff training for virtual care</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 4 -->
+                <div class="healthcare-card p-8 rounded-2xl" data-anim data-anim-delay="0.36s">
+                    <div class="healthcare-icon">
+                        💉
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Medical Device Networking</h3>
+                    <p class="text-charcoal mb-6">Secure networking for medical equipment and diagnostic devices.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Medical device network design</li>
+                        <li>• Equipment connectivity setup</li>
+                        <li>• Data integration solutions</li>
+                        <li>• Network segmentation</li>
+                        <li>• Security for IoT medical devices</li>
+                        <li>• Monitoring and maintenance</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 5 -->
+                <div class="healthcare-card p-8 rounded-2xl" data-anim data-anim-delay="0.42s">
+                    <div class="healthcare-icon">
+                        🔐
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Patient Data Security Systems</h3>
+                    <p class="text-charcoal mb-6">Comprehensive security measures to protect sensitive patient information.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Data encryption at rest and in transit</li>
+                        <li>• Multi-factor authentication</li>
+                        <li>• Role-based access controls</li>
+                        <li>• Data loss prevention</li>
+                        <li>• Secure backup solutions</li>
+                        <li>• Incident response planning</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 6 -->
+                <div class="healthcare-card p-8 rounded-2xl" data-anim data-anim-delay="0.48s">
+                    <div class="healthcare-icon">
+                        ⚡
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Emergency Power & Backup Solutions</h3>
+                    <p class="text-charcoal mb-6">Critical power infrastructure to ensure continuous operation of essential systems.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• UPS systems for critical equipment</li>
+                        <li>• Backup generator setup</li>
+                        <li>• Power conditioning systems</li>
+                        <li>• Emergency lighting solutions</li>
+                        <li>• Redundant power supplies</li>
+                        <li>• Regular testing and maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Compliance & Regulations -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    <span class="text-tealBlue">Compliance</span> & Regulatory Alignment
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    We ensure your healthcare ICT systems meet all necessary regulatory requirements and industry standards.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Left Column -->
+                <div data-anim data-anim-delay="0.18s">
+                    <div class="compliance-card p-10 rounded-2xl mb-10">
+                        <h3 class="text-2xl font-heavy mb-6">Key Healthcare Regulations</h3>
+                        <p class="mb-8">We design systems that comply with major healthcare regulations and data protection standards.</p>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange text-lg">🏛️</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">HIPAA Compliance</h4>
+                                    <p class="text-white/90">Health Insurance Portability and Accountability Act requirements for patient data protection in the US</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange text-lg">🌍</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">GDPR Alignment</h4>
+                                    <p class="text-white/90">General Data Protection Regulation compliance for European patient data</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange text-lg">🇬🇭</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Ghana Data Protection</h4>
+                                    <p class="text-white/90">Compliance with Ghana's Data Protection Act and healthcare regulations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="data-protection">
+                        <h3 class="text-xl font-heavy mb-4 text-deepBlue">Data Protection Framework</h3>
+                        <p class="text-charcoal mb-4">Our healthcare data protection framework includes:</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <h4 class="font-semibold text-deepBlue mb-2">Technical Controls</h4>
+                                <ul class="text-sm text-charcoal space-y-1">
+                                    <li>• Data encryption</li>
+                                    <li>• Access logging</li>
+                                    <li>• Network segmentation</li>
+                                    <li>• Intrusion detection</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-deepBlue mb-2">Administrative Controls</h4>
+                                <ul class="text-sm text-charcoal space-y-1">
+                                    <li>• Policy development</li>
+                                    <li>• Staff training</li>
+                                    <li>• Incident response</li>
+                                    <li>• Regular audits</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div data-anim data-anim-delay="0.24s">
+                    <div class="bg-softGray p-10 rounded-2xl mb-10">
+                        <h3 class="text-2xl font-heavy mb-6 text-deepBlue">Compliance Services</h3>
+                        <p class="text-charcoal mb-6">We provide comprehensive compliance support for healthcare organizations.</p>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-tealBlue/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-tealBlue text-xl">📋</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-deepBlue mb-2">Compliance Assessment</h4>
+                                    <p class="text-sm text-charcoal">Detailed evaluation of current systems against regulatory requirements</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-tealBlue/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-tealBlue text-xl">🔍</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-deepBlue mb-2">Gap Analysis</h4>
+                                    <p class="text-sm text-charcoal">Identification of compliance gaps and remediation planning</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-tealBlue/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-tealBlue text-xl">🔄</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-deepBlue mb-2">Implementation Support</h4>
+                                    <p class="text-sm text-charcoal">Assistance with implementing compliance measures and controls</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-tealBlue/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-tealBlue text-xl">📊</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-deepBlue mb-2">Ongoing Compliance</h4>
+                                    <p class="text-sm text-charcoal">Regular audits, monitoring, and updates to maintain compliance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="compliance-card p-10 rounded-2xl">
+                        <h3 class="text-2xl font-heavy mb-6">Certification Support</h3>
+                        <p class="mb-8">We assist healthcare facilities with preparing for and maintaining important certifications.</p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-safetyOrange mb-3">Preparation Services</h4>
+                                <ul class="text-sm text-white/90 space-y-2">
+                                    <li>• Documentation preparation</li>
+                                    <li>• System configuration</li>
+                                    <li>• Staff training</li>
+                                    <li>• Mock audits</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-safetyOrange mb-3">Maintenance Support</h4>
+                                <ul class="text-sm text-white/90 space-y-2">
+                                    <li>• Continuous monitoring</li>
+                                    <li>• Update management</li>
+                                    <li>• Annual reviews</li>
+                                    <li>• Change management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Healthcare Implementation Process -->
+    <section class="py-24 bg-softGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    Healthcare <span class="text-tealBlue">Implementation Process</span>
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    A structured approach to implementing healthcare ICT solutions with minimal disruption to patient care.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Step 1 -->
+                <div class="process-step step-1" data-anim data-anim-delay="0.18s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Healthcare Needs Assessment</h3>
+                    <p class="text-charcoal mb-4">We begin with a comprehensive assessment of your healthcare facility's unique requirements and constraints.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-6">
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Assessment Activities</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Clinical workflow analysis</li>
+                                <li>• Regulatory requirement review</li>
+                                <li>• Current system evaluation</li>
+                                <li>• Stakeholder interviews</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Deliverables</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Requirements document</li>
+                                <li>• Compliance gap analysis</li>
+                                <li>• Risk assessment report</li>
+                                <li>• Implementation roadmap</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="process-step step-2" data-anim data-anim-delay="0.24s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Solution Design & Planning</h3>
+                    <p class="text-charcoal mb-4">Creating healthcare-specific designs that prioritize patient safety and data security.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-6">
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Design Components</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Network architecture design</li>
+                                <li>• Security framework planning</li>
+                                <li>• Medical device integration</li>
+                                <li>• Backup and redundancy</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Planning Considerations</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Minimal disruption planning</li>
+                                <li>• Emergency procedures</li>
+                                <li>• Staff training schedule</li>
+                                <li>• Go-live preparation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="process-step step-3" data-anim data-anim-delay="0.30s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Phased Implementation</h3>
+                    <p class="text-charcoal mb-4">Careful, staged implementation to ensure continuity of care and system reliability.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-6">
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Implementation Approach</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Staged rollout planning</li>
+                                <li>• Parallel system operation</li>
+                                <li>• Data migration strategy</li>
+                                <li>• Testing and validation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Quality Assurance</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• System testing protocols</li>
+                                <li>• Performance verification</li>
+                                <li>• Security validation</li>
+                                <li>• User acceptance testing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="process-step step-4" data-anim data-anim-delay="0.36s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Training & Ongoing Support</h3>
+                    <p class="text-charcoal mb-4">Comprehensive training and 24/7 support specifically tailored for healthcare staff.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-6">
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Training Program</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Role-specific training</li>
+                                <li>• Emergency procedures</li>
+                                <li>• Compliance training</li>
+                                <li>• Ongoing education</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Healthcare Support</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• 24/7 technical support</li>
+                                <li>• Emergency response team</li>
+                                <li>• Regular maintenance</li>
+                                <li>• System optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center" data-anim data-anim-delay="0.42s">
+                <div class="inline-block bg-softGray p-10 rounded-2xl border border-deepBlue/20 max-w-3xl mx-auto">
+                    <p class="text-2xl font-heavy text-deepBlue mb-6">
+                        "Healthcare technology must be designed with patient safety as the highest priority, followed closely by data security and system reliability."
+                    </p>
+                    <p class="text-tealBlue font-heavy tracking-widest text-sm">— OUR HEALTHCARE ICT PHILOSOPHY</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits for Healthcare -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    <span class="text-tealBlue">Benefits</span> for Healthcare Organizations
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    How our specialized healthcare ICT solutions deliver value to medical facilities and providers.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.18s">
+                    <div class="text-4xl mb-6">🛡️</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Enhanced Patient Data Security</h3>
+                    <p class="text-charcoal">Robust protection for sensitive patient information, reducing risk of data breaches and ensuring regulatory compliance.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.24s">
+                    <div class="text-4xl mb-6">⚖️</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Regulatory Compliance</h3>
+                    <p class="text-charcoal">Systems designed to meet HIPAA, GDPR, and local healthcare regulations, reducing legal and financial risks.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.30s">
+                    <div class="text-4xl mb-6">⚡</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Improved Operational Efficiency</h3>
+                    <p class="text-charcoal">Streamlined workflows, reduced administrative burden, and optimized resource utilization across healthcare operations.</p>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.36s">
+                    <div class="text-4xl mb-6">💡</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Better Patient Care</h3>
+                    <p class="text-charcoal">Technology that supports clinical decision-making, reduces errors, and enhances overall patient experience and outcomes.</p>
+                </div>
+                
+                <!-- Benefit 5 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.42s">
+                    <div class="text-4xl mb-6">🔄</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">System Reliability</h3>
+                    <p class="text-charcoal">High-availability systems with redundancy and backup solutions to ensure continuous operation of critical healthcare services.</p>
+                </div>
+                
+                <!-- Benefit 6 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.48s">
+                    <div class="text-4xl mb-6">📈</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Cost Optimization</h3>
+                    <p class="text-charcoal">Reduced IT overhead, optimized resource utilization, and prevention of costly compliance violations and data breaches.</p>
+                </div>
+                
+                <!-- Benefit 7 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.54s">
+                    <div class="text-4xl mb-6">🏥</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Telemedicine Readiness</h3>
+                    <p class="text-charcoal">Infrastructure that supports remote consultations, virtual care, and digital health initiatives for expanded service delivery.</p>
+                </div>
+                
+                <!-- Benefit 8 -->
+                <div class="bg-softGray p-8 rounded-2xl border-l-4 border-deepBlue" data-anim data-anim-delay="0.60s">
+                    <div class="text-4xl mb-6">🔧</div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Future-Proof Infrastructure</h3>
+                    <p class="text-charcoal">Scalable solutions that can grow with your healthcare facility and adapt to emerging technologies and requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section id="consultation" class="py-24 bg-deepBlue relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-deepBlue to-tealBlue/30"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-heavy mb-8 text-white" data-anim data-anim-delay="0.06s">
+                Secure Your <span class="text-safetyOrange">Healthcare Technology</span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                Get specialized ICT solutions designed specifically for healthcare environments. Ensure patient data security, regulatory compliance, and operational excellence.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center" data-anim data-anim-delay="0.18s">
+                <a href="Contact.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-safetyOrange hover:bg-safetyOrangeHover transition transform hover:scale-105">
+                    Request Healthcare Consultation
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                </a>
+                <a href="tel:+233XXXXXXXXX" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white border-2 border-white hover:bg-white hover:text-deepBlue transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    Emergency Support Line
+                </a>
+            </div>
+            
+            <div class="mt-16 bg-white/10 p-8 rounded-2xl border border-white/20" data-anim data-anim-delay="0.24s">
+                <h3 class="text-2xl font-heavy mb-6 text-white">What's Included in Your Healthcare Consultation</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-safetyOrange flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-semibold">Compliance Assessment</p>
+                        <p class="text-gray-300 text-sm">Regulatory requirement analysis</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-safetyOrange flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-semibold">Healthcare Solution Design</p>
+                        <p class="text-gray-300 text-sm">Tailored ICT system recommendations</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-safetyOrange flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-semibold">Implementation Roadmap</p>
+                        <p class="text-gray-300 text-sm">Phased rollout plan with minimal disruption</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-deepBlue text-white/80 py-16 border-t border-white/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-12 pb-8 border-b border-white/20">
+                <h2 class="text-3xl font-heavy tracking-tighter mb-2"><span class="text-safetyOrange">PESEWANI.TECH</span></h2>
+                <p class="text-sm font-bold tracking-widest uppercase text-white/60">Smart ICT. Secure Spaces. Productive Workplaces.</p>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- About Us -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">About Us</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Company Overview</a></li>
+                        <li><a href="about.html#mission" class="hover:text-safetyOrange transition">• Mission & Vision</a></li>
+                        <li><a href="about.html#values" class="hover:text-safetyOrange transition">• Core Values</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Services</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="shop-office.html" class="hover:text-safetyOrange transition">• Shops & Offices</a></li>
+                        <li><a href="ICT.HTML" class="hover:text-safetyOrange transition">• ICT Policy</a></li>
+                        <li><a href="Security-Solution.html" class="hover:text-safetyOrange transition">• Security Solutions</a></li>
+                        <li><a href="Ergonomics.html" class="hover:text-safetyOrange transition">• Ergonomics</a></li>
+                        <li><a href="Healthcare.html" class="text-safetyOrange hover:text-safetyOrange transition">• Healthcare ICT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Compliance -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Legal & Compliance</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Acceptable Use</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support & Contact + Trust & Security -->
+                <div>
+                    <div class="mb-8">
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Support & Contact</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Contact Us</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Help / Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Trust & Security</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Security Practices</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Compliance</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Data Protection</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] font-heavy tracking-[0.2em] uppercase text-white/60">
+                <span class="mb-4 md:mb-0">© 2026 PESEWANI TECH</span>
+                <span>Specialized Healthcare ICT Solutions</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+        
+        // Animation observer
+        (function () {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('in-view');
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('[data-anim]').forEach(el => {
+                el.classList.add('fade-up');
+                io.observe(el);
+                
+                // Add delay based on data attribute
+                const delay = el.getAttribute('data-anim-delay');
+                if (delay) {
+                    el.style.transitionDelay = delay;
+                }
+            });
+        })();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

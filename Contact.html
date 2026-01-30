@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Pesewani.tech</title>
+    <link rel="icon" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="LOGO 2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="LOGO 2.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F59E0B" />
+    <meta name="msapplication-TileColor" content="#F59E0B" />
+    <meta name="theme-color" content="#0F2A44" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#0F2A44',
+                        tealBlue: '#1FA2A6',
+                        safetyOrange: '#F59E0B',
+                        safetyOrangeHover: '#D97706',
+                        charcoal: '#1F2933',
+                        softGray: '#F5F7FA',
+                        'tech-orange': '#F59E0B',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        heavy: ['Syncopate', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1F2933; background: #F5F7FA; }
+        h1, h2, h3 { font-family: 'Syncopate', sans-serif; text-transform: uppercase; color: #0F2A44; }
+        
+        .font-heavy { font-family: 'Syncopate', sans-serif; text-transform: uppercase; }
+        .bg-tech-orange { background-color: #F59E0B; }
+        .text-tech-orange { color: #F59E0B; }
+        .bg-deep-blue { background-color: #0F2A44; }
+        .text-deep-blue { color: #0F2A44; }
+        
+        .contact-card {
+            background: rgba(255, 255, 255, 1);
+            border: 2px solid #0F2A44;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(15, 42, 68, 0.1);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-4px);
+            border-color: #F59E0B;
+            box-shadow: 0 8px 20px rgba(245, 158, 11, 0.2);
+        }
+        
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #F59E0B, transparent);
+            opacity: 0.6;
+        }
+        
+        .input-field {
+            background: #FFFFFF;
+            border: 2px solid #0F2A44;
+            color: #1F2933;
+            transition: all 0.3s ease;
+        }
+        
+        .input-field::placeholder {
+            color: #1F2933;
+            opacity: 0.6;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #F59E0B;
+            box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+            background: #FFFFFF;
+        }
+        
+        .service-tag {
+            background: rgba(245, 158, 11, 0.15);
+            border: 2px solid #F59E0B;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #0F2A44;
+        }
+        
+        .success-message {
+            background: rgba(34, 197, 94, 0.15);
+            border: 2px solid #22C55E;
+            color: #1F2933;
+        }
+        
+        .error-message {
+            background: rgba(239, 68, 68, 0.15);
+            border: 2px solid #EF4444;
+            color: #1F2933;
+        }
+        
+        .form-step {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .form-step.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-charcoal">
+    <!-- Navigation -->
+   <nav class="absolute inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="flex justify-between h-20 items-center">
+            <div class="flex items-center gap-10">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-heavy tracking-tighter text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="index.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Home</a>
+                    <div class="relative group">
+                        <button class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase flex items-center gap-2">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block bg-white border border-deepBlue/10 shadow-2xl rounded-lg overflow-hidden min-w-[280px] z-50">
+                            <div class="p-1">
+                                <a href="shop-office.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Shops & Office Setup
+                                </a>
+                                <a href="Security-Solution.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Security Solutions
+                                </a>
+                                <a href="ICT.HTML" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    ICT Governance & Data Policy
+                                </a>
+                                <a href="Healthcare.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Healthcare ICT Solutions
+                                </a>
+                                <a href="Ergonomics.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Ergonomics
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </div> <a href="Industries.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Industries </a>
+                    <a href="about.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">About </a>
+
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-2">
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest bg-safetyOrange text-white hover:skew-x-[-12deg] transition-transform">GET_STARTED</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobileMenuBtn" aria-expanded="false" class="p-2 text-safetyOrange">
+                    <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke-width="3"/></svg>
+                    <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="3"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="h-[2px] w-full bg-gradient-to-r from-safetyOrange via-transparent to-transparent opacity-30"></div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-40 -translate-y-full transform transition-transform duration-300">
+        <div class="absolute inset-0 bg-black/85"></div>
+        <div class="relative max-w-md mx-auto mt-20 bg-white border border-deepBlue/10 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl font-heavy text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                    </div>
+                    <button id="mobileClose" class="p-2 text-charcoal hover:text-deepBlue">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" stroke-width="2"/></svg>
+                    </button>
+                </div>
+
+                <nav class="flex flex-col gap-2">
+                    <a href="index.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Home</a>
+                    
+                    <div class="relative group">
+                        <button class="w-full text-left text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition flex items-center justify-between">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="hidden group-hover:block pl-4 bg-deepBlue/5 rounded-lg mt-1">
+                            <a href="shop-office.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Shops & Office Setup</a>
+                            <a href="ICT.HTML" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">ICT Governance & Data Policy</a>
+                            <a href="Security-Solution.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Security Solutions</a>
+                            <a href="Healthcare.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Healthcare ICT Solutions</a>
+                            <a href="Ergonomics.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Ergonomics</a>
+                        </div>
+                    </div>
+
+                    <a href="Industries.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Industries</a>
+                    <a href="about.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">About Us</a>
+                    <a href="Contact.html" class="text-sm font-heavy tracking-widest text-charcoal uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Contact</a>
+                </nav>
+
+                <div class="mt-6 flex flex-col gap-3">
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 rounded-lg text-center hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest bg-safetyOrange text-white rounded-lg text-center hover:skew-x-[-8deg] transition-transform">GET_STARTED</a>
+                </div>
+
+                <div class="mt-6 text-xs text-charcoal font-mono tracking-widest">© PESEWANI.TECH</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+    </script>
+</nav>
+
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-24 relative overflow-hidden">
+        <div class="absolute -left-20 top-20 text-[15rem] font-black opacity-[0.05] pointer-events-none select-none italic text-deepBlue">CONTACT</div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 animate-fade-in">
+                    <div class="inline-flex items-center gap-3 mb-6">
+                        <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                        <span class="text-safetyOrange font-heavy text-xs tracking-[0.3em]">GET IN TOUCH</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl font-heavy mb-8 leading-none text-deepBlue">
+                        LET'S <span class="text-safetyOrange">BUILD</span><br>
+                        YOUR SOLUTION
+                    </h1>
+                    
+                    <p class="text-xl text-charcoal max-w-2xl mb-12 leading-relaxed">
+                        Ready to transform your space? Tell us about your project and we'll provide 
+                        a comprehensive assessment and custom implementation plan.
+                    </p>
+                    
+                    <div class="flex gap-6">
+                        <a href="#contact-form" class="px-8 py-4 bg-safetyOrange text-white font-heavy hover:skew-x-[-10deg] transition-transform text-sm">START PROJECT</a>
+                        <a href="#contact-info" class="px-8 py-4 border-2 border-deepBlue text-deepBlue font-heavy hover:bg-deepBlue hover:text-white transition text-sm">CONTACT INFO</a>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-6 animate-slide-up">
+                    <div class="contact-card p-10 relative overflow-hidden">
+                        <div class="absolute -right-10 -top-10 w-40 h-40 bg-safetyOrange/10 rounded-full blur-3xl"></div>
+                        
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-heavy mb-6 text-deepBlue">Response Time Guarantee</h3>
+                            <div class="grid grid-cols-2 gap-6 mb-10">
+                                <div class="text-center p-6 bg-softGray rounded-lg border-2 border-deepBlue">
+                                    <div class="text-3xl font-heavy text-safetyOrange mb-2">< 2H</div>
+                                    <div class="text-sm text-charcoal">Initial Response</div>
+                                </div>
+                                <div class="text-center p-6 bg-softGray rounded-lg border-2 border-deepBlue">
+                                    <div class="text-3xl font-heavy text-safetyOrange mb-2">24/7</div>
+                                    <div class="text-sm text-charcoal">Support Available</div>
+                                </div>
+                            </div>
+                            
+                            <div class="border-t-2 border-deepBlue pt-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-3 h-3 bg-safetyOrange rounded-full animate-pulse"></div>
+                                    <div class="text-sm text-charcoal">Current Status: <span class="text-safetyOrange font-heavy">Available for Consultations</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-divider mt-24"></div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <!-- Left Column: Contact Form -->
+                <div class="lg:col-span-8">
+                    <div class="contact-card p-10 animate-fade-in">
+                        <div class="flex items-center justify-between mb-10">
+                            <h2 class="text-3xl font-heavy text-deepBlue">Project Inquiry Form</h2>
+                            <div class="text-xs text-charcoal font-mono">
+                                <span class="text-safetyOrange">●</span> STEP <span id="current-step">1</span>/3
+                            </div>
+                        </div>
+                        
+                        <!-- Success/Error Messages -->
+                        <div id="success-message" class="success-message p-4 rounded-lg mb-6 hidden">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-green-700 font-heavy">Message sent successfully! We'll respond within 2 hours.</span>
+                            </div>
+                        </div>
+                        
+                        <div id="error-message" class="error-message p-4 rounded-lg mb-6 hidden">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-red-700 font-heavy">Please fill in all required fields.</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Multi-Step Form -->
+                        <form id="inquiryForm" novalidate>
+                            <!-- Step 1: Contact Information -->
+                            <div id="step-1" class="form-step active">
+                                <h3 class="text-xl font-heavy mb-6 text-safetyOrange">Contact Information</h3>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-charcoal mb-2">Full Name *</label>
+                                        <input type="text" id="name" name="name" required 
+                                               class="w-full px-4 py-3 rounded-lg input-field focus:outline-none focus:border-safetyOrange">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="company" class="block text-sm font-medium text-charcoal mb-2">Company/Organization</label>
+                                        <input type="text" id="company" name="company" 
+                                               class="w-full px-4 py-3 rounded-lg input-field focus:outline-none focus:border-safetyOrange">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-charcoal mb-2">Email Address *</label>
+                                        <input type="email" id="email" name="email" required 
+                                               class="w-full px-4 py-3 rounded-lg input-field focus:outline-none focus:border-safetyOrange">
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="phone" class="block text-sm font-medium text-charcoal mb-2">Phone Number *</label>
+                                        <input type="tel" id="phone" name="phone" required 
+                                               class="w-full px-4 py-3 rounded-lg input-field focus:outline-none focus:border-safetyOrange">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-8">
+                                    <label for="inquiry-type" class="block text-sm font-medium text-charcoal mb-2">Type of Inquiry *</label>
+                                    <select id="inquiry-type" name="inquiry-type" required 
+                                            class="w-full px-4 py-3 rounded-lg input-field focus:outline-none focus:border-safetyOrange appearance-none bg-white">
+                                        <option value="">Select inquiry type</option>
+                                        <option value="office-setup">Office/Shop Setup</option>
+                                        <option value="security">Security Solutions</option>
+                                        <option value="ict-governance">ICT Governance & Policy</option>
+                                        <option value="ergonomics">Ergonomic Assessment</option>
+                                        <option value="consultation">General Consultation</option>
+                                        <option value="support">Technical Support</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="flex justify-end">
+                                    <button type="button" onclick="nextStep(2)" 
+                                            class="px-8 py-3 bg-safetyOrange text-white font-heavy hover:scale-105 transition-transform text-sm">
+                                        NEXT: PROJECT DETAILS →
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 2: Project Details -->
+                            <div id="step-2" class="form-step">
+                                <h3 class="text-xl font-heavy mb-6 text-safetyOrange">Project Details</h3>
+                                
+                                <div class="mb-8">
+                                    <label class="block text-sm font-medium text-charcoal mb-4">Services Needed *</label>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                        <label class="flex items-center gap-3 p-3 input-field rounded-lg cursor-pointer hover:bg-softGray">
+                                            <input type="checkbox" name="services[]" value="office-setup" class="w-4 h-4 text-safetyOrange">
+                                            <span class="text-charcoal">Office/Shop Setup</span>
+                                        </label>
+                                        <label class="flex items-center gap-3 p-3 input-field rounded-lg cursor-pointer hover:bg-softGray">
+                                            <input type="checkbox" name="services[]" value="security" class="w-4 h-4 text-safetyOrange">
+                                            <span class="text-charcoal">Security Solutions</span>
+                                        </label>
+                                        <label class="flex items-center gap-3 p-3 input-field rounded-lg cursor-pointer hover:bg-softGray">
+                                            <input type="checkbox" name="services[]" value="ict-governance" class="w-4 h-4 text-safetyOrange">
+                                            <span class="text-charcoal">ICT Governance</span>
+                                        </label>
+                                        <label class="flex items-center gap-3 p-3 input-field rounded-lg cursor-pointer hover:bg-softGray">
+                                            <input type="checkbox" name="services[]" value="ergonomics" class="w-4 h-4 text-safetyOrange">
+                                            <span class="text-charcoal">Ergonomic Assessment</span>
+                                        </label>
+                                        <label class="flex items-center gap-3 p-3 input-field rounded-lg cursor-pointer hover:bg-softGray">
+                                            <input type="checkbox" name="services[]" value="consultation" class="w-4 h-4 text-safetyOrange">
+                                            <span class="text-charcoal">General Consultation</span>
+                                        </label>
+                                        <label class="flex items-center gap-3 p-3 input-field rounded-lg cursor-pointer hover:bg-softGray">
+                                            <input type="checkbox" name="services[]" value="other" class="w-4 h-4 text-safetyOrange">
+                                            <span class="text-charcoal">Other Services</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-8">
+                                    <label for="timeline" class="block text-sm font-medium text-charcoal mb-2">Project Timeline *</label>
+                                    <select id="timeline" name="timeline" required 
+                                            class="w-full px-4 py-3 rounded-lg input-field focus:outline-none focus:border-safetyOrange appearance-none bg-white">
+                                        <option value="">Select timeline</option>
+                                        <option value="urgent">Urgent (Within 1 week)</option>
+                                        <option value="soon">Soon (Within 1 month)</option>
+                                        <option value="planning">Planning Phase (1-3 months)</option>
+                                        <option value="future">Future Consideration</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-8">
+                                    <label for="budget" class="block text-sm font-medium text-charcoal mb-2">Budget Range</label>
+                                    <select id="budget" name="budget" 
+                                            class="w-full px-4 py-3 rounded-lg input-field focus:outline-none focus:border-safetyOrange appearance-none bg-white">
+                                        <option value="">Select budget range</option>
+                                        <option value="basic">Basic Setup ($1,000 - $5,000)</option>
+                                        <option value="standard">Standard Package ($5,000 - $15,000)</option>
+                                        <option value="premium">Premium Solution ($15,000 - $50,000)</option>
+                                        <option value="enterprise">Enterprise Scale ($50,000+)</option>
+                                        <option value="tbd">To Be Determined</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="flex justify-between">
+                                    <button type="button" onclick="prevStep(1)" 
+                                            class="px-8 py-3 border-2 border-deepBlue text-deepBlue font-heavy hover:bg-deepBlue hover:text-white transition text-sm">
+                                        ← BACK
+                                    </button>
+                                    <button type="button" onclick="nextStep(3)" 
+                                            class="px-8 py-3 bg-safetyOrange text-white font-heavy hover:scale-105 transition-transform text-sm">
+                                        NEXT: MESSAGE →
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Step 3: Message & Submit -->
+                            <div id="step-3" class="form-step">
+                                <h3 class="text-xl font-heavy mb-6 text-safetyOrange">Final Details</h3>
+                                
+                                <div class="mb-8">
+                                    <label for="message" class="block text-sm font-medium text-charcoal mb-2">Project Description *</label>
+                                    <textarea id="message" name="message" rows="6" required 
+                                              class="w-full px-4 py-3 rounded-lg input-field focus:outline-none focus:border-safetyOrange resize-none"
+                                              placeholder="Describe your project requirements, specific challenges, and any other relevant details..."></textarea>
+                                </div>
+                                
+                                <div class="mb-8">
+                                    <label for="location" class="block text-sm font-medium text-charcoal mb-2">Project Location (City/Area)</label>
+                                    <input type="text" id="location" name="location" 
+                                           class="w-full px-4 py-3 rounded-lg input-field focus:outline-none focus:border-safetyOrange"
+                                           placeholder="e.g., Accra, Kumasi, Takoradi...">
+                                </div>
+                                
+                                <div class="mb-8">
+                                    <label class="flex items-start gap-3">
+                                        <input type="checkbox" name="newsletter" class="w-4 h-4 mt-1 text-safetyOrange" checked>
+                                        <span class="text-sm text-charcoal">
+                                            I'd like to receive updates about new services, security tips, and industry insights. 
+                                            You can unsubscribe at any time.
+                                        </span>
+                                    </label>
+                                </div>
+                                
+                                <div class="flex justify-between">
+                                    <button type="button" onclick="prevStep(2)" 
+                                            class="px-8 py-3 border-2 border-deepBlue text-deepBlue font-heavy hover:bg-deepBlue hover:text-white transition text-sm">
+                                        ← BACK
+                                    </button>
+                                    <button type="submit" 
+                                            class="px-8 py-3 bg-safetyOrange text-white font-heavy hover:scale-105 transition-transform text-sm flex items-center gap-2">
+                                        <svg id="submit-spinner" class="w-4 h-4 hidden animate-spin" fill="none" viewBox="0 0 24 24">
+                                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                        </svg>
+                                        SEND INQUIRY
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Contact Info & FAQs -->
+                <div class="lg:col-span-4 space-y-8">
+                    <!-- Contact Information -->
+                    <div id="contact-info" class="contact-card p-8 animate-slide-up">
+                        <h3 class="text-xl font-heavy mb-6 text-deepBlue">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-safetyOrange/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-deepBlue mb-1">Email</h4>
+                                    <a href="mailto:hello@pesewani.tech" class="text-safetyOrange hover:underline font-heavy">HELLO@PESEWANI.TECH</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-safetyOrange/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-deepBlue mb-1">Phone</h4>
+                                    <a href="tel:+233000000000" class="text-charcoal hover:text-safetyOrange font-heavy">+233 00 000 0000</a>
+                                    <p class="text-xs text-charcoal mt-1 opacity-70">Mon-Fri: 8:00 AM - 6:00 PM</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-safetyOrange/20 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-deepBlue mb-1">Service Areas</h4>
+                                    <p class="text-charcoal">Accra & Greater Accra Region</p>
+                                    <p class="text-charcoal">Kumasi & Ashanti Region</p>
+                                    <p class="text-charcoal">Takoradi & Western Region</p>
+                                    <p class="text-xs text-charcoal mt-1 opacity-70">Available for projects nationwide</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="border-t-2 border-deepBlue pt-6 mt-6">
+                            <h4 class="font-medium text-deepBlue mb-4">Business Hours</h4>
+                            <div class="space-y-2 text-sm text-charcoal">
+                                <div class="flex justify-between">
+                                    <span>Monday - Friday</span>
+                                    <span class="text-safetyOrange font-heavy">8:00 AM - 6:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Saturday</span>
+                                    <span class="text-safetyOrange font-heavy">9:00 AM - 2:00 PM</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>Emergency Support</span>
+                                    <span class="text-safetyOrange font-heavy">24/7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div class="contact-card p-8 animate-slide-up" style="animation-delay: 0.2s">
+                        <h3 class="text-xl font-heavy mb-6 text-deepBlue">Quick Links</h3>
+                        
+                        <div class="space-y-4">
+                            <a href="services.html#office-setup" class="flex items-center justify-between p-3 input-field rounded-lg hover:bg-softGray transition">
+                                <span class="text-charcoal">Office Setup Services</span>
+                                <svg class="w-4 h-4 text-safetyOrange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                            
+                            <a href="services.html#security" class="flex items-center justify-between p-3 input-field rounded-lg hover:bg-softGray transition">
+                                <span class="text-charcoal">Security Solutions</span>
+                                <svg class="w-4 h-4 text-safetyOrange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                            
+                            <a href="services.html#ict-governance" class="flex items-center justify-between p-3 input-field rounded-lg hover:bg-softGray transition">
+                                <span class="text-charcoal">ICT Governance</span>
+                                <svg class="w-4 h-4 text-safetyOrange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                            
+                            <a href="services.html#ergonomics" class="flex items-center justify-between p-3 input-field rounded-lg hover:bg-softGray transition">
+                                <span class="text-charcoal">Ergonomic Assessment</span>
+                                <svg class="w-4 h-4 text-safetyOrange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Response Guarantee -->
+                    <div class="bg-safetyOrange/20 border-2 border-safetyOrange p-8 animate-slide-up rounded-lg" style="animation-delay: 0.4s">
+                        <div class="text-safetyOrange text-4xl mb-4">⚡</div>
+                        <h4 class="font-heavy text-lg text-deepBlue mb-3">Fast Response Guarantee</h4>
+                        <p class="text-charcoal text-sm mb-4">
+                            We guarantee an initial response within 2 hours during business hours.
+                        </p>
+                        <div class="text-xs text-charcoal font-mono font-heavy">
+                            STATUS: <span class="text-safetyOrange">SYSTEMS ACTIVE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section-divider mt-24"></div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center gap-3 mb-6">
+                    <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                    <span class="text-safetyOrange font-heavy text-xs tracking-[0.3em]">FAQ</span>
+                    <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                </div>
+                
+                <h2 class="text-4xl font-heavy text-deepBlue mb-6">FREQUENTLY <span class="text-safetyOrange">ASKED</span> QUESTIONS</h2>
+                <p class="text-charcoal max-w-2xl mx-auto">
+                    Quick answers to common questions about our services and process.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="space-y-6 animate-fade-in">
+                    <div class="contact-card p-6">
+                        <h4 class="font-heavy text-deepBlue mb-3">What's included in a site assessment?</h4>
+                        <p class="text-charcoal text-sm">
+                            Our comprehensive assessment includes infrastructure audit, security vulnerability analysis, 
+                            workflow evaluation, and a detailed report with recommendations and implementation plan.
+                        </p>
+                    </div>
+                    
+                    <div class="contact-card p-6">
+                        <h4 class="font-heavy text-deepBlue mb-3">How long does a typical project take?</h4>
+                        <p class="text-charcoal text-sm">
+                            Project timelines vary: Office setups (1-2 weeks), Security installations (3-7 days), 
+                            Policy development (2-4 weeks). We provide exact timelines after initial assessment.
+                        </p>
+                    </div>
+                    
+                    <div class="contact-card p-6">
+                        <h4 class="font-heavy text-deepBlue mb-3">Do you offer maintenance contracts?</h4>
+                        <p class="text-charcoal text-sm">
+                            Yes, we offer flexible maintenance packages including 24/7 monitoring, 
+                            regular updates, and priority support. Contact us for custom packages.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 animate-fade-in" style="animation-delay: 0.2s">
+                    <div class="contact-card p-6">
+                        <h4 class="font-heavy text-deepBlue mb-3">What areas do you serve?</h4>
+                        <p class="text-charcoal text-sm">
+                            We primarily serve Accra, Kumasi, and Takoradi, but accept projects nationwide. 
+                            Remote consultations are available for clients outside our primary service areas.
+                        </p>
+                    </div>
+                    
+                    <div class="contact-card p-6">
+                        <h4 class="font-heavy text-deepBlue mb-3">Can you work with existing infrastructure?</h4>
+                        <p class="text-charcoal text-sm">
+                            Absolutely. We assess and optimize existing systems, integrate new solutions, 
+                            and ensure everything works seamlessly together.
+                        </p>
+                    </div>
+                    
+                    <div class="contact-card p-6">
+                        <h4 class="font-heavy text-deepBlue mb-3">What's your response time for emergencies?</h4>
+                        <p class="text-charcoal text-sm">
+                            Emergency support clients receive immediate response (under 30 minutes) 
+                            and on-site support within 2 hours for critical issues in our service areas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <p class="text-charcoal mb-6">Still have questions?</p>
+                <a href="mailto:hello@pesewani.tech" class="inline-flex items-center gap-3 px-8 py-4 border-2 border-deepBlue text-deepBlue font-heavy hover:bg-deepBlue hover:text-white transition text-sm">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                    </svg>
+                    EMAIL US DIRECTLY
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="pb-24">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="bg-deepBlue border-4 border-safetyOrange p-12 md:p-20 text-center relative overflow-hidden">
+                <h2 class="text-4xl md:text-6xl font-heavy mb-8 leading-none text-white">READY TO <span class="text-safetyOrange">START</span>?</h2>
+                <p class="text-xl text-white mb-12 max-w-xl mx-auto">
+                    Contact us today for a free initial consultation and project assessment.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="tel:+233000000000" class="bg-safetyOrange text-white px-10 py-5 font-heavy text-sm hover:invert transition-all inline-block text-center">
+                        CALL NOW
+                    </a>
+                    <a href="#contact-form" class="border-2 border-white text-white px-10 py-5 font-heavy text-sm hover:bg-white hover:text-deepBlue transition-all inline-block text-center">
+                        FILL FORM
+                    </a>
+                </div>
+                
+                <div class="mt-12 text-sm text-white/70 font-mono">
+                    <span class="text-safetyOrange">●</span> SUPPORT: 24/7
+                    <span class="mx-4">|</span>
+                    <span class="text-safetyOrange">●</span> RESPONSE: < 2 HOURS
+                    <span class="mx-4">|</span>
+                    <span class="text-safetyOrange">●</span> STATUS: OPERATIONAL
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <footer class="bg-deepBlue text-white/80 py-16 border-t border-white/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-12 pb-8 border-b border-white/20">
+                <h2 class="text-3xl font-heavy tracking-tighter mb-2"><span class="text-safetyOrange">PESEWANI.TECH</span></h2>
+                <p class="text-sm font-bold tracking-widest uppercase text-white/60">Smart ICT. Secure Spaces. Productive Workplaces.</p>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- About Us -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">About Us</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Company Overview</a></li>
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Mission & Vision</a></li>
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Core Values</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Services</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="shop-office.html" class="hover:text-safetyOrange transition">• Shops & Offices</a></li>
+                        <li><a href="ICT.HTML" class="hover:text-safetyOrange transition">• ICT Policy</a></li>
+                        <li><a href="Security-Solution.html" class="hover:text-safetyOrange transition">• Security Solutions</a></li>
+                        <li><a href="Ergonomics.html" class="hover:text-safetyOrange transition">• Ergonomics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Compliance -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Legal & Compliance</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Acceptable Use Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition border-l-2 border-safetyOrange pl-2">• Data Processing Agreement</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support & Contact + Trust & Security -->
+                <div>
+                    <div class="mb-8">
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Support & Contact</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Contact Us</a></li>
+                            <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Help / Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Trust & Security</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Security Practices</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Compliance</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Data Protection</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] font-heavy tracking-[0.2em] uppercase text-white/60 gap-4">
+                <span>© 2026 PESEWANI TECH</span>
+                <span>Data Processing Agreement v1.0 • Effective 01/01/2026</span>
+                <span>Last Updated: January 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Script
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+
+        // Multi-Step Form Logic
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        function nextStep(step) {
+            if (validateStep(currentStep)) {
+                document.getElementById(`step-${currentStep}`).classList.remove('active');
+                document.getElementById(`step-${step}`).classList.add('active');
+                document.getElementById('current-step').textContent = step;
+                currentStep = step;
+                
+                document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function prevStep(step) {
+            document.getElementById(`step-${currentStep}`).classList.remove('active');
+            document.getElementById(`step-${step}`).classList.add('active');
+            document.getElementById('current-step').textContent = step;
+            currentStep = step;
+        }
+
+        function validateStep(step) {
+            const form = document.getElementById('inquiryForm');
+            let isValid = true;
+            
+            document.getElementById('success-message').classList.add('hidden');
+            document.getElementById('error-message').classList.add('hidden');
+            
+            if (step === 1) {
+                const requiredFields = ['name', 'email', 'phone', 'inquiry-type'];
+                for (const field of requiredFields) {
+                    const input = document.getElementById(field);
+                    if (!input.value.trim()) {
+                        input.classList.add('border-red-500');
+                        isValid = false;
+                    } else {
+                        input.classList.remove('border-red-500');
+                    }
+                }
+                
+                const email = document.getElementById('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (email.value && !emailRegex.test(email.value)) {
+                    email.classList.add('border-red-500');
+                    isValid = false;
+                }
+            }
+            
+            if (step === 2) {
+                const services = form.querySelectorAll('input[name="services[]"]:checked');
+                const timeline = document.getElementById('timeline');
+                
+                if (services.length === 0) {
+                    isValid = false;
+                }
+                
+                if (!timeline.value) {
+                    timeline.classList.add('border-red-500');
+                    isValid = false;
+                } else {
+                    timeline.classList.remove('border-red-500');
+                }
+            }
+            
+            if (!isValid) {
+                document.getElementById('error-message').classList.remove('hidden');
+                setTimeout(() => {
+                    document.getElementById('error-message').classList.add('hidden');
+                }, 5000);
+            }
+            
+            return isValid;
+        }
+
+        // Form Submission
+        document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateStep(currentStep)) {
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const spinner = document.getElementById('submit-spinner');
+                submitBtn.disabled = true;
+                spinner.classList.remove('hidden');
+                
+                setTimeout(() => {
+                    spinner.classList.add('hidden');
+                    submitBtn.disabled = false;
+                    
+                    document.getElementById('success-message').classList.remove('hidden');
+                    
+                    setTimeout(() => {
+                        this.reset();
+                        document.getElementById(`step-${currentStep}`).classList.remove('active');
+                        document.getElementById('step-1').classList.add('active');
+                        document.getElementById('current-step').textContent = '1';
+                        currentStep = 1;
+                        document.getElementById('success-message').classList.add('hidden');
+                    }, 3000);
+                }, 1500);
+            }
+        });
+
+        // Pre-fill form based on URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const service = getUrlParameter('service');
+            if (service) {
+                const serviceMap = {
+                    'office-setup': 'Office/Shop Setup',
+                    'security': 'Security Solutions',
+                    'ict-governance': 'ICT Governance & Policy',
+                    'ergonomics': 'Ergonomic Assessment'
+                };
+                
+                if (serviceMap[service]) {
+                    const inquirySelect = document.getElementById('inquiry-type');
+                    for (let i = 0; i < inquirySelect.options.length; i++) {
+                        if (inquirySelect.options[i].value === service) {
+                            inquirySelect.selectedIndex = i;
+                            break;
+                        }
+                    }
+                    
+                    const serviceCheckbox = document.querySelector(`input[name="services[]"][value="${service}"]`);
+                    if (serviceCheckbox) {
+                        serviceCheckbox.checked = true;
+                    }
+                }
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if(this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        (function () {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-fade-in, .animate-slide-up').forEach(el => {
+                if (el.classList.contains('animate-fade-in')) {
+                    el.style.opacity = '0';
+                    el.style.transition = 'opacity 0.8s ease-out';
+                }
+                if (el.classList.contains('animate-slide-up')) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                }
+                observer.observe(el);
+            });
+        })();
+    </script>
+</body>
+</html>

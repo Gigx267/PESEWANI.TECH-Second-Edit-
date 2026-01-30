@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceptable Use Policy | Pesewani.tech</title>
+    <link rel="icon" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="LOGO 2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="LOGO 2.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F59E0B" />
+    <meta name="msapplication-TileColor" content="#F59E0B" />
+    <meta name="theme-color" content="#0F2A44" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#0F2A44',
+                        tealBlue: '#1FA2A6',
+                        safetyOrange: '#F59E0B',
+                        safetyOrangeHover: '#D97706',
+                        charcoal: '#1F2933',
+                        softGray: '#F5F7FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1F2933; background-color: #F5F7FA; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; color: #0F2A44; }
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+        .font-heavy { font-family: 'Syncopate', sans-serif; text-transform: uppercase; }
+        
+        .policy-section {
+            border-left: 4px solid #F59E0B;
+            padding-left: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .prohibited-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .prohibited-item::before {
+            content: "⛔";
+            position: absolute;
+            left: 0;
+            color: #ef4444;
+        }
+        
+        .permitted-item {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .permitted-item::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+        }
+        
+        .legal-disclaimer {
+            background: linear-gradient(135deg, #0F2A44 0%, #1F2933 100%);
+            color: white;
+            border-left: 4px solid #F59E0B;
+        }
+        
+        .version-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #F59E0B;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #0F2A44;
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background: #F59E0B;
+            transform: translateY(-2px);
+        }
+        
+        .section-anchor {
+            scroll-margin-top: 8rem;
+        }
+        
+        .table-of-contents a.active {
+            color: #F59E0B;
+            font-weight: 600;
+            border-left-color: #F59E0B;
+        }
+        
+        .print-button {
+            transition: all 0.2s ease;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-softGray">
+    <!-- Navigation (Same as home page) -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-deepBlue/10">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-10">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-heavy tracking-tighter text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                    </div>
+                    <div class="hidden md:flex items-center gap-6">
+                        <a href="index.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Home</a>
+                        <div class="relative group">
+                            <button class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase flex items-center gap-2">
+                                Services
+                                <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                                </svg>
+                            </button>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block bg-white border border-deepBlue/10 shadow-2xl rounded-lg overflow-hidden min-w-[280px] z-50">
+                                <div class="p-1">
+                                    <a href="shop-office.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        Shops & Office Setup
+                                    </a>
+                                    <a href="Security-Solution.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        Security Solutions
+                                    </a>
+                                    <a href="ICT.HTML" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        ICT Governance & Data Policy
+                                    </a>
+                                    <a href="Healthcare.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        Healthcare ICT Solutions
+                                    </a>
+                                    <a href="Ergonomics.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        Ergonomics
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="Industries.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Industries</a>
+                        <a href="about.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">About Us</a>
+                        <a href="Contact.html" class="text-[10px] font-heavy tracking-[0.3em] text-charcoal hover:text-safetyOrange transition uppercase">Contact</a>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center gap-2">
+                    <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest bg-safetyOrange text-white hover:skew-x-[-12deg] transition-transform">GET_STARTED</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" aria-expanded="false" class="p-2 text-safetyOrange">
+                        <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke-width="3"/></svg>
+                        <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="3"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu panel -->
+        <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-40 -translate-y-full transform transition-transform duration-300">
+            <div class="absolute inset-0 bg-black/85"></div>
+            <div class="relative max-w-md mx-auto mt-20 bg-white border border-deepBlue/10 rounded-2xl overflow-hidden shadow-2xl">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <span class="text-xl font-heavy text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                        </div>
+                        <button id="mobileClose" class="p-2 text-charcoal hover:text-deepBlue">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" stroke-width="2"/></svg>
+                        </button>
+                    </div>
+
+                    <nav class="flex flex-col gap-2">
+                        <a href="index.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Home</a>
+                        
+                        <div class="relative group">
+                            <button class="w-full text-left text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition flex items-center justify-between">
+                                Services
+                                <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                                </svg>
+                            </button>
+                            <div class="hidden group-hover:block pl-4 bg-deepBlue/5 rounded-lg mt-1">
+                                <a href="shop-office.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Shops & Office Setup</a>
+                                <a href="ICT.HTML" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">ICT Governance & Data Policy</a>
+                                <a href="Security-Solution.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Security Solutions</a>
+                                <a href="Healthcare.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Healthcare ICT Solutions</a>
+                                <a href="Ergonomics.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Ergonomics</a>
+                            </div>
+                        </div>
+
+                        <a href="Industries.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Industries</a>
+                        <a href="about.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">About Us</a>
+                        <a href="Contact.html" class="text-sm font-heavy tracking-widest text-charcoal uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Contact</a>
+                    </nav>
+
+                    <div class="mt-6 flex flex-col gap-3">
+                        <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 rounded-lg text-center hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                        <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest bg-safetyOrange text-white rounded-lg text-center hover:skew-x-[-8deg] transition-transform">GET_STARTED</a>
+                    </div>
+
+                    <div class="mt-6 text-xs text-charcoal font-mono tracking-widest">© PESEWANI.TECH</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 bg-deepBlue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="inline-flex items-center gap-3 mb-6">
+                    <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                    <span class="text-safetyOrange font-heavy text-xs tracking-[0.3em]">
+                        LEGAL & COMPLIANCE
+                    </span>
+                    <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 text-white">
+                    Acceptable Use Policy
+                </h1>
+                
+                <p class="text-gray-100 max-w-3xl mx-auto mb-8 text-lg">
+                    Guidelines for the lawful, ethical, and secure use of Pesewani Tech products and services
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <div class="text-sm text-gray-300">
+                        <span class="font-bold">Effective Date:</span> 1st January 2026
+                    </div>
+                    <div class="text-sm text-gray-300">
+                        <span class="font-bold">Version:</span> 1.0
+                    </div>
+                    <button onclick="window.print()" class="print-button px-6 py-2 text-sm font-semibold bg-white/20 text-white border border-white/30 hover:bg-white/30 transition rounded-lg flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                        </svg>
+                        Print Policy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <div class="sticky top-20 z-30 bg-white/90 backdrop-blur-sm border-y border-deepBlue/10 hidden md:block">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <div class="table-of-contents flex gap-6 overflow-x-auto text-sm">
+                <a href="#purpose" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">1. Purpose</a>
+                <a href="#permitted-use" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">2. Permitted Use</a>
+                <a href="#prohibited-activities" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">3. Prohibited Activities</a>
+                <a href="#pos-systems" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">4. POS Systems Usage</a>
+                <a href="#cybersecurity" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">5. Cybersecurity</a>
+                <a href="#monitoring" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">6. Monitoring & Enforcement</a>
+                <a href="#consequences" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">7. Consequences</a>
+                <a href="#liability" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">8. Liability</a>
+                <a href="#updates" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">9. Updates</a>
+                <a href="#governing-law" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">10. Governing Law</a>
+                <a href="#contact" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">11. Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Policy Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Scope Notice -->
+        <div class="mb-12 p-6 bg-safetyOrange/5 border border-safetyOrange/20 rounded-xl">
+            <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 text-safetyOrange">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-deepBlue mb-2">Policy Scope</h3>
+                    <p class="text-charcoal">
+                        This Acceptable Use Policy ("Policy") governs the use of all products and services provided by Pesewani Tech ("Company", "we", "us"), including but not limited to: SaaS platforms, POS systems, APIs and integrations, cloud-hosted services, cybersecurity solutions, websites and mobile applications.
+                    </p>
+                    <p class="text-charcoal mt-2 font-medium">
+                        This Policy applies to all users, clients, partners, employees, and third parties (collectively, "Users").
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Purpose -->
+        <section id="purpose" class="section-anchor policy-section mb-12">
+            <div class="version-badge">§1</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">1. Purpose</h2>
+            <p class="text-charcoal mb-4">
+                The purpose of this Policy is to:
+            </p>
+            <ul class="space-y-3 mb-4">
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-safetyOrange mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-charcoal">Protect the integrity, availability, and security of Pesewani Tech systems</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-safetyOrange mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-charcoal">Ensure lawful and ethical use of ICT services</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-safetyOrange mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-charcoal">Prevent abuse, fraud, cybercrime, and misuse</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Section 2: Permitted Use -->
+        <section id="permitted-use" class="section-anchor policy-section mb-12">
+            <div class="version-badge">§2</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">2. Permitted Use</h2>
+            <p class="text-charcoal mb-4">
+                Users may use the Services only for:
+            </p>
+            <ul class="space-y-3">
+                <li class="permitted-item">Lawful business and operational purposes</li>
+                <li class="permitted-item">Authorized transactions and data processing</li>
+                <li class="permitted-item">Activities consistent with agreed contracts and applicable laws</li>
+            </ul>
+        </section>
+
+        <!-- Section 3: Prohibited Activities -->
+        <section id="prohibited-activities" class="section-anchor policy-section mb-12">
+            <div class="version-badge">§3</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-6">3. Prohibited Activities</h2>
+            <p class="text-charcoal mb-6">
+                Users must not engage in any of the following:
+            </p>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-deepBlue mb-4">a. Illegal or Unlawful Activities</h3>
+                <ul class="space-y-2">
+                    <li class="prohibited-item">Violating Ghanaian law or international regulations</li>
+                    <li class="prohibited-item">Facilitating fraud, money laundering, or financial crime</li>
+                </ul>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-deepBlue mb-4">b. Security Violations</h3>
+                <ul class="space-y-2">
+                    <li class="prohibited-item">Unauthorized access or attempted access to systems</li>
+                    <li class="prohibited-item">Bypassing authentication or security controls</li>
+                    <li class="prohibited-item">Introducing malware, ransomware, spyware, or malicious code</li>
+                    <li class="prohibited-item">Conducting penetration testing without written authorization</li>
+                </ul>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-deepBlue mb-4">c. Data Misuse</h3>
+                <ul class="space-y-2">
+                    <li class="prohibited-item">Unauthorized collection, storage, or sharing of personal data</li>
+                    <li class="prohibited-item">Processing personal data without legal basis or consent</li>
+                    <li class="prohibited-item">Breaching confidentiality obligations</li>
+                </ul>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-deepBlue mb-4">d. System Abuse</h3>
+                <ul class="space-y-2">
+                    <li class="prohibited-item">Excessive or abusive use that degrades system performance</li>
+                    <li class="prohibited-item">Automated scraping without permission</li>
+                    <li class="prohibited-item">Interfering with service availability or uptime</li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold text-deepBlue mb-4">e. Intellectual Property Violations</h3>
+                <ul class="space-y-2">
+                    <li class="prohibited-item">Infringing copyrights, trademarks, or proprietary rights</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 4: POS Systems Usage -->
+        <section id="pos-systems" class="section-anchor policy-section mb-12">
+            <div class="version-badge">§4</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">4. POS & Financial Systems Usage</h2>
+            <p class="text-charcoal mb-4">
+                Users of Pesewani Tech POS systems must:
+            </p>
+            <div class="bg-deepBlue/5 p-6 rounded-lg border border-deepBlue/10">
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-8 h-8 bg-safetyOrange/10 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-safetyOrange font-bold">1</span>
+                        </div>
+                        <span class="text-charcoal">Comply with payment network rules and local financial regulations</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-8 h-8 bg-safetyOrange/10 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-safetyOrange font-bold">2</span>
+                        </div>
+                        <span class="text-charcoal">Maintain secure access credentials</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 w-8 h-8 bg-safetyOrange/10 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-safetyOrange font-bold">3</span>
+                        </div>
+                        <span class="text-charcoal">Prevent unauthorized transactions and fraudulent activities</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 5: Cybersecurity Responsibilities -->
+        <section id="cybersecurity" class="section-anchor policy-section mb-12">
+            <div class="version-badge">§5</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">5. Cybersecurity Responsibilities</h2>
+            <p class="text-charcoal mb-6">
+                Users agree to:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg border border-deepBlue/10 shadow-sm">
+                    <div class="text-safetyOrange mb-3">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-deepBlue mb-2">Implement Security Practices</h4>
+                    <p class="text-sm text-charcoal">Implement reasonable security practices for your systems</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg border border-deepBlue/10 shadow-sm">
+                    <div class="text-safetyOrange mb-3">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-deepBlue mb-2">Report Incidents</h4>
+                    <p class="text-sm text-charcoal">Promptly report security incidents or suspected breaches</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg border border-deepBlue/10 shadow-sm">
+                    <div class="text-safetyOrange mb-3">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-deepBlue mb-2">Cooperate Fully</h4>
+                    <p class="text-sm text-charcoal">Cooperate with investigations and mitigation efforts</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Monitoring & Enforcement -->
+        <section id="monitoring" class="section-anchor policy-section mb-12">
+            <div class="version-badge">§6</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">6. Monitoring & Enforcement</h2>
+            <p class="text-charcoal mb-6">
+                Pesewani Tech reserves the right to:
+            </p>
+            <div class="bg-red-50 border border-red-100 rounded-lg p-6">
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-red-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-charcoal">Monitor system usage for security and compliance</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-red-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-charcoal">Suspend or terminate access for violations</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-red-500 mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-charcoal">Report unlawful activities to relevant authorities</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 7: Consequences -->
+        <section id="consequences" class="section-anchor policy-section mb-12">
+            <div class="version-badge">§7</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">7. Consequences of Violation</h2>
+            <p class="text-charcoal mb-6">
+                Violations may result in:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg border border-red-200 shadow-sm">
+                    <div class="text-red-500 text-3xl mb-3">⛔</div>
+                    <h4 class="font-semibold text-deepBlue mb-2">Access Suspension</h4>
+                    <p class="text-sm text-charcoal">Immediate suspension or termination of access to services</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg border border-red-200 shadow-sm">
+                    <div class="text-red-500 text-3xl mb-3">⚖️</div>
+                    <h4 class="font-semibold text-deepBlue mb-2">Legal Action</h4>
+                    <p class="text-sm text-charcoal">Legal action or claims for damages resulting from violations</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg border border-red-200 shadow-sm">
+                    <div class="text-red-500 text-3xl mb-3">🚨</div>
+                    <h4 class="font-semibold text-deepBlue mb-2">Authority Reporting</h4>
+                    <p class="text-sm text-charcoal">Reporting to law enforcement or regulatory authorities</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Limitation of Liability -->
+        <section id="liability" class="section-anchor policy-section mb-12">
+            <div class="version-badge">§8</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">8. Limitation of Liability</h2>
+            <div class="bg-deepBlue/5 p-6 rounded-lg border border-deepBlue/10">
+                <p class="text-charcoal font-semibold italic">
+                    "Pesewani Tech shall not be liable for damages arising from misuse of the Services in violation of this Policy."
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 9: Updates -->
+        <section id="updates" class="section-anchor policy-section mb-12">
+            <div class="version-badge">§9</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">9. Updates to This Policy</h2>
+            <p class="text-charcoal mb-4">
+                This Policy may be updated periodically to reflect changes in technology, regulations, or business practices. 
+                Users are responsible for regularly reviewing this Policy.
+            </p>
+            <div class="bg-yellow-50 border border-yellow-100 rounded-lg p-4">
+                <p class="text-yellow-800 font-semibold">
+                    ⚠️ Continued use of the Services constitutes acceptance of changes to this Policy.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 10: Governing Law -->
+        <section id="governing-law" class="section-anchor policy-section mb-12">
+            <div class="version-badge">§10</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">10. Governing Law</h2>
+            <div class="bg-white p-6 rounded-lg border border-deepBlue/10 shadow-sm">
+                <div class="flex items-center gap-4">
+                    <div class="flex-shrink-0">
+                        <svg class="w-12 h-12 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="text-lg font-semibold text-deepBlue">Republic of Ghana</p>
+                        <p class="text-charcoal">This Policy shall be governed by and construed in accordance with the laws of the Republic of Ghana.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 11: Contact -->
+        <section id="contact" class="section-anchor policy-section mb-12">
+            <div class="version-badge">§11</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-6">11. Contact Information</h2>
+            <div class="bg-safetyOrange/5 p-8 rounded-xl border border-safetyOrange/20">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-deepBlue mb-4">Pesewani Tech</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                                <a href="mailto:compliance@pesewani.tech" class="text-deepBlue hover:text-safetyOrange font-medium">compliance@pesewani.tech</a>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-charcoal">For compliance inquiries and policy questions</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-deepBlue mb-3">Support Hours</h4>
+                        <p class="text-charcoal mb-2">Monday - Friday: 8:00 AM - 6:00 PM GMT</p>
+                        <p class="text-sm text-charcoal/70">Emergency support available for security incidents</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Disclaimer -->
+        <div class="legal-disclaimer p-8 rounded-xl mt-16">
+            <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 text-safetyOrange">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3">Important Legal Disclaimer</h3>
+                    <p class="text-white/90 mb-3">
+                        This Acceptable Use Policy is provided for compliance purposes and does not replace professional legal advice. 
+                        Users are encouraged to seek independent legal counsel for specific compliance questions or interpretations.
+                    </p>
+                    <p class="text-white/80 text-sm">
+                        Last reviewed: January 2026 | Version 1.0
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top" id="backToTop">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+            </svg>
+        </a>
+    </main>
+
+    <!-- Footer (Same as home page) -->
+    <footer class="bg-deepBlue text-white/80 py-16 border-t border-white/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-12 pb-8 border-b border-white/20">
+                <h2 class="text-3xl font-heavy tracking-tighter mb-2"><span class="text-safetyOrange">PESEWANI.TECH</span></h2>
+                <p class="text-sm font-bold tracking-widest uppercase text-white/60">Smart ICT. Secure Spaces. Productive Workplaces.</p>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- About Us -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">About Us</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Company Overview</a></li>
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Mission & Vision</a></li>
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Core Values</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Services</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="shop-office.html" class="hover:text-safetyOrange transition">• Shops & Offices</a></li>
+                        <li><a href="ICT.HTML" class="hover:text-safetyOrange transition">• ICT Policy</a></li>
+                        <li><a href="Security-Solution.html" class="hover:text-safetyOrange transition">• Security Solutions</a></li>
+                        <li><a href="Ergonomics.html" class="hover:text-safetyOrange transition">• Ergonomics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Compliance -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Legal & Compliance</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="#" class="hover:text-safetyOrange transition border-l-2 border-safetyOrange pl-2">• Acceptable Use Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Cookie Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support & Contact + Trust & Security -->
+                <div>
+                    <div class="mb-8">
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Support & Contact</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Contact Us</a></li>
+                            <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Help / Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Trust & Security</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Security Practices</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Compliance</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Data Protection</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] font-heavy tracking-[0.2em] uppercase text-white/60 gap-4">
+                <span>© 2026 PESEWANI TECH</span>
+                <span>Acceptable Use Policy v1.0 • Effective 1st January 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script (Same as home page) -->
+    <script>
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+    </script>
+
+    <!-- Music Controls Script (Same as home page) -->
+    <script>
+        (function () {
+            const audio = document.getElementById('bgMusic');
+
+            function setPlayingUI(isPlaying) {
+                const btn = document.getElementById('toggleMusic');
+                const lbl = document.getElementById('toggleLabel');
+                const playIcon = document.getElementById('playIcon');
+                if (!btn || !lbl || !playIcon) return;
+                btn.setAttribute('aria-pressed', isPlaying ? 'true' : 'false');
+                if (isPlaying) {
+                    playIcon.outerHTML = '<svg id="playIcon" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+                    lbl.textContent = 'Pause Music';
+                } else {
+                    playIcon.outerHTML = '<svg id="playIcon" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3v18l15-9z"/></svg>';
+                    lbl.textContent = 'Play Music';
+                }
+            }
+            function setMutedUI(isMuted) {
+                const muteIcon = document.getElementById('muteIcon');
+                if (!muteIcon) return;
+                if (isMuted) {
+                    muteIcon.outerHTML = '<svg id="muteIcon" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12l3.5 3.5-1.5 1.5L15 13.5l-3.5 3.5H7v-8h4.5L15 8.5l3.5 3.5zM19 5.5L17.5 4 13 8.5 11.5 7 7 11.5V20h10.5l3.5 3.5 1.5-1.5L19 5.5z"/></svg>';
+                } else {
+                    muteIcon.outerHTML = '<svg id="muteIcon" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M5 9v6h4l5 5V4L9 9H5z"/></svg>';
+                }
+            }
+
+            function attachControlEvents() {
+                const toggle = document.getElementById('toggleMusic');
+                const mute = document.getElementById('muteMusic');
+                if (!toggle || !mute) return;
+
+                toggle.addEventListener('click', async () => {
+                    try {
+                        if (audio.paused) {
+                            await audio.play();
+                            setPlayingUI(true);
+                        } else {
+                            audio.pause();
+                            setPlayingUI(false);
+                        }
+                    } catch (e) {
+                        console.error('Play failed:', e);
+                    }
+                });
+
+                mute.addEventListener('click', () => {
+                    audio.muted = !audio.muted;
+                    setMutedUI(audio.muted);
+                });
+
+                audio.addEventListener('play', () => setPlayingUI(true));
+                audio.addEventListener('pause', () => setPlayingUI(false));
+                audio.addEventListener('volumechange', () => setMutedUI(audio.muted));
+            }
+
+            window.addEventListener('load', async () => {
+                try {
+                    const playPromise = audio.play();
+                    if (playPromise !== undefined) {
+                        await playPromise;
+                    }
+                    document.getElementById('musicControls')?.classList.remove('hidden');
+                    setPlayingUI(!audio.paused);
+                    setMutedUI(audio.muted);
+                    attachControlEvents();
+                } catch (err) {
+                    document.getElementById('musicControls')?.classList.remove('hidden');
+                    setPlayingUI(!audio.paused);
+                    setMutedUI(audio.muted);
+                    attachControlEvents();
+                    console.log('Autoplay prevented:', err);
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                const focused = document.activeElement;
+                if (!focused) return;
+                if (focused.id === 'toggleMusic' && (e.key === ' ' || e.key === 'Enter')) {
+                    e.preventDefault();
+                    document.getElementById('toggleMusic').click();
+                }
+                if (focused.id === 'muteMusic' && (e.key === ' ' || e.key === 'Enter')) {
+                    e.preventDefault();
+                    document.getElementById('muteMusic').click();
+                }
+            });
+        })();
+    </script>
+
+    <!-- Scroll and ToC Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+                
+                // Update active ToC link
+                const sections = document.querySelectorAll('.section-anchor');
+                const navLinks = document.querySelectorAll('.table-of-contents a');
+                
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (window.pageYOffset >= sectionTop) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Smooth scroll for ToC links
+            document.querySelectorAll('.table-of-contents a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Smooth scroll for back to top
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Animate statistics counters
+            const counters = document.querySelectorAll('.stat-counter');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-count');
+                    const count = +counter.innerText;
+                    
+                    const inc = target / speed;
+                    
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                // Start counting when section is in view
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            updateCount();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                observer.observe(counter.closest('section'));
+            });
+        });
+        
+        // Print functionality
+        function printPolicy() {
+            window.print();
+        }
+    </script>
+</body>
+</html>

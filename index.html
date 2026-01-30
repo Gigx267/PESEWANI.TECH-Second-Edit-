@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesewani.tech | Smart ICT & Secure Spaces</title>
+    <link rel="icon" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="LOGO 2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="LOGO 2.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F59E0B" />
+    <meta name="msapplication-TileColor" content="#F59E0B" />
+    <meta name="theme-color" content="#0F2A44" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#0F2A44',
+                        tealBlue: '#1FA2A6',
+                        safetyOrange: '#F59E0B',
+                        safetyOrangeHover: '#D97706',
+                        charcoal: '#1F2933',
+                        softGray: '#F5F7FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1F2933; background-color: #F5F7FA; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; color: #0F2A44; }
+    </style>
+</head>
+
+<!-- Background Music Player -->
+<audio id="bgMusic" loop preload="none">
+    <source src="my (1).mp3" type="audio/mpeg">
+    <source src="my (1).mp3" type="audio/ogg">
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+(function () {
+    const controls = document.createElement('div');
+    controls.id = 'musicControls';
+    controls.className = 'fixed bottom-6 right-6 z-50 hidden items-center gap-3 bg-white border border-deepBlue/10 rounded-full px-3 py-2 shadow-lg';
+    controls.innerHTML = `
+        <button id="toggleMusic" aria-pressed="false" class="flex items-center gap-2 px-4 py-2 rounded-full bg-safetyOrange text-white font-black text-xs hover:scale-[1.03] transition-transform">
+            <svg id="playIcon" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3v18l15-9z"/></svg>
+            <span id="toggleLabel" class="uppercase tracking-widest text-[10px]">Play Music</span>
+        </button>
+        <button id="muteMusic" class="w-10 h-10 rounded-full border border-deepBlue/20 text-deepBlue flex items-center justify-center hover:text-safetyOrange transition">
+            <svg id="muteIcon" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M5 9v6h4l5 5V4L9 9H5z"/></svg>
+        </button>
+    `;
+    document.addEventListener('DOMContentLoaded', () => document.body.appendChild(controls));
+
+    const audio = document.getElementById('bgMusic');
+
+    function setPlayingUI(isPlaying) {
+        const btn = document.getElementById('toggleMusic');
+        const lbl = document.getElementById('toggleLabel');
+        const playIcon = document.getElementById('playIcon');
+        if (!btn || !lbl || !playIcon) return;
+        btn.setAttribute('aria-pressed', isPlaying ? 'true' : 'false');
+        if (isPlaying) {
+            playIcon.outerHTML = '<svg id="playIcon" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+            lbl.textContent = 'Pause Music';
+        } else {
+            playIcon.outerHTML = '<svg id="playIcon" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M5 3v18l15-9z"/></svg>';
+            lbl.textContent = 'Play Music';
+        }
+    }
+    function setMutedUI(isMuted) {
+        const muteIcon = document.getElementById('muteIcon');
+        if (!muteIcon) return;
+        if (isMuted) {
+            muteIcon.outerHTML = '<svg id="muteIcon" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12l3.5 3.5-1.5 1.5L15 13.5l-3.5 3.5H7v-8h4.5L15 8.5l3.5 3.5zM19 5.5L17.5 4 13 8.5 11.5 7 7 11.5V20h10.5l3.5 3.5 1.5-1.5L19 5.5z"/></svg>';
+        } else {
+            muteIcon.outerHTML = '<svg id="muteIcon" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M5 9v6h4l5 5V4L9 9H5z"/></svg>';
+        }
+    }
+
+    function attachControlEvents() {
+        const toggle = document.getElementById('toggleMusic');
+        const mute = document.getElementById('muteMusic');
+        if (!toggle || !mute) return;
+
+        toggle.addEventListener('click', async () => {
+            try {
+                if (audio.paused) {
+                    await audio.play();
+                    setPlayingUI(true);
+                } else {
+                    audio.pause();
+                    setPlayingUI(false);
+                }
+            } catch (e) {
+                console.error('Play failed:', e);
+            }
+        });
+
+        mute.addEventListener('click', () => {
+            audio.muted = !audio.muted;
+            setMutedUI(audio.muted);
+        });
+
+        audio.addEventListener('play', () => setPlayingUI(true));
+        audio.addEventListener('pause', () => setPlayingUI(false));
+        audio.addEventListener('volumechange', () => setMutedUI(audio.muted));
+    }
+
+    window.addEventListener('load', async () => {
+        try {
+            const playPromise = audio.play();
+            if (playPromise !== undefined) {
+                await playPromise;
+            }
+            document.getElementById('musicControls')?.classList.remove('hidden');
+            setPlayingUI(!audio.paused);
+            setMutedUI(audio.muted);
+            attachControlEvents();
+        } catch (err) {
+            document.getElementById('musicControls')?.classList.remove('hidden');
+            setPlayingUI(!audio.paused);
+            setMutedUI(audio.muted);
+            attachControlEvents();
+            console.log('Autoplay prevented:', err);
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        const focused = document.activeElement;
+        if (!focused) return;
+        if (focused.id === 'toggleMusic' && (e.key === ' ' || e.key === 'Enter')) {
+            e.preventDefault();
+            document.getElementById('toggleMusic').click();
+        }
+        if (focused.id === 'muteMusic' && (e.key === ' ' || e.key === 'Enter')) {
+            e.preventDefault();
+            document.getElementById('muteMusic').click();
+        }
+    });
+})();
+</script>
+<body class="bg-softGray">
+<nav class="absolute inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="flex justify-between h-20 items-center">
+            <div class="flex items-center gap-10">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-heavy tracking-tighter text-deepBlue inline md:hidden">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                </div>
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="index.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Home</a>
+                    <div class="relative group">
+                        <button class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase flex items-center gap-2">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block bg-white border border-deepBlue/10 shadow-2xl rounded-lg overflow-hidden min-w-[280px] z-50">
+                            <div class="p-1">
+                                <a href="shop-office.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Shops & Office Setup
+                                </a>
+                                <a href="Security-Solution.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Security Solutions
+                                </a>
+                                <a href="ICT.HTML" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    ICT Governance & Data Policy
+                                </a>
+                                <a href="Healthcare.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Healthcare ICT Solutions
+                                </a>
+                                <a href="Ergonomics.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Ergonomics
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="Industries.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Industries</a>
+                    <a href="about.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">About</a>
+                    <a href="Contact.html" class="text-[10px] font-heavy tracking-[0.3em] text-charcoal hover:text-safetyOrange transition uppercase">Contact</a>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-2">
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest bg-safetyOrange text-white hover:skew-x-[-12deg] transition-transform">GET_STARTED</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobileMenuBtn" aria-expanded="false" class="p-2 text-safetyOrange">
+                    <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke-width="3"/></svg>
+                    <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="3"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="h-[2px] w-full bg-gradient-to-r from-safetyOrange via-transparent to-transparent opacity-30"></div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-40 -translate-y-full transform transition-transform duration-300">
+        <div class="absolute inset-0 bg-black/85"></div>
+        <div class="relative max-w-md mx-auto mt-20 bg-white border border-deepBlue/10 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl font-heavy text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                    </div>
+                    <button id="mobileClose" class="p-2 text-charcoal hover:text-deepBlue">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" stroke-width="2"/></svg>
+                    </button>
+                </div>
+
+                <nav class="flex flex-col gap-2">
+                    <a href="index.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Home</a>
+                    
+                    <div class="relative group">
+                        <button class="w-full text-left text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition flex items-center justify-between">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="hidden group-hover:block pl-4 bg-deepBlue/5 rounded-lg mt-1">
+                            <a href="shop-office.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Shops & Office Setup</a>
+                            <a href="ICT.HTML" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">ICT Governance & Data Policy</a>
+                            <a href="Security-Solution.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Security Solutions</a>
+                            <a href="Healthcare.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Healthcare ICT Solutions</a>
+                            <a href="Ergonomics.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Ergonomics</a>
+                        </div>
+                    </div>
+
+                    <a href="Industries.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Industries</a>
+                    <a href="about.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">About Us</a>
+                    <a href="Contact.html" class="text-sm font-heavy tracking-widest text-charcoal uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Contact</a>
+                </nav>
+
+                <div class="mt-6 flex flex-col gap-3">
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 rounded-lg text-center hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest bg-safetyOrange text-white rounded-lg text-center hover:skew-x-[-8deg] transition-transform">GET_STARTED</a>
+                </div>
+
+                <div class="mt-6 text-xs text-charcoal font-mono tracking-widest">© PESEWANI.TECH</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+    </script>
+</nav>
+
+<header class="relative py-24 lg:py-32 bg-deepBlue bg-cover bg-center bg-no-repeat" style="background-image: url('https://i.pinimg.com/736x/0d/81/29/0d8129117fc06f0c440d64758b7d7655.jpg');">
+    <div class="absolute inset-0 bg-deepBlue/70"></div>
+    <style>
+        .fade-up { opacity: 0; transform: translateY(18px) scale(.995); transition: opacity .6s cubic-bezier(.2,.9,.2,1), transform .6s cubic-bezier(.2,.9,.2,1); will-change: opacity, transform; }
+        .fade-up.in-view { opacity: 1; transform: none; }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('[data-anim]').forEach(el => {
+                const d = el.getAttribute('data-anim-delay');
+                if (d) el.style.transitionDelay = d;
+            });
+        });
+    </script>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="mx-auto max-w-4xl text-center">
+            <div class="inline-block bg-transparent p-8 md:p-12 transform transition" data-anim data-anim-delay="0s">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-white" data-anim data-anim-delay="0.06s">
+                    <span class="block">Smart ICT. Secure Spaces.</span>
+                    <span class="block bg-gradient-to-r from-tealBlue to-safetyOrange bg-clip-text text-transparent">Productive Workplaces.</span>
+                </h1>
+                <p class="text-gray-100 max-w-2xl mx-auto mb-8" data-anim data-anim-delay="0.12s">
+                    We design, secure, and optimize shops, offices, and homes with professional ICT systems, security solutions, and ergonomic workspaces.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-anim data-anim-delay="0.18s">
+                    <a href="Contact.html" class="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-xl font-semibold text-white shadow-xl bg-safetyOrange hover:bg-safetyOrangeHover transition transform">
+                        Request a Site Assessment
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+                    <a href="Contact.html" class="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-xl font-semibold bg-white/15 text-white border border-white/30 hover:bg-white/25 transition">
+                        Talk to an Expert
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 flex justify-center gap-3" data-anim data-anim-delay="0.26s">
+                <span class="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white/15 text-sm text-white shadow-sm" data-anim data-anim-delay="0.30s">
+                    <svg class="w-4 h-4 text-tealBlue" fill="currentColor" viewBox="0 0 20 20"><path d="M2 11a1 1 0 011-1h14a1 1 0 110 2H3a1 1 0 01-1-1z"/></svg>
+                    Trusted by SMEs & Offices
+                </span>
+                <span class="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-white/15 text-sm text-white shadow-sm" data-anim data-anim-delay="0.34s">
+                    <svg class="w-4 h-4 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 01.894.553l6 12A1 1 0 0116 16H4a1 1 0 01-.894-1.447l6-12A1 1 0 0110 2z"/></svg>
+                    Fast Local Support
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20" data-anim data-anim-delay="0.4s">
+        <a href="#services" class="flex items-center justify-center w-10 h-16 rounded-full bg-white/20 text-white animate-bounce">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+    </div>
+</header>
+
+<section id="about-us" class="relative py-24 bg-white text-deepBlue overflow-hidden border-b border-deepBlue/10">
+    <div class="graffiti-bg -right-20 top-20 opacity-[0.03] rotate-90" data-anim data-anim-delay="0.06s">MISSION</div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            
+            <div class="lg:col-span-7" data-anim data-anim-delay="0.12s">
+                <div class="inline-flex items-center gap-3 mb-6" data-anim data-anim-delay="0.14s">
+                    <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                    <span class="text-safetyOrange font-heavy text-xs tracking-[0.3em]">
+                        Planned, protected, and properly equipped.
+                    </span>
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl font-heavy mb-10 leading-none text-deepBlue" data-anim data-anim-delay="0.18s">
+                    A productive workspace is not accidental
+                </h2>
+
+                <div class="space-y-6 text-charcoal text-lg leading-relaxed max-w-2xl" data-anim data-anim-delay="0.22s">
+                    <p>
+                        At <span class="text-deepBlue font-bold">PESEWANI.TECH</span>, we don't just install hardware; we architect resilience. Born from a need for professional-grade ICT in rapidly evolving spaces, we bridge the gap between complex technology and everyday productivity.
+                    </p>
+                    <p>
+                        Our team operates at the intersection of <span class="text-deepBlue">cybersecurity</span> and <span class="text-deepBlue">spatial design</span>. Whether it's a high-traffic retail shop or a silent corporate headquarters, we ensure your digital and physical infrastructure is auditable, scalable, and impenetrable.
+                    </p>
+                </div>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6" data-anim data-anim-delay="0.28s">
+                    <div class="border-l-4 border-safetyOrange pl-4">
+                        <h4 class="font-heavy text-sm text-deepBlue mb-2 uppercase">The Vision</h4>
+                        <p class="text-xs text-charcoal/70 uppercase tracking-wider leading-relaxed">To become the standard protocol for secure, smart workspace integration across the region.</p>
+                    </div>
+                    <div class="border-l-4 border-safetyOrange pl-4">
+                        <h4 class="font-heavy text-sm text-deepBlue mb-2 uppercase">The Method</h4>
+                        <p class="text-xs text-charcoal/70 uppercase tracking-wider leading-relaxed">Zero-trust architecture combined with human-centric ergonomic design.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <div class="tech-card p-8 relative group bg-softGray border border-deepBlue/10 border-l-4 border-l-safetyOrange" data-anim data-anim-delay="0.32s">
+                    <div class="absolute top-4 right-4 text-safetyOrange/20 font-heavy text-4xl group-hover:text-safetyOrange/40 transition">01</div>
+                    <h3 class="text-safetyOrange font-heavy text-xl mb-4">OUR DNA</h3>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between border-b border-deepBlue/10 pb-2">
+                            <span class="text-[10px] font-heavy text-charcoal/60 uppercase">Expertise</span>
+                            <span class="text-[10px] font-heavy text-deepBlue">Full-Stack ICT</span>
+                        </li>
+                        <li class="flex justify-between border-b border-deepBlue/10 pb-2">
+                            <span class="text-[10px] font-heavy text-charcoal/60 uppercase">Security</span>
+                            <span class="text-[10px] font-heavy text-deepBlue">Military Grade</span>
+                        </li>
+                        <li class="flex justify-between border-b border-deepBlue/10 pb-2">
+                            <span class="text-[10px] font-heavy text-charcoal/60 uppercase">Location</span>
+                            <span class="text-[10px] font-heavy text-deepBlue">Local Support</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-safetyOrange p-8 text-white skew-x-[-3deg]" data-anim data-anim-delay="0.36s">
+                    <div class="skew-x-[3deg]">
+                        <svg class="w-8 h-8 mb-4 opacity-30" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V12C14.017 12.5523 13.5693 13 13.017 13H11.017C10.4647 13 10.017 12.5523 10.017 12V9C10.017 7.34315 11.3601 6 13.017 6H19.017C20.6739 6 22.017 7.34315 22.017 9V15C22.017 17.7614 19.7784 20 17.017 20H14.017V21Z" />
+                        </svg>
+                        <p class="font-bold text-xl italic leading-tight">
+                            "Innovation is useless if it isn't dependable. We build for the long haul."
+                        </p>
+                        <p class="mt-4 text-[10px] font-heavy tracking-widest">— LEAD ARCHITECT</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4" data-anim data-anim-delay="0.40s">
+                    <div class="bg-deepBlue/5 border border-deepBlue/20 p-4">
+                        <div class="text-3xl font-heavy text-deepBlue">100%</div>
+                        <div class="text-[8px] font-heavy text-safetyOrange tracking-widest">UPTIME GOAL</div>
+                    </div>
+                    <div class="bg-deepBlue/5 border border-deepBlue/20 p-4">
+                        <div class="text-3xl font-heavy text-deepBlue">24/7</div>
+                        <div class="text-[8px] font-heavy text-safetyOrange tracking-widest">MONITORING</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;900&display=swap');
+
+    .font-heavy { font-family: 'Syncopate', sans-serif; text-transform: uppercase; }
+    
+    .bg-tech-yellow { background-color: #F59E0B; }
+    .text-tech-yellow { color: #F59E0B; }
+    
+    .tech-card {
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid #0F2A44;
+        backdrop-filter: blur(10px);
+    }
+
+    .graffiti-bg {
+        position: absolute;
+        font-size: 12rem;
+        font-weight: 900;
+        color: rgba(15, 42, 68, 0.05);
+        z-index: 0;
+        pointer-events: none;
+        user-select: none;
+        line-height: 0.8;
+    }
+</style>
+
+<section id="about" class="relative py-24 bg-softGray text-deepBlue overflow-hidden" data-anim data-anim-delay="0.04s">
+    <div class="graffiti-bg -left-10 top-0" data-anim data-anim-delay="0.06s">PESEWANI</div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+            
+            <div class="lg:col-span-7">
+                <div class="inline-block px-3 py-1 bg-deepBlue text-white font-black text-xs tracking-widest mb-4" data-anim data-anim-delay="0.08s">
+                    EST. 2026 // PROTOCOL_01
+                </div>
+                <h1 class="text-6xl md:text-8xl font-heavy mb-8 leading-none tracking-tighter text-deepBlue" data-anim data-anim-delay="0.12s">
+                    SMARTER <br> <span class="text-safetyOrange">SPACES.</span>
+                </h1>
+                <p class="text-xl text-charcoal max-w-xl border-l-4 border-deepBlue/30 pl-6 mb-10" data-anim data-anim-delay="0.16s">
+                    We combine human-centered design and security-first engineering to deliver systems that just work. Expectable. Auditable. Dependable.
+                </p>
+                
+                <div class="flex gap-6" data-anim data-anim-delay="0.20s">
+                    <a href="Contact.html" class="px-8 py-4 bg-safetyOrange text-white font-black hover:skew-x-[-10deg] transition-transform">START PROJECT</a>
+                    <a href="Services.html" class="px-8 py-4 border-2 border-deepBlue text-deepBlue font-black hover:bg-deepBlue hover:text-white transition">VIEW SERVICES</a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                <div class="tech-card p-6 col-span-2 flex justify-between items-center bg-white border-l-4 border-l-safetyOrange" data-anim data-anim-delay="0.24s" data-tilt>
+                    <div>
+                        <div class="text-safetyOrange text-xs font-bold uppercase tracking-widest">Security Protocol</div>
+                        <div class="text-xl font-bold text-deepBlue">Standard v2.0 Active</div>
+                    </div>
+                    <div class="text-4xl">🔐</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white py-20 text-deepBlue font-sans border-t border-deepBlue/10" data-anim data-anim-delay="0.06s">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="flex items-center gap-4 mb-16">
+            <h2 class="text-5xl font-heavy tracking-tighter" data-anim data-anim-delay="0.08s">SPECIALIZED <span class="text-safetyOrange italic underline">SERVICES</span></h2>
+            <div class="h-[2px] flex-grow bg-gradient-to-r from-safetyOrange to-transparent opacity-30" data-anim data-anim-delay="0.12s"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[220px]">
+            
+            <div class="md:col-span-8 row-span-2 group relative overflow-hidden bg-softGray border-2 border-deepBlue/20 p-10 hover:border-safetyOrange transition" data-anim data-anim-delay="0.16s" data-tilt>
+                <div class="absolute top-0 right-0 p-4 opacity-10 text-9xl font-black text-deepBlue">01</div>
+                <div class="relative z-10 flex flex-col h-full">
+                    <span class="text-safetyOrange font-black mb-4 tracking-[0.4em]" data-anim data-anim-delay="0.18s">OFFICE SETUP</span>
+                    <h3 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.20s">Shops & Office Setup</h3>
+                    <p class="text-charcoal max-w-md text-lg" data-anim data-anim-delay="0.22s">POS integration and automated power redundancy for retail and corporate ecosystems. Whether you're managing a single storefront or a corporate complex, our infrastructure remains online when the grid fails, keeping your revenue stream uninterrupted and your data secured </p>
+                    <div class="mt-auto" data-anim data-anim-delay="0.24s">
+                        <button class="flex items-center gap-4 text-safetyOrange font-bold group-hover:translate-x-2 transition-transform">
+                            DEPLOYMENT READY <span class="text-2xl">→</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 right-0 w-12 h-12 bg-safetyOrange clip-path-slant group-hover:w-16 transition-all" style="clip-path: polygon(100% 0, 0% 100%, 100% 100%);"></div>
+            </div>
+
+            <div class="md:col-span-4 row-span-1 bg-deepBlue/5 border-l-4 border-safetyOrange p-6 flex flex-col justify-between" data-anim data-anim-delay="0.26s" data-tilt>
+                <div>
+                    <h3 class="text-xl font-heavy text-deepBlue" data-anim data-anim-delay="0.28s">Security</h3>
+                    <p class="text-sm text-charcoal/70" data-anim data-anim-delay="0.30s">Home & Office Security Solutions</p>
+                    <p class="text-sm text-charcoal mt-3">Protect what matters with professional CCTV, access control, alarms, and remote monitoring solutions. predictive threat modeling, and scalable continuous 24/7 protection and rapid on-site response.</p>
+                </div>
+                <div class="text-xs font-mono text-safetyOrange" data-anim data-anim-delay="0.32s">24/7 ENCRYPTION ACTIVE</div>
+            </div>
+
+            <div class="md:col-span-4 row-span-1 bg-deepBlue/5 border-2 border-deepBlue/20 p-6 hover:bg-safetyOrange hover:text-white transition-all duration-300 group" data-anim data-anim-delay="0.34s" data-tilt>
+                <h3 class="text-xl font-heavy text-deepBlue group-hover:text-white" data-anim data-anim-delay="0.36s">Governance</h3>
+                <p class="text-sm text-charcoal group-hover:text-white/90" data-anim data-anim-delay="0.38s">ICT Governance & Data Policy Services</p>
+                <div class="mt-4 text-2xl group-hover:scale-125 transition-transform" data-anim data-anim-delay="0.40s">⚖️ We design clear, practical ICT policies that protect your data, guide staff usage, and support compliance.</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="bg-softGray py-24 border-t border-deepBlue/10 relative overflow-hidden" data-anim data-anim-delay="0.06s">
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 text-[15rem] font-black opacity-[0.03] pointer-events-none select-none italic text-deepBlue" data-anim data-anim-delay="0.08s">FLOW</div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+            <h2 class="text-5xl font-heavy text-deepBlue" data-anim data-anim-delay="0.10s">HOW WE <span class="text-safetyOrange italic">WORK</span></h2>
+            <p class="text-safetyOrange font-mono text-xs tracking-widest animate-pulse" data-anim data-anim-delay="0.12s">● SYSTEM_LOG: [READY]</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-0 border-2 border-deepBlue/20">
+            <div class="group p-8 bg-white border-r border-deepBlue/20 hover:bg-deepBlue transition-all duration-300" data-anim data-anim-delay="0.14s">
+                <span class="text-safetyOrange group-hover:text-white font-heavy text-sm mb-8 block">// 01</span>
+                <h4 class="text-deepBlue group-hover:text-white text-2xl font-heavy mb-4">ASSESS</h4>
+                <p class="text-charcoal group-hover:text-white/80 text-sm leading-relaxed font-medium">Multi-point diagnostic of infrastructure and growth trajectory.</p>
+            </div>
+            
+            <div class="group p-8 bg-white border-r border-deepBlue/20 hover:bg-deepBlue transition-all duration-300" data-anim data-anim-delay="0.16s">
+                <span class="text-safetyOrange group-hover:text-white font-heavy text-sm mb-8 block">// 02</span>
+                <h4 class="text-deepBlue group-hover:text-white text-2xl font-heavy mb-4">DESIGN</h4>
+                <p class="text-charcoal group-hover:text-white/80 text-sm leading-relaxed font-medium">Architecting bespoke blueprints tailored to constraints.</p>
+            </div>
+
+            <div class="group p-8 bg-white border-r border-deepBlue/20 hover:bg-deepBlue transition-all duration-300" data-anim data-anim-delay="0.18s">
+                <span class="text-safetyOrange group-hover:text-white font-heavy text-sm mb-8 block">// 03</span>
+                <h4 class="text-deepBlue group-hover:text-white text-2xl font-heavy mb-4">INSTALL</h4>
+                <p class="text-charcoal group-hover:text-white/80 text-sm leading-relaxed font-medium">Precision deployment with zero-latency handovers.</p>
+            </div>
+
+            <div class="group p-8 bg-white hover:bg-deepBlue transition-all duration-300" data-anim data-anim-delay="0.20s">
+                <span class="text-safetyOrange group-hover:text-white font-heavy text-sm mb-8 block">// 04</span>
+                <h4 class="text-deepBlue group-hover:text-white text-2xl font-heavy mb-4">SUPPORT</h4>
+                <p class="text-charcoal group-hover:text-white/80 text-sm leading-relaxed font-medium">24/7 technical oversight and adaptive protocols.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="why-us" class="py-24 bg-white border-y border-deepBlue/10" data-anim data-anim-delay="0.06s">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        
+        <div class="lg:col-span-7">
+            <h2 class="text-4xl font-heavy text-deepBlue mb-12" data-anim data-anim-delay="0.08s">THE <span class="text-safetyOrange">ADVANTAGE</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex gap-4" data-anim data-anim-delay="0.10s">
+                    <div class="text-safetyOrange font-black text-2xl italic">/01</div>
+                    <div>
+                        <div class="font-heavy text-sm mb-2 text-deepBlue">ICT EXPERTISE</div>
+                        <div class="text-charcoal/70 text-sm">Years of practical experience across SMEs and corporates.</div>
+                    </div>
+                </div>
+                <div class="flex gap-4" data-anim data-anim-delay="0.12s">
+                    <div class="text-safetyOrange font-black text-2xl italic">/02</div>
+                    <div>
+                        <div class="font-heavy text-sm mb-2 text-deepBlue">SECURITY FIRST</div>
+                        <div class="text-charcoal/70 text-sm">Design that thinks like an attacker to keep you ahead.</div>
+                    </div>
+                </div>
+                <div class="flex gap-4" data-anim data-anim-delay="0.14s">
+                    <div class="text-safetyOrange font-black text-2xl italic">/03</div>
+                    <div>
+                        <div class="font-heavy text-sm mb-2 text-deepBlue">BUSINESS VALUE</div>
+                        <div class="text-charcoal text-sm">Reducing risk while improving bottom-line operations.</div>
+                    </div>
+                </div>
+                <div class="flex gap-4" data-anim data-anim-delay="0.16s">
+                    <div class="text-safetyOrange font-black text-2xl italic">/04</div>
+                    <div>
+                        <div class="font-heavy text-sm mb-2 text-deepBlue">FAST RESPONSE</div>
+                        <div class="text-charcoal text-sm">On-the-ground support for mission-critical issues.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5">
+            <div class="bg-deepBlue/5 border-l-4 border-safetyOrange p-10" data-anim data-anim-delay="0.18s" data-tilt>
+                <h3 class="text-xl font-heavy text-deepBlue mb-6 tracking-tight">INDUSTRIES SUPPORTED</h3>
+                <div class="flex flex-wrap gap-2 mb-8">
+                    <span class="border border-deepBlue/30 px-4 py-1 text-[10px] font-heavy tracking-widest text-charcoal/70 uppercase">Retail</span>
+                    <span class="border border-deepBlue/30 px-4 py-1 text-[10px] font-heavy tracking-widest text-charcoal/70 uppercase">Corporate</span>
+                    <span class="border border-deepBlue/30 px-4 py-1 text-[10px] font-heavy tracking-widest text-charcoal/70 uppercase">SMEs</span>
+                    <span class="border border-deepBlue/30 px-4 py-1 text-[10px] font-heavy tracking-widest text-charcoal/70 uppercase">Schools</span>
+                </div>
+                <p class="text-safetyOrange font-mono text-sm italic border-t border-deepBlue/20 pt-6">"WE FOCUS ON SOLUTIONS THAT WORK IN REAL ENVIRONMENTS."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-softGray">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="bg-safetyOrange p-12 md:p-20 text-white flex flex-col items-center text-center relative overflow-hidden" data-anim data-anim-delay="0.08s" data-tilt>
+            <div class="absolute left-0 bottom-0 w-full h-2 bg-black/10"></div>
+            
+            <h2 class="text-4xl md:text-6xl font-heavy mb-8 leading-none" data-anim data-anim-delay="0.10s">READY TO <br> OPTIMIZE?</h2>
+            <p class="text-lg font-bold mb-10 max-w-xl uppercase tracking-tight" data-anim data-anim-delay="0.12s">
+                Setting up a new office, improving security, or drafting ICT policies? We are ready.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4" data-anim data-anim-delay="0.14s">
+                <a href="Assessment.html" class="bg-deepBlue text-white px-10 py-5 font-heavy text-sm hover:opacity-90 transition-all inline-block text-center" role="button">FREE ASSESSMENT</a>
+                <a href="Expert.html" class="border-2 border-white text-white px-10 py-5 font-heavy text-sm hover:bg-white hover:text-safetyOrange transition-all inline-block text-center" role="button">SPEAK TO EXPERT</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-deepBlue text-white/80 py-16 border-t border-white/20">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center mb-12 pb-8 border-b border-white/20">
+            <h2 class="text-3xl font-heavy tracking-tighter mb-2"><span class="text-safetyOrange">PESEWANI.TECH</span></h2>
+            <p class="text-sm font-bold tracking-widest uppercase text-white/60">Smart ICT. Secure Spaces. Productive Workplaces.</p>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <!-- About Us -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">About Us</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Company Overview</a></li>
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Mission & Vision</a></li>
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Core Values</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Services</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Shops & Offices</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• ICT Policy</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Security Solutions</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Ergonomics</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal & Compliance -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Legal & Compliance</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="PrivacyPolicy.html" class="hover:text-safetyOrange transition">• Privacy Policy</a></li>
+                    <li><a href="Acceptable.html" class="hover:text-safetyOrange transition">• Terms of Service</a></li>
+                    <li><a href="cookie.html" class="hover:text-safetyOrange transition">• Cookie Policy</a></li>
+                    <li><a href="Acceptable.html" class="hover:text-safetyOrange transition">• Acceptable Use</a></li>
+                </ul>
+            </div>
+
+            <!-- Support & Contact + Trust & Security -->
+            <div>
+                <div class="mb-8">
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Support & Contact</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Contact Us</a></li>
+                        <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Help / Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Trust & Security</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Security Practices</a></li>
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Compliance</a></li>
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Data Protection</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/20 pt-8 flex justify-between items-center text-[10px] font-heavy tracking-[0.2em] uppercase text-white/60">
+            <span>© 2026 PESEWANI TECH</span>
+            <span>© 2026 Pesewani Tech. All Rights Reserved. </span>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        (function () {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('in-view');
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('[data-anim]').forEach(el => {
+                el.classList.add('fade-up');
+                io.observe(el);
+            });
+
+            const tiltElements = document.querySelectorAll('[data-tilt]');
+            tiltElements.forEach(el => {
+                el.addEventListener('mousemove', (ev) => {
+                    const rect = el.getBoundingClientRect();
+                    const x = (ev.clientX - rect.left) / rect.width;
+                    const y = (ev.clientY - rect.top) / rect.height;
+                    const rx = (y - 0.5) * -6;
+                    const ry = (x - 0.5) * 10;
+                    el.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(8px)`;
+                    el.style.boxShadow = '0 14px 40px rgba(15, 42, 68, 0.12)';
+                });
+                el.addEventListener('mouseleave', () => {
+                    el.style.transform = '';
+                    el.style.boxShadow = '';
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>

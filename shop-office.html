@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shops & Office Setup | Pesewani.tech - Professional ICT Infrastructure</title>
+    <link rel="icon" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="LOGO 2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="LOGO 2.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F59E0B" />
+    <meta name="msapplication-TileColor" content="#F59E0B" />
+    <meta name="theme-color" content="#0F2A44" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#0F2A44',
+                        tealBlue: '#1FA2A6',
+                        safetyOrange: '#F59E0B',
+                        safetyOrangeHover: '#D97706',
+                        charcoal: '#1F2933',
+                        softGray: '#F5F7FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        heavy: ['Syncopate', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1F2933; background-color: #F5F7FA; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: #0F2A44; }
+        .font-heavy { font-family: 'Syncopate', sans-serif; text-transform: uppercase; }
+        
+        .process-step {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .process-step:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background-color: #F59E0B;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        .process-step.step-1:before { content: '1'; }
+        .process-step.step-2:before { content: '2'; }
+        .process-step.step-3:before { content: '3'; }
+        .process-step.step-4:before { content: '4'; }
+        
+        .solution-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid #F59E0B;
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(245, 158, 11, 0.15);
+        }
+        
+        .fade-up { 
+            opacity: 0; 
+            transform: translateY(20px) scale(.98); 
+            transition: opacity .7s cubic-bezier(.2,.9,.2,1), transform .7s cubic-bezier(.2,.9,.2,1); 
+            will-change: opacity, transform; 
+        }
+        .fade-up.in-view { opacity: 1; transform: none; }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            background-color: #F59E0B;
+            color: white;
+            font-size: 28px;
+        }
+        
+        .checklist li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+        }
+        
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #F59E0B;
+            font-weight: bold;
+        }
+        
+        .setup-process {
+            counter-reset: step;
+        }
+        
+        .setup-process .process-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .setup-process .process-item:before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background-color: #F59E0B;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-family: 'Syncopate', sans-serif;
+        }
+        
+        @media (max-width: 768px) {
+            .setup-process .process-item {
+                padding-left: 50px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-softGray">
+    <!-- Navigation -->
+    <nav class="absolute inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="flex justify-between h-20 items-center">
+            <div class="flex items-center gap-10">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-heavy tracking-tighter text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="index.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Home</a>
+                    <div class="relative group">
+                        <button class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase flex items-center gap-2">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block bg-white border border-deepBlue/10 shadow-2xl rounded-lg overflow-hidden min-w-[280px] z-50">
+                            <div class="p-1">
+                                <a href="shop-office.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Shops & Office Setup
+                                </a>
+                                <a href="Security-Solution.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Security Solutions
+                                </a>
+                                <a href="ICT.HTML" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    ICT Governance & Data Policy
+                                </a>
+                                <a href="Healthcare.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Healthcare ICT Solutions
+                                </a>
+                                <a href="Ergonomics.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Ergonomics
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </div> <a href="Industries.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Industries </a>
+                    <a href="about.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">About Us</a>
+                    <a href="Contact.html" class="text-[10px] font-heavy tracking-[0.3em] text-charcoal hover:text-safetyOrange transition uppercase">Contact</a>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-2">
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest bg-safetyOrange text-white hover:skew-x-[-12deg] transition-transform">GET_STARTED</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobileMenuBtn" aria-expanded="false" class="p-2 text-safetyOrange">
+                    <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke-width="3"/></svg>
+                    <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="3"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="h-[2px] w-full bg-gradient-to-r from-safetyOrange via-transparent to-transparent opacity-30"></div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-40 -translate-y-full transform transition-transform duration-300">
+        <div class="absolute inset-0 bg-black/85"></div>
+        <div class="relative max-w-md mx-auto mt-20 bg-white border border-deepBlue/10 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl font-heavy text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                    </div>
+                    <button id="mobileClose" class="p-2 text-charcoal hover:text-deepBlue">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" stroke-width="2"/></svg>
+                    </button>
+                </div>
+
+                <nav class="flex flex-col gap-2">
+                    <a href="index.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Home</a>
+                    
+                    <div class="relative group">
+                        <button class="w-full text-left text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition flex items-center justify-between">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="hidden group-hover:block pl-4 bg-deepBlue/5 rounded-lg mt-1">
+                            <a href="shop-office.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Shops & Office Setup</a>
+                            <a href="ICT.HTML" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">ICT Governance & Data Policy</a>
+                            <a href="Security-Solution.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Security Solutions</a>
+                            <a href="Healthcare.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Healthcare ICT Solutions</a>
+                            <a href="Ergonomics.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Ergonomics</a>
+                        </div>
+                    </div>
+
+                    <a href="Industries.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Industries</a>
+                    <a href="about.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">About Us</a>
+                    <a href="Contact.html" class="text-sm font-heavy tracking-widest text-charcoal uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Contact</a>
+                </nav>
+
+                <div class="mt-6 flex flex-col gap-3">
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 rounded-lg text-center hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest bg-safetyOrange text-white rounded-lg text-center hover:skew-x-[-8deg] transition-transform">GET_STARTED</a>
+                </div>
+
+                <div class="mt-6 text-xs text-charcoal font-mono tracking-widest">© PESEWANI.TECH</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+    </script>
+</nav>
+
+    
+    <!-- Hero Section -->
+    <header class="relative py-24 lg:py-32 bg-deepBlue overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-deepBlue to-safetyOrange/10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl">
+                <div class="inline-block px-4 py-2 bg-safetyOrange/20 rounded-full mb-8" data-anim data-anim-delay="0s">
+                    <span class="text-safetyOrange text-sm font-heavy tracking-widest">SERVICE DETAIL</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-heavy leading-tight mb-8 text-white" data-anim data-anim-delay="0.06s">
+                    Shops & <span class="text-safetyOrange">Office Setup</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl" data-anim data-anim-delay="0.12s">
+                    Complete ICT infrastructure and workspace design for reliable connectivity, smooth operations, and professional working environments from day one.
+                </p>
+                <div class="flex flex-wrap gap-4" data-anim data-anim-delay="0.18s">
+                    <a href="#consultation" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-safetyOrange hover:bg-safetyOrangeHover transition transform hover:scale-105">
+                        Request Free Consultation
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+                    <a href="#solutions" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white border-2 border-white hover:bg-white hover:text-deepBlue transition">
+                        View Solutions
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Overview Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-anim data-anim-delay="0.06s">
+                    <div class="inline-flex items-center gap-3 mb-8">
+                        <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                        <span class="text-safetyOrange font-heavy text-xs tracking-[0.3em]">COMPLETE SOLUTIONS</span>
+                    </div>
+                    
+                    <h2 class="text-4xl font-heavy mb-8 leading-tight text-deepBlue" data-anim data-anim-delay="0.12s">
+                        Beyond Equipment Installation
+                    </h2>
+                    
+                    <div class="space-y-6 text-charcoal text-lg leading-relaxed" data-anim data-anim-delay="0.18s">
+                        <p>
+                            We provide complete ICT and workspace setup for shops and offices ensuring <span class="text-deepBlue font-semibold">reliable connectivity, smooth operations, and a professional working environment from day one</span>.
+                        </p>
+                        <p>
+                            Our solutions go beyond equipment. We assess your space, design the right infrastructure, and deploy systems that support efficiency, security, and future growth.
+                        </p>
+                        <p>
+                            Whether you're managing a single storefront or a corporate complex, our infrastructure remains online when the grid fails, keeping your revenue stream uninterrupted and your data secured.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-10 grid grid-cols-2 gap-6" data-anim data-anim-delay="0.24s">
+                        <div class="bg-safetyOrange/5 p-6 rounded-xl border border-safetyOrange/20">
+                            <div class="text-3xl font-bold text-deepBlue mb-2">100%</div>
+                            <div class="text-sm font-heavy text-safetyOrange tracking-widest">UPTIME GOAL</div>
+                        </div>
+                        <div class="bg-safetyOrange/5 p-6 rounded-xl border border-safetyOrange/20">
+                            <div class="text-3xl font-bold text-deepBlue mb-2">24/7</div>
+                            <div class="text-sm font-heavy text-safetyOrange tracking-widest">SUPPORT READY</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative" data-anim data-anim-delay="0.30s">
+                    <div class="bg-deepBlue/5 border border-deepBlue/10 p-10 rounded-2xl shadow-xl">
+                        <h3 class="text-2xl font-heavy mb-8 text-deepBlue">Ideal For</h3>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-safetyOrange/20 flex items-center justify-center">
+                                    <span class="text-safetyOrange">🏪</span>
+                                </div>
+                                <span class="font-semibold text-deepBlue">Retail Shops</span>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-safetyOrange/20 flex items-center justify-center">
+                                    <span class="text-safetyOrange">🚀</span>
+                                </div>
+                                <span class="font-semibold text-deepBlue">Startups & SMEs</span>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-safetyOrange/20 flex items-center justify-center">
+                                    <span class="text-safetyOrange">🏢</span>
+                                </div>
+                                <span class="font-semibold text-deepBlue">Corporate Offices</span>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-safetyOrange/20 flex items-center justify-center">
+                                    <span class="text-safetyOrange">🆕</span>
+                                </div>
+                                <span class="font-semibold text-deepBlue">New Business Setups</span>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-safetyOrange/20 flex items-center justify-center">
+                                    <span class="text-safetyOrange">🏠</span>
+                                </div>
+                                <span class="font-semibold text-deepBlue">Smart Homes</span>
+                            </div>
+                            
+                            <div class="flex items-center gap-3 p-4 bg-white rounded-lg shadow-sm">
+                                <div class="w-10 h-10 rounded-full bg-safetyOrange/20 flex items-center justify-center">
+                                    <span class="text-safetyOrange">📦</span>
+                                </div>
+                                <span class="font-semibold text-deepBlue">Warehouses</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 pt-8 border-t border-deepBlue/10">
+                            <p class="text-deepBlue font-semibold text-lg italic">
+                                "We transform empty spaces into productive, technology-enabled work environments."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-24 bg-softGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    Complete <span class="text-safetyOrange">Solutions</span> We Provide
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    From network infrastructure to power backup systems—everything you need for a modern, efficient workspace.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Solution 1 -->
+                <div class="solution-card bg-white p-8 rounded-2xl" data-anim data-anim-delay="0.18s">
+                    <div class="feature-icon">
+                        🔌
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Structured Cabling & Network Design</h3>
+                    <p class="text-charcoal mb-6">Professional cabling infrastructure for reliable data transmission and future scalability.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Cat6/Cat6a Ethernet cabling</li>
+                        <li>• Network rack installation</li>
+                        <li>• Patch panel configuration</li>
+                        <li>• Cable management systems</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 2 -->
+                <div class="solution-card bg-white p-8 rounded-2xl" data-anim data-anim-delay="0.24s">
+                    <div class="feature-icon">
+                        📶
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Wi-Fi & Internet Setup</h3>
+                    <p class="text-charcoal mb-6">High-speed wireless networks with complete coverage and optimal performance.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Business-grade Wi-Fi systems</li>
+                        <li>• Mesh network deployment</li>
+                        <li>• Internet router configuration</li>
+                        <li>• Network security setup</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 3 -->
+                <div class="solution-card bg-white p-8 rounded-2xl" data-anim data-anim-delay="0.30s">
+                    <div class="feature-icon">
+                        💳
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">POS Systems & Peripherals</h3>
+                    <p class="text-charcoal mb-6">Complete point-of-sale solutions for retail and business operations.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• POS hardware installation</li>
+                        <li>• Barcode scanner setup</li>
+                        <li>• Receipt printer configuration</li>
+                        <li>• Payment terminal integration</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 4 -->
+                <div class="solution-card bg-white p-8 rounded-2xl" data-anim data-anim-delay="0.36s">
+                    <div class="feature-icon">
+                        💻
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Desktop & Laptop Setup</h3>
+                    <p class="text-charcoal mb-6">Workstation configuration and deployment for maximum productivity.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Computer hardware installation</li>
+                        <li>• Operating system setup</li>
+                        <li>• Software installation</li>
+                        <li>• User account configuration</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 5 -->
+                <div class="solution-card bg-white p-8 rounded-2xl" data-anim data-anim-delay="0.42s">
+                    <div class="feature-icon">
+                        🗄️
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Servers & Shared Storage</h3>
+                    <p class="text-charcoal mb-6">Centralized data management and storage solutions.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Server installation & configuration</li>
+                        <li>• Network Attached Storage (NAS)</li>
+                        <li>• File sharing setup</li>
+                        <li>• Backup system implementation</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 6 -->
+                <div class="solution-card bg-white p-8 rounded-2xl" data-anim data-anim-delay="0.48s">
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">UPS & Power Backup Solutions</h3>
+                    <p class="text-charcoal mb-6">Uninterruptible power supply systems for business continuity.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• UPS installation & configuration</li>
+                        <li>• Power conditioning</li>
+                        <li>• Battery backup systems</li>
+                        <li>• Surge protection</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 7 -->
+                <div class="solution-card bg-white p-8 rounded-2xl col-span-1 md:col-span-2 lg:col-span-3" data-anim data-anim-delay="0.54s">
+                    <div class="feature-icon">
+                        🏢
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Smart Office & Home Layout Planning</h3>
+                    <p class="text-charcoal mb-6">Intelligent space design for optimal workflow and technology integration.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Workspace ergonomic design</li>
+                            <li>• Cable routing planning</li>
+                            <li>• Equipment placement optimization</li>
+                            <li>• Lighting and acoustics planning</li>
+                        </ul>
+                        <ul class="text-sm text-charcoal space-y-2">
+                            <li>• Conference room setup</li>
+                            <li>• Reception area design</li>
+                            <li>• Storage solutions integration</li>
+                            <li>• Future expansion planning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Setup Process -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    Our <span class="text-safetyOrange">Setup Process</span>
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    A systematic approach to transforming your space into a productive, technology-enabled environment.
+                </p>
+            </div>
+            
+            <div class="setup-process max-w-4xl mx-auto">
+                <!-- Step 1 -->
+                <div class="process-item" data-anim data-anim-delay="0.18s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Assessment & Planning</h3>
+                    <p class="text-charcoal mb-4">We start with a comprehensive analysis of your space, business needs, and growth objectives.</p>
+                    <ul class="checklist text-charcoal ml-6">
+                        <li>Site survey and measurements</li>
+                        <li>Business requirement analysis</li>
+                        <li>Infrastructure planning</li>
+                        <li>Budget and timeline development</li>
+                    </ul>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="process-item" data-anim data-anim-delay="0.24s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Design & Architecture</h3>
+                    <p class="text-charcoal mb-4">Creating detailed blueprints and specifications for your ideal workspace.</p>
+                    <ul class="checklist text-charcoal ml-6">
+                        <li>Network architecture design</li>
+                        <li>Cabling and electrical plans</li>
+                        <li>Equipment specifications</li>
+                        <li>Workflow optimization mapping</li>
+                    </ul>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="process-item" data-anim data-anim-delay="0.30s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Installation & Configuration</h3>
+                    <p class="text-charcoal mb-4">Professional implementation with minimal disruption to your operations.</p>
+                    <ul class="checklist text-charcoal ml-6">
+                        <li>Cabling and infrastructure installation</li>
+                        <li>Equipment setup and configuration</li>
+                        <li>Network and security implementation</li>
+                        <li>System testing and optimization</li>
+                    </ul>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="process-item" data-anim data-anim-delay="0.36s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Training & Support</h3>
+                    <p class="text-charcoal mb-4">Ensuring your team can effectively use the new systems with ongoing support.</p>
+                    <ul class="checklist text-charcoal ml-6">
+                        <li>Staff training and documentation</li>
+                        <li>System handover and acceptance</li>
+                        <li>Ongoing maintenance plans</li>
+                        <li>24/7 technical support</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center" data-anim data-anim-delay="0.42s">
+                <div class="inline-block bg-safetyOrange/10 p-10 rounded-2xl border border-safetyOrange/20 max-w-3xl mx-auto">
+                    <p class="text-2xl font-heavy text-deepBlue mb-6">
+                        "We don't just install hardware—we architect resilient, efficient workspaces that support your business growth."
+                    </p>
+                    <p class="text-safetyOrange font-heavy tracking-widest text-sm">— PESEWANI.TECH COMMITMENT</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Key Features -->
+    <section class="py-24 bg-softGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    Key <span class="text-safetyOrange">Features</span> & Benefits
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    Why choose Pesewani Tech for your shop or office setup needs.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl border-l-4 border-safetyOrange" data-anim data-anim-delay="0.18s">
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Reliable Connectivity</h3>
+                    <p class="text-charcoal">Enterprise-grade network infrastructure ensures stable internet and network performance for all your business operations.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl border-l-4 border-safetyOrange" data-anim data-anim-delay="0.24s">
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Future-Proof Design</h3>
+                    <p class="text-charcoal">Scalable solutions that grow with your business, preventing costly upgrades and reconfigurations.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl border-l-4 border-safetyOrange" data-anim data-anim-delay="0.30s">
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Professional Aesthetics</h3>
+                    <p class="text-charcoal">Clean cable management and organized equipment placement for a professional, clutter-free workspace.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-2xl border-l-4 border-safetyOrange" data-anim data-anim-delay="0.36s">
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Power Redundancy</h3>
+                    <p class="text-charcoal">Automated power backup solutions keep your systems running during outages, protecting data and productivity.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white p-8 rounded-2xl border-l-4 border-safetyOrange" data-anim data-anim-delay="0.42s">
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Security Integration</h3>
+                    <p class="text-charcoal">Built-in security measures protect your network, data, and physical assets from threats and unauthorized access.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white p-8 rounded-2xl border-l-4 border-safetyOrange" data-anim data-anim-delay="0.48s">
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Local Support</h3>
+                    <p class="text-charcoal">Fast, on-the-ground technical support for troubleshooting, maintenance, and upgrades when you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section id="consultation" class="py-24 bg-deepBlue relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-deepBlue to-safetyOrange/20"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-heavy mb-8 text-white" data-anim data-anim-delay="0.06s">
+                Ready to Setup Your <span class="text-safetyOrange">Professional Workspace</span>?
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                From retail shops to corporate offices, we deliver complete ICT solutions that work from day one. Get a free consultation and quote for your project.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center" data-anim data-anim-delay="0.18s">
+                <a href="Contact.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-safetyOrange hover:bg-safetyOrangeHover transition transform hover:scale-105">
+                    Request Free Consultation
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                </a>
+                <a href="tel:+233XXXXXXXXX" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white border-2 border-white hover:bg-white hover:text-deepBlue transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    Call Now: +233 XX XXX XXXX
+                </a>
+            </div>
+            
+            <div class="mt-16 bg-white/10 p-8 rounded-2xl border border-white/20" data-anim data-anim-delay="0.24s">
+                <h3 class="text-2xl font-heavy mb-6 text-white">What's Included in Your Free Consultation</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-safetyOrange flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-semibold">Site Assessment</p>
+                        <p class="text-gray-300 text-sm">Comprehensive space evaluation</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-safetyOrange flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-semibold">Solution Proposal</p>
+                        <p class="text-gray-300 text-sm">Tailored setup recommendations</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-safetyOrange flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-semibold">Timeline & Quote</p>
+                        <p class="text-gray-300 text-sm">Clear project timeline and pricing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-deepBlue text-white/80 py-16 border-t border-white/20">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center mb-12 pb-8 border-b border-white/20">
+            <h2 class="text-3xl font-heavy tracking-tighter mb-2"><span class="text-safetyOrange">PESEWANI.TECH</span></h2>
+            <p class="text-sm font-bold tracking-widest uppercase text-white/60">Smart ICT. Secure Spaces. Productive Workplaces.</p>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <!-- About Us -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">About Us</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Company Overview</a></li>
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Mission & Vision</a></li>
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Core Values</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Services</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Shops & Offices</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• ICT Policy</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Security Solutions</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Ergonomics</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal & Compliance -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Legal & Compliance</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="PrivacyPolicy.html" class="hover:text-safetyOrange transition">• Privacy Policy</a></li>
+                    <li><a href="Acceptable.html" class="hover:text-safetyOrange transition">• Terms of Service</a></li>
+                    <li><a href="cookie.html" class="hover:text-safetyOrange transition">• Cookie Policy</a></li>
+                    <li><a href="Acceptable.html" class="hover:text-safetyOrange transition">• Acceptable Use</a></li>
+                </ul>
+            </div>
+
+            <!-- Support & Contact + Trust & Security -->
+            <div>
+                <div class="mb-8">
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Support & Contact</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Contact Us</a></li>
+                        <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Help / Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Trust & Security</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Security Practices</a></li>
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Compliance</a></li>
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Data Protection</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/20 pt-8 flex justify-between items-center text-[10px] font-heavy tracking-[0.2em] uppercase text-white/60">
+            <span>© 2026 PESEWANI TECH</span>
+            <span>© 2026 Pesewani Tech. All Rights Reserved. </span>
+        </div>
+    </div>
+</footer>
+
+
+    <script>
+        // Mobile menu functionality
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+        
+        // Animation observer
+        (function () {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('in-view');
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('[data-anim]').forEach(el => {
+                el.classList.add('fade-up');
+                io.observe(el);
+                
+                // Add delay based on data attribute
+                const delay = el.getAttribute('data-anim-delay');
+                if (delay) {
+                    el.style.transitionDelay = delay;
+                }
+            });
+        })();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

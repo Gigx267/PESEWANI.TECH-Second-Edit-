@@ -1,0 +1,793 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ergonomics Services | Pesewani.tech - Workplace Comfort & Productivity</title>
+    <link rel="icon" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="LOGO 2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="LOGO 2.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F59E0B" />
+    <meta name="msapplication-TileColor" content="#F59E0B" />
+    <meta name="theme-color" content="#0F2A44" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#0F2A44',
+                        tealBlue: '#1FA2A6',
+                        safetyOrange: '#F59E0B',
+                        safetyOrangeHover: '#D97706',
+                        charcoal: '#1F2933',
+                        softGray: '#F5F7FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        heavy: ['Syncopate', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1F2933; background-color: #F5F7FA; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: #0F2A44; }
+        .font-heavy { font-family: 'Syncopate', sans-serif; text-transform: uppercase; }
+        
+        .ergonomics-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid #0F2A44;
+            background-color: #FFFFFF;
+        }
+        
+        .ergonomics-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(15, 42, 68, 0.15);
+        }
+        
+        .wellness-card {
+            background: linear-gradient(135deg, #0F2A44 0%, #1FA2A6 100%);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .wellness-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(15, 42, 68, 0.25);
+        }
+        
+        .fade-up { 
+            opacity: 0; 
+            transform: translateY(20px) scale(.98); 
+            transition: opacity .7s cubic-bezier(.2,.9,.2,1), transform .7s cubic-bezier(.2,.9,.2,1); 
+            will-change: opacity, transform; 
+        }
+        .fade-up.in-view { opacity: 1; transform: none; }
+        
+        .ergonomics-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            background-color: #0F2A44;
+            color: white;
+            font-size: 28px;
+        }
+        
+        .checklist li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+        }
+        
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #F59E0B;
+            font-weight: bold;
+        }
+        
+        .process-step {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .process-step:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #0F2A44;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 14px;
+        }
+        
+        .process-step.step-1:before { content: '1'; }
+        .process-step.step-2:before { content: '2'; }
+        .process-step.step-3:before { content: '3'; }
+        .process-step.step-4:before { content: '4'; }
+        
+        .benefit-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: #1FA2A6;
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .workspace-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .grid-item {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        @media (max-width: 768px) {
+            .workspace-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .productivity-badge {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        .posture-guide {
+            background-color: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid #F59E0B;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        
+        .comfort-scale {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            padding: 15px;
+            background: #F5F7FA;
+            border-radius: 10px;
+        }
+        
+        .scale-item {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .scale-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0F2A44;
+            margin-bottom: 5px;
+        }
+        
+        .scale-label {
+            font-size: 12px;
+            color: #1F2933;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-softGray">
+   <nav class="absolute inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="flex justify-between h-20 items-center">
+            <div class="flex items-center gap-10">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-heavy tracking-tighter text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="index.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Home</a>
+                    <div class="relative group">
+                        <button class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase flex items-center gap-2">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block bg-white border border-deepBlue/10 shadow-2xl rounded-lg overflow-hidden min-w-[280px] z-50">
+                            <div class="p-1">
+                                <a href="shop-office.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Shops & Office Setup
+                                </a>
+                                <a href="Security-Solution.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Security Solutions
+                                </a>
+                                <a href="ICT.HTML" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    ICT Governance & Data Policy
+                                </a>
+                                <a href="Healthcare.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Healthcare ICT Solutions
+                                </a>
+                                <a href="Ergonomics.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Ergonomics
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </div> <a href="Industries.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Industries </a>
+                    <a href="about.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">About Us</a>
+                    <a href="Contact.html" class="text-[10px] font-heavy tracking-[0.3em] text-charcoal hover:text-safetyOrange transition uppercase">Contact</a>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-2">
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest bg-safetyOrange text-white hover:skew-x-[-12deg] transition-transform">GET_STARTED</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobileMenuBtn" aria-expanded="false" class="p-2 text-safetyOrange">
+                    <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke-width="3"/></svg>
+                    <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="3"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="h-[2px] w-full bg-gradient-to-r from-safetyOrange via-transparent to-transparent opacity-30"></div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-40 -translate-y-full transform transition-transform duration-300">
+        <div class="absolute inset-0 bg-black/85"></div>
+        <div class="relative max-w-md mx-auto mt-20 bg-white border border-deepBlue/10 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl font-heavy text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                    </div>
+                    <button id="mobileClose" class="p-2 text-charcoal hover:text-deepBlue">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" stroke-width="2"/></svg>
+                    </button>
+                </div>
+
+                <nav class="flex flex-col gap-2">
+                    <a href="index.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Home</a>
+                    
+                    <div class="relative group">
+                        <button class="w-full text-left text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition flex items-center justify-between">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="hidden group-hover:block pl-4 bg-deepBlue/5 rounded-lg mt-1">
+                            <a href="shop-office.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Shops & Office Setup</a>
+                            <a href="ICT.HTML" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">ICT Governance & Data Policy</a>
+                            <a href="Security-Solution.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Security Solutions</a>
+                            <a href="Healthcare.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Healthcare ICT Solutions</a>
+                            <a href="Ergonomics.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Ergonomics</a>
+                        </div>
+                    </div>
+
+                    <a href="Industries.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Industries</a>
+                    <a href="about.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">About Us</a>
+                    <a href="Contact.html" class="text-sm font-heavy tracking-widest text-charcoal uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Contact</a>
+                </nav>
+
+                <div class="mt-6 flex flex-col gap-3">
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 rounded-lg text-center hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest bg-safetyOrange text-white rounded-lg text-center hover:skew-x-[-8deg] transition-transform">GET_STARTED</a>
+                </div>
+
+                <div class="mt-6 text-xs text-charcoal font-mono tracking-widest">© PESEWANI.TECH</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+    </script>
+</nav>
+
+    <!-- Hero Section -->
+    <header class="relative py-24 lg:py-32 bg-deepBlue overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-deepBlue to-tealBlue/20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl">
+                <div class="inline-block px-4 py-2 bg-tealBlue/20 rounded-full mb-8" data-anim data-anim-delay="0s">
+                    <span class="text-tealBlue text-sm font-heavy tracking-widest">ERGONOMICS</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-heavy leading-tight mb-8 text-white" data-anim data-anim-delay="0.06s">
+                    Ergonomics for <span class="text-safetyOrange">Productivity</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl" data-anim data-anim-delay="0.12s">
+                    Comfort That Drives Performance. We design ergonomic workspaces that improve comfort, health, and overall productivity, supporting both employee well-being and business success.
+                </p>
+                <div class="flex flex-wrap gap-4" data-anim data-anim-delay="0.18s">
+                    <a href="#assessment" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-safetyOrange hover:bg-safetyOrangeHover transition transform hover:scale-105">
+                        Request Ergonomic Assessment
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+                    <a href="#solutions" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white border-2 border-white hover:bg-white hover:text-deepBlue transition">
+                        View Ergonomic Solutions
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- The Problem Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-anim data-anim-delay="0.06s">
+                    <div class="inline-flex items-center gap-3 mb-8">
+                        <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                        <span class="text-tealBlue font-heavy text-xs tracking-[0.3em]">THE PROBLEM</span>
+                    </div>
+                    
+                    <h2 class="text-4xl font-heavy mb-8 leading-tight text-deepBlue" data-anim data-anim-delay="0.12s">
+                    Poor Ergonomics Leads to Reduced Performance
+                    </h2>
+                    
+                    <div class="space-y-6 text-charcoal text-lg leading-relaxed" data-anim data-anim-delay="0.18s">
+                        <p>
+                            A poorly designed workspace leads to <span class="text-deepBlue font-semibold">fatigue, discomfort, and reduced productivity</span>. Musculoskeletal disorders, eye strain, and mental fatigue are common consequences of inadequate ergonomic setups.
+                        </p>
+                        <p>
+                            We help organizations and individuals design ergonomic workspaces that improve comfort, focus, and overall performance—supporting both health and productivity for sustainable success.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-10 p-8 bg-red-50 border-l-4 border-red-500 rounded-r-xl" data-anim data-anim-delay="0.24s">
+                        <h3 class="text-xl font-heavy mb-4 text-deepBlue">Common Workplace Issues</h3>
+                        <div class="workspace-grid">
+                            <div class="grid-item">
+                                <h4 class="font-semibold text-deepBlue mb-2">Back & Neck Pain</h4>
+                                <p class="text-sm text-charcoal">Improper chair and desk setup</p>
+                            </div>
+                            <div class="grid-item">
+                                <h4 class="font-semibold text-deepBlue mb-2">Eye Strain</h4>
+                                <p class="text-sm text-charcoal">Poor monitor positioning and lighting</p>
+                            </div>
+                            <div class="grid-item">
+                                <h4 class="font-semibold text-deepBlue mb-2">Wrist Issues</h4>
+                                <p class="text-sm text-charcoal">Incorrect keyboard and mouse placement</p>
+                            </div>
+                            <div class="grid-item">
+                                <h4 class="font-semibold text-deepBlue mb-2">Fatigue</h4>
+                                <p class="text-sm text-charcoal">Lack of movement and poor posture</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative" data-anim data-anim-delay="0.30s">
+                    <div class="bg-deepBlue p-10 rounded-2xl text-white shadow-xl">
+                        <h3 class="text-2xl font-heavy mb-8">Why Ergonomics Matters</h3>
+                        
+                        <p class="text-xl mb-8">
+                            Proper ergonomics isn't just about comfort—it's about <span class="text-safetyOrange font-semibold">health, productivity, and business performance</span>.
+                        </p>
+                        
+                        <ul class="space-y-6 mb-10">
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Health & Wellness</h4>
+                                    <p class="text-gray-300">Reduces risk of musculoskeletal disorders and work-related injuries</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Productivity Boost</h4>
+                                    <p class="text-gray-300">Comfortable employees are more focused and efficient</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Cost Reduction</h4>
+                                    <p class="text-gray-300">Decreases absenteeism and healthcare costs related to workplace injuries</p>
+                                </div>
+                            </li>
+                            
+                            <li class="flex items-start gap-4">
+                                <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center flex-shrink-0">
+                                    <span class="text-safetyOrange">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Employee Satisfaction</h4>
+                                    <p class="text-gray-300">Shows care for employee wellbeing, improving retention and morale</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="pt-8 border-t border-white/20">
+                            <p class="text-tealBlue font-semibold text-lg italic">
+                                "A comfortable employee is a productive employee. Ergonomics is an investment that pays dividends in performance and wellbeing."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Ergonomics Solutions -->
+    <section id="solutions" class="py-24 bg-softGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    Our <span class="text-tealBlue">Ergonomic Services</span>
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    Comprehensive ergonomic solutions tailored to individual needs and organizational requirements.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Solution 1 -->
+                <div class="ergonomics-card p-8 rounded-2xl" data-anim data-anim-delay="0.18s">
+                    <div class="ergonomics-icon">
+                        🪑
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Ergonomic Chair & Desk Selection</h3>
+                    <p class="text-charcoal mb-6">Professional assessment and recommendation of ergonomic furniture that supports proper posture.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Ergonomic chair assessment</li>
+                        <li>• Adjustable desk recommendations</li>
+                        <li>• Proper sitting posture guidance</li>
+                        <li>• Standing desk options</li>
+                        <li>• Budget-friendly alternatives</li>
+                        <li>• Supplier coordination</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 2 -->
+                <div class="ergonomics-card p-8 rounded-2xl" data-anim data-anim-delay="0.24s">
+                    <div class="ergonomics-icon">
+                        🖥️
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Monitor & Equipment Positioning</h3>
+                    <p class="text-charcoal mb-6">Optimal placement of computer equipment to reduce eye strain and neck pain.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Monitor height and distance setup</li>
+                        <li>• Keyboard and mouse positioning</li>
+                        <li>• Document holder placement</li>
+                        <li>• Multiple monitor configuration</li>
+                        <li>• Laptop workstation conversion</li>
+                        <li>• Equipment adjustment training</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 3 -->
+                <div class="ergonomics-card p-8 rounded-2xl" data-anim data-anim-delay="0.30s">
+                    <div class="ergonomics-icon">
+                        📐
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Workspace Layout Optimization</h3>
+                    <p class="text-charcoal mb-6">Strategic arrangement of workspace elements for optimal workflow and comfort.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Desk and chair positioning</li>
+                        <li>• Traffic flow optimization</li>
+                        <li>• Storage accessibility planning</li>
+                        <li>• Collaborative space design</li>
+                        <li>• Meeting area ergonomics</li>
+                        <li>• Multi-user workspace planning</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 4 -->
+                <div class="ergonomics-card p-8 rounded-2xl" data-anim data-anim-delay="0.36s">
+                    <div class="ergonomics-icon">
+                        💡
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Lighting & Posture Recommendations</h3>
+                    <p class="text-charcoal mb-6">Proper lighting solutions and posture guidance for long-term comfort and health.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Task lighting assessment</li>
+                        <li>• Glare reduction strategies</li>
+                        <li>• Proper sitting posture training</li>
+                        <li>• Standing posture guidance</li>
+                        <li>• Micro-break scheduling</li>
+                        <li>• Stretching exercise programs</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 5 -->
+                <div class="ergonomics-card p-8 rounded-2xl" data-anim data-anim-delay="0.42s">
+                    <div class="ergonomics-icon">
+                        🛠️
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Ergonomic Accessory Selection</h3>
+                    <p class="text-charcoal mb-6">Recommendation and setup of ergonomic accessories to enhance comfort and productivity.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Ergonomic keyboard and mouse</li>
+                        <li>• Monitor arms and stands</li>
+                        <li>• Footrests and anti-fatigue mats</li>
+                        <li>• Laptop stands and docks</li>
+                        <li>• Document holders</li>
+                        <li>• Cable management solutions</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 6 -->
+                <div class="ergonomics-card p-8 rounded-2xl" data-anim data-anim-delay="0.48s">
+                    <div class="ergonomics-icon">
+                        🏢
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Workstation Assessments</h3>
+                    <p class="text-charcoal mb-6">Comprehensive individual and group workstation evaluations with personalized recommendations.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Individual workstation analysis</li>
+                        <li>• Department-wide assessments</li>
+                        <li>• Remote work setup evaluation</li>
+                        <li>• Home office ergonomics</li>
+                        <li>• Follow-up assessments</li>
+                        <li>• Progress tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    <span class="text-tealBlue">Benefits</span> of Proper Ergonomics
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    Investing in ergonomics delivers measurable improvements for both employees and organizations.
+                </p>
+            </div>
+            
+            <div class="comfort-scale" data-anim data-anim-delay="0.18s">
+                <div class="scale-item">
+                    <div class="scale-value">40%</div>
+                    <div class="scale-label">Reduced Fatigue</div>
+                </div>
+                <div class="scale-item">
+                    <div class="scale-value">25%</div>
+                    <div class="scale-label">Productivity Increase</div>
+                </div>
+                <div class="scale-item">
+                    <div class="scale-value">60%</div>
+                    <div class="scale-label">Fewer Injuries</div>
+                </div>
+                <div class="scale-item">
+                    <div class="scale-value">30%</div>
+                    <div class="scale-label">Absenteeism Drop</div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Benefit 1 -->
+                <div class="wellness-card p-8 rounded-2xl" data-anim data-anim-delay="0.24s">
+                    <div class="text-4xl mb-6">😌</div>
+                    <h3 class="text-xl font-heavy mb-4">Reduced Fatigue & Injuries</h3>
+                    <p>Proper ergonomic setup minimizes musculoskeletal disorders and work-related pain, keeping employees healthier and more comfortable throughout the workday.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="wellness-card p-8 rounded-2xl" data-anim data-anim-delay="0.30s">
+                    <div class="text-4xl mb-6">🎯</div>
+                    <h3 class="text-xl font-heavy mb-4">Improved Focus & Efficiency</h3>
+                    <p>Comfortable workspaces enhance concentration and mental clarity, allowing employees to work more effectively with fewer distractions and errors.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="wellness-card p-8 rounded-2xl" data-anim data-anim-delay="0.36s">
+                    <div class="text-4xl mb-6">📈</div>
+                    <h3 class="text-xl font-heavy mb-4">Higher Productivity</h3>
+                    <p>Optimized environments lead to better performance, faster task completion, and increased output—directly impacting the bottom line.</p>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="wellness-card p-8 rounded-2xl" data-anim data-anim-delay="0.42s">
+                    <div class="text-4xl mb-6">❤️</div>
+                    <h3 class="text-xl font-heavy mb-4">Better Employee Well-being</h3>
+                    <p>Shows commitment to employee health, improving morale, job satisfaction, and retention while reducing stress and burnout.</p>
+                </div>
+            </div>
+            
+            <!-- Additional Benefits -->
+            <div class="mt-16 bg-softGray p-10 rounded-2xl border border-tealBlue/20" data-anim data-anim-delay="0.48s">
+                <h3 class="text-2xl font-heavy mb-8 text-deepBlue text-center">Long-Term Organizational Benefits</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-tealBlue text-xl">💰</span>
+                        </div>
+                        <p class="font-semibold text-deepBlue">Cost Savings</p>
+                        <p class="text-sm text-charcoal">Reduced healthcare costs and workers' compensation claims</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-tealBlue text-xl">👥</span>
+                        </div>
+                        <p class="font-semibold text-deepBlue">Talent Retention</p>
+                        <p class="text-sm text-charcoal">Lower turnover rates and improved employee loyalty</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-tealBlue text-xl">⚖️</span>
+                        </div>
+                        <p class="font-semibold text-deepBlue">Legal Compliance</p>
+                        <p class="text-sm text-charcoal">Meeting occupational health and safety requirements</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-tealBlue text-xl">🏆</span>
+                        </div>
+                        <p class="font-semibold text-deepBlue">Competitive Advantage</p>
+                        <p class="text-sm text-charcoal">Enhanced employer brand and reputation as a caring workplace</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-deepBlue text-white/80 py-16 border-t border-white/20">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center mb-12 pb-8 border-b border-white/20">
+            <h2 class="text-3xl font-heavy tracking-tighter mb-2"><span class="text-safetyOrange">PESEWANI.TECH</span></h2>
+            <p class="text-sm font-bold tracking-widest uppercase text-white/60">Smart ICT. Secure Spaces. Productive Workplaces.</p>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <!-- About Us -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">About Us</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Company Overview</a></li>
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Mission & Vision</a></li>
+                    <li><a href="about.html" class="hover:text-safetyOrange transition">• Core Values</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Services</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Shops & Offices</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• ICT Policy</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Security Solutions</a></li>
+                    <li><a href="Services.html" class="hover:text-safetyOrange transition">• Ergonomics</a></li>
+                </ul>
+            </div>
+
+            <!-- Legal & Compliance -->
+            <div>
+                <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Legal & Compliance</h4>
+                <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                    <li><a href="PrivacyPolicy.html" class="hover:text-safetyOrange transition">• Privacy Policy</a></li>
+                    <li><a href="Termsofservice.html" class="hover:text-safetyOrange transition">• Terms of Service</a></li>
+                    <li><a href="cookie.html" class="hover:text-safetyOrange transition">• Cookie Policy</a></li>
+                    <li><a href="Acceptable.html" class="hover:text-safetyOrange transition">• Acceptable Use</a></li>
+                </ul>
+            </div>
+
+            <!-- Support & Contact + Trust & Security -->
+            <div>
+                <div class="mb-8">
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Support & Contact</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Contact Us</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Help / Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Trust & Security</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Security Practices</a></li>
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Compliance</a></li>
+                        <li><a href="Data.html" class="hover:text-safetyOrange transition">• Data Protection</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/20 pt-8 flex justify-between items-center text-[10px] font-heavy tracking-[0.2em] uppercase text-white/60">
+            <span>© 2026 PESEWANI TECH</span>
+            <span>© 2026 Pesewani Tech. All Rights Reserved. </span>
+        </div>
+    </div>
+</footer>
+
+   

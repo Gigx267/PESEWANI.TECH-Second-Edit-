@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Processing Agreement | Pesewani.tech</title>
+    <link rel="icon" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="LOGO 2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="LOGO 2.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F59E0B" />
+    <meta name="msapplication-TileColor" content="#F59E0B" />
+    <meta name="theme-color" content="#0F2A44" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#0F2A44',
+                        tealBlue: '#1FA2A6',
+                        safetyOrange: '#F59E0B',
+                        safetyOrangeHover: '#D97706',
+                        charcoal: '#1F2933',
+                        softGray: '#F5F7FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1F2933; background-color: #F5F7FA; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; color: #0F2A44; }
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+        .font-heavy { font-family: 'Syncopate', sans-serif; text-transform: uppercase; }
+        
+        .dpa-section {
+            border-left: 4px solid #F59E0B;
+            padding-left: 1.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-number {
+            position: absolute;
+            top: 0;
+            left: -2rem;
+            background: #F59E0B;
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        
+        .legal-definition {
+            background: rgba(15, 42, 68, 0.05);
+            border: 1px solid rgba(15, 42, 68, 0.1);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .responsibility-card {
+            background: white;
+            border: 1px solid rgba(15, 42, 68, 0.1);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .responsibility-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(15, 42, 68, 0.1);
+            border-color: #F59E0B;
+        }
+        
+        .security-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(31, 162, 166, 0.1);
+            border: 1px solid rgba(31, 162, 166, 0.2);
+            border-radius: 0.5rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .data-category-chip {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 2rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+        
+        .compliance-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(15, 42, 68, 0.1);
+            border: 1px solid rgba(15, 42, 68, 0.2);
+            border-radius: 0.5rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #0F2A44;
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background: #F59E0B;
+            transform: translateY(-2px);
+        }
+        
+        .section-anchor {
+            scroll-margin-top: 8rem;
+        }
+        
+        .download-button {
+            transition: all 0.2s ease;
+        }
+        
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+        }
+        
+        .legal-notice {
+            background: linear-gradient(135deg, #0F2A44 0%, #1F2933 100%);
+            color: white;
+            border-left: 4px solid #F59E0B;
+        }
+        
+        .print-button {
+            transition: all 0.2s ease;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+        }
+        
+        .parties-card {
+            background: white;
+            border: 2px solid rgba(15, 42, 68, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .parties-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #F59E0B, #1FA2A6);
+        }
+        
+        .data-subject-card {
+            background: white;
+            border: 1px solid rgba(15, 42, 68, 0.1);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .data-subject-card h4 {
+            color: #0F2A44;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-softGray">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-deepBlue/10">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-10">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-heavy tracking-tighter text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                    </div>
+                    <div class="hidden md:flex items-center gap-6">
+                        <a href="index.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Home</a>
+                        <div class="relative group">
+                            <button class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase flex items-center gap-2">
+                                Services
+                                <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                                </svg>
+                            </button>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block bg-white border border-deepBlue/10 shadow-2xl rounded-lg overflow-hidden min-w-[280px] z-50">
+                                <div class="p-1">
+                                    <a href="shop-office.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        Shops & Office Setup
+                                    </a>
+                                    <a href="Security-Solution.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        Security Solutions
+                                    </a>
+                                    <a href="ICT.HTML" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        ICT Governance & Data Policy
+                                    </a>
+                                    <a href="Healthcare.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        Healthcare ICT Solutions
+                                    </a>
+                                    <a href="Ergonomics.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        Ergonomics
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="Industries.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Industries</a>
+                        <a href="about.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">About Us</a>
+                        <a href="Contact.html" class="text-[10px] font-heavy tracking-[0.3em] text-charcoal hover:text-safetyOrange transition uppercase">Contact</a>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center gap-2">
+                    <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest bg-safetyOrange text-white hover:skew-x-[-12deg] transition-transform">GET_STARTED</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" aria-expanded="false" class="p-2 text-safetyOrange">
+                        <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke-width="3"/></svg>
+                        <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="3"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu panel -->
+        <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-40 -translate-y-full transform transition-transform duration-300">
+            <div class="absolute inset-0 bg-black/85"></div>
+            <div class="relative max-w-md mx-auto mt-20 bg-white border border-deepBlue/10 rounded-2xl overflow-hidden shadow-2xl">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <span class="text-xl font-heavy text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                        </div>
+                        <button id="mobileClose" class="p-2 text-charcoal hover:text-deepBlue">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" stroke-width="2"/></svg>
+                        </button>
+                    </div>
+
+                    <nav class="flex flex-col gap-2">
+                        <a href="index.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Home</a>
+                        
+                        <div class="relative group">
+                            <button class="w-full text-left text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition flex items-center justify-between">
+                                Services
+                                <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                                </svg>
+                            </button>
+                            <div class="hidden group-hover:block pl-4 bg-deepBlue/5 rounded-lg mt-1">
+                                <a href="shop-office.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Shops & Office Setup</a>
+                                <a href="ICT.HTML" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">ICT Governance & Data Policy</a>
+                                <a href="Security-Solution.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Security Solutions</a>
+                                <a href="Healthcare.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Healthcare ICT Solutions</a>
+                                <a href="Ergonomics.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Ergonomics</a>
+                            </div>
+                        </div>
+
+                        <a href="Industries.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Industries</a>
+                        <a href="about.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">About Us</a>
+                        <a href="Contact.html" class="text-sm font-heavy tracking-widest text-charcoal uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Contact</a>
+                    </nav>
+
+                    <div class="mt-6 flex flex-col gap-3">
+                        <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 rounded-lg text-center hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                        <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest bg-safetyOrange text-white rounded-lg text-center hover:skew-x-[-8deg] transition-transform">GET_STARTED</a>
+                    </div>
+
+                    <div class="mt-6 text-xs text-charcoal font-mono tracking-widest">© PESEWANI.TECH</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 bg-deepBlue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="inline-flex items-center gap-3 mb-6">
+                    <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                    <span class="text-safetyOrange font-heavy text-xs tracking-[0.3em]">
+                        DATA PROCESSING AGREEMENT
+                    </span>
+                    <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 text-white">
+                    Data Processing Agreement (DPA)
+                </h1>
+                
+                <p class="text-gray-100 max-w-3xl mx-auto mb-8 text-lg">
+                    Legal framework governing the processing of personal data in compliance with data protection regulations
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <div class="text-sm text-gray-300">
+                        <span class="font-bold">Effective Date:</span> 01/01/2026
+                    </div>
+                    <div class="text-sm text-gray-300">
+                        <span class="font-bold">Version:</span> 1.0
+                    </div>
+                    <div class="text-sm text-gray-300">
+                        <span class="font-bold">Document Type:</span> Standard DPA
+                    </div>
+                </div>
+                
+                <div class="mt-8 flex flex-wrap gap-4 justify-center">
+                    <button onclick="window.print()" class="print-button px-6 py-3 text-sm font-semibold bg-white/20 text-white border border-white/30 hover:bg-white/30 transition rounded-lg flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                        </svg>
+                        Print DPA
+                    </button>
+                    <button onclick="downloadDPA()" class="download-button px-6 py-3 text-sm font-semibold bg-safetyOrange text-white hover:bg-safetyOrangeHover transition rounded-lg flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        Download PDF
+                    </button>
+                    <a href="#contact" class="px-6 py-3 text-sm font-semibold bg-white/20 text-white border border-white/30 hover:bg-white/30 transition rounded-lg flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        Contact DPO
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <div class="sticky top-20 z-30 bg-white/90 backdrop-blur-sm border-y border-deepBlue/10 hidden md:block">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <div class="table-of-contents flex gap-6 overflow-x-auto text-sm">
+                <a href="#parties" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">Parties</a>
+                <a href="#definitions" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">1. Definitions</a>
+                <a href="#scope" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">2. Scope & Purpose</a>
+                <a href="#categories" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">3. Data Categories</a>
+                <a href="#responsibilities" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">4. Responsibilities</a>
+                <a href="#security" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">5. Security</a>
+                <a href="#subprocessors" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">6. Sub‑Processors</a>
+                <a href="#transfers" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">7. Data Transfers</a>
+                <a href="#breach" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">8. Breach Notification</a>
+                <a href="#rights" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">9. Data Subject Rights</a>
+                <a href="#retention" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">10. Retention & Deletion</a>
+                <a href="#contact" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">16. Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Parties Section -->
+        <section id="parties" class="section-anchor mb-16">
+            <div class="parties-card">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-full bg-safetyOrange/10 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-2xl font-bold text-deepBlue">Processor</h2>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="font-bold text-lg text-deepBlue">Pesewani Tech</div>
+                            <div class="text-charcoal">A company incorporated in the Republic of Ghana</div>
+                            <div class="text-sm text-charcoal/70">Service Provider & Data Processor</div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-full bg-tealBlue/10 flex items-center justify-center">
+                                <svg class="w-6 h-6 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-2xl font-bold text-deepBlue">Controller</h2>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="font-bold text-lg text-deepBlue">[Client Name]</div>
+                            <div class="text-charcoal">Customer & Data Controller</div>
+                            <div class="text-sm text-charcoal/70 italic">To be specified in individual agreements</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 pt-8 border-t border-deepBlue/10">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-charcoal font-medium">This DPA forms part of, and is incorporated into, the primary service agreement between the Parties and applies to all personal data processed in connection with Pesewani Tech's POS systems, SaaS platforms, cybersecurity services, APIs, and ICT solutions.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compliance Badges -->
+        <div class="mb-12">
+            <h3 class="text-lg font-semibold text-deepBlue mb-4">Compliant With:</h3>
+            <div class="flex flex-wrap gap-3">
+                <div class="compliance-badge">
+                    <svg class="w-5 h-5 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Ghana Data Protection Act, 2012 (Act 843)</span>
+                </div>
+                <div class="compliance-badge">
+                    <svg class="w-5 h-5 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>EU General Data Protection Regulation (GDPR)</span>
+                </div>
+                <div class="compliance-badge">
+                    <svg class="w-5 h-5 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>International Data Protection Standards</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Definitions -->
+        <section id="definitions" class="section-anchor dpa-section">
+            <div class="section-number">1</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">Definitions</h2>
+            <div class="legal-definition">
+                <p class="text-charcoal mb-4">
+                    Terms used in this DPA shall have the meanings given under:
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-safetyOrange mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-charcoal">Ghana Data Protection Act, 2012 (Act 843)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-safetyOrange mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-charcoal">EU General Data Protection Regulation (GDPR), where applicable</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: Scope & Purpose -->
+        <section id="scope" class="section-anchor dpa-section">
+            <div class="section-number">2</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">Scope & Purpose of Processing</h2>
+            <p class="text-charcoal mb-6">
+                Pesewani Tech processes personal data solely for the purpose of providing contracted services, including:
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white p-4 rounded-lg border border-deepBlue/10">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-safetyOrange/10 flex items-center justify-center">
+                            <svg class="w-4 h-4 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-deepBlue">Hosting & Operation</h4>
+                    </div>
+                    <p class="text-sm text-charcoal">Hosting and operation of SaaS and POS platforms</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg border border-deepBlue/10">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-safetyOrange/10 flex items-center justify-center">
+                            <svg class="w-4 h-4 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm14 1a1 1 0 11-2 0 1 1 0 012 0zM2 13a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zm14 1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-deepBlue">Transaction Processing</h4>
+                    </div>
+                    <p class="text-sm text-charcoal">Transaction processing and system administration</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg border border-deepBlue/10">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center">
+                            <svg class="w-4 h-4 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-deepBlue">Security Monitoring</h4>
+                    </div>
+                    <p class="text-sm text-charcoal">Security monitoring, threat detection, and incident response</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg border border-deepBlue/10">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-tealBlue/10 flex items-center justify-center">
+                            <svg class="w-4 h-4 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-deepBlue">Customer Support</h4>
+                    </div>
+                    <p class="text-sm text-charcoal">Customer support and maintenance services</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Categories of Data -->
+        <section id="categories" class="section-anchor dpa-section">
+            <div class="section-number">3</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-6">Categories of Data & Data Subjects</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-deepBlue mb-4">3.1 Data Subjects</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="data-subject-card">
+                        <h4>Customers and End-Users</h4>
+                        <p class="text-sm text-charcoal">Individuals using services through client platforms</p>
+                    </div>
+                    <div class="data-subject-card">
+                        <h4>Merchants and Business Clients</h4>
+                        <p class="text-sm text-charcoal">Business entities and their authorized representatives</p>
+                    </div>
+                    <div class="data-subject-card">
+                        <h4>Employees and Authorized Users</h4>
+                        <p class="text-sm text-charcoal">Staff members with system access privileges</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-deepBlue mb-4">3.2 Categories of Personal Data</h3>
+                <div class="mb-6">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="data-category-chip">Identification and contact information</span>
+                        <span class="data-category-chip">Transaction and payment-related metadata</span>
+                        <span class="data-category-chip">Device, usage, and log data</span>
+                        <span class="data-category-chip">Authentication and access credentials</span>
+                    </div>
+                </div>
+                
+                <div class="bg-red-50 border border-red-100 rounded-lg p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        <h4 class="font-semibold text-deepBlue">Sensitive Personal Data Notice</h4>
+                    </div>
+                    <p class="text-charcoal">
+                        Sensitive personal data shall be processed only where explicitly authorized and legally permitted under applicable data protection laws.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Roles & Responsibilities -->
+        <section id="responsibilities" class="section-anchor dpa-section">
+            <div class="section-number">4</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-6">Roles & Responsibilities</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <!-- Controller Responsibilities -->
+                <div class="responsibility-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-tealBlue/10 flex items-center justify-center">
+                            <span class="text-tealBlue font-bold">C</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-deepBlue">Controller Responsibilities</h3>
+                    </div>
+                    <p class="text-charcoal mb-4">The Controller shall:</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-tealBlue mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-charcoal">Ensure a lawful basis for processing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-tealBlue mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-charcoal">Provide required notices and obtain consent where applicable</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-tealBlue mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-charcoal">Ensure data accuracy and lawfulness</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Processor Responsibilities -->
+                <div class="responsibility-card">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-safetyOrange/10 flex items-center justify-center">
+                            <span class="text-safetyOrange font-bold">P</span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-deepBlue">Processor Responsibilities</h3>
+                    </div>
+                    <p class="text-charcoal mb-4">Pesewani Tech shall:</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-safetyOrange mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-charcoal">Process personal data only on documented instructions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-safetyOrange mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-charcoal">Ensure confidentiality of authorized personnel</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-safetyOrange mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-charcoal">Implement appropriate technical and organizational security measures</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-safetyOrange mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-charcoal">Assist the Controller with data subject requests</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Security Measures -->
+        <section id="security" class="section-anchor dpa-section">
+            <div class="section-number">5</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">Security Measures</h2>
+            <p class="text-charcoal mb-6">
+                Pesewani Tech implements comprehensive security measures including:
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white p-4 rounded-lg border border-deepBlue/10 text-center">
+                    <div class="text-3xl mb-3">🔐</div>
+                    <h4 class="font-semibold text-deepBlue mb-2">Encryption</h4>
+                    <p class="text-sm text-charcoal">Encryption in transit and at rest where applicable</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg border border-deepBlue/10 text-center">
+                    <div class="text-3xl mb-3">👨‍💻</div>
+                    <h4 class="font-semibold text-deepBlue mb-2">Access Controls</h4>
+                    <p class="text-sm text-charcoal">Access controls and authentication mechanisms</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg border border-deepBlue/10 text-center">
+                    <div class="text-3xl mb-3">📊</div>
+                    <h4 class="font-semibold text-deepBlue mb-2">Continuous Monitoring</h4>
+                    <p class="text-sm text-charcoal">Continuous monitoring and logging systems</p>
+                </div>
+                
+                <div class="bg-white p-4 rounded-lg border border-deepBlue/10 text-center">
+                    <div class="text-3xl mb-3">🛡️</div>
+                    <h4 class="font-semibold text-deepBlue mb-2">Secure Development</h4>
+                    <p class="text-sm text-charcoal">Secure development and deployment practices</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Sub‑Processors -->
+        <section id="subprocessors" class="section-anchor dpa-section">
+            <div class="section-number">6</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">Sub‑Processors</h2>
+            <div class="legal-definition">
+                <p class="text-charcoal mb-4">
+                    Pesewani Tech may engage vetted sub‑processors for specific services including cloud hosting, analytics, and payment infrastructure. 
+                    Pesewani Tech remains responsible for their compliance with this DPA.
+                </p>
+                <div class="flex items-center gap-3 mt-4">
+                    <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-charcoal font-medium">A current list of sub‑processors shall be made available upon request.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: International Data Transfers -->
+        <section id="transfers" class="section-anchor dpa-section">
+            <div class="section-number">7</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">International Data Transfers</h2>
+            <div class="legal-definition">
+                <p class="text-charcoal mb-4">
+                    Where personal data is transferred outside Ghana, appropriate safeguards are implemented, including:
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-safetyOrange mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-charcoal">Standard Contractual Clauses (SCCs)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-5 h-5 text-safetyOrange mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="text-charcoal">Equivalent lawful transfer mechanisms</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 8: Data Breach Notification -->
+        <section id="breach" class="section-anchor dpa-section">
+            <div class="section-number">8</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">Data Breach Notification</h2>
+            <div class="bg-red-50 border border-red-100 rounded-lg p-6">
+                <div class="flex items-center gap-3 mb-3">
+                    <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                    </svg>
+                    <h4 class="font-semibold text-deepBlue">Breach Notification Protocol</h4>
+                </div>
+                <p class="text-charcoal">
+                    Pesewani Tech shall notify the Controller without undue delay upon becoming aware of a personal data breach and cooperate in remediation and regulatory reporting.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 9: Data Subject Rights Assistance -->
+        <section id="rights" class="section-anchor dpa-section">
+            <div class="section-number">9</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">Data Subject Rights Assistance</h2>
+            <div class="legal-definition">
+                <p class="text-charcoal mb-4">
+                    Pesewani Tech shall assist the Controller in fulfilling obligations relating to:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded-lg border border-deepBlue/10">
+                        <h4 class="font-semibold text-deepBlue mb-2">Access & Rectification</h4>
+                        <p class="text-sm text-charcoal">Right to access and rectify personal data</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-deepBlue/10">
+                        <h4 class="font-semibold text-deepBlue mb-2">Erasure</h4>
+                        <p class="text-sm text-charcoal">Right to erasure (right to be forgotten)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-deepBlue/10">
+                        <h4 class="font-semibold text-deepBlue mb-2">Restriction</h4>
+                        <p class="text-sm text-charcoal">Right to restriction of processing</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-deepBlue/10">
+                        <h4 class="font-semibold text-deepBlue mb-2">Objection</h4>
+                        <p class="text-sm text-charcoal">Right to object to processing</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border border-deepBlue/10">
+                        <h4 class="font-semibold text-deepBlue mb-2">Data Portability</h4>
+                        <p class="text-sm text-charcoal">Right to data portability</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Data Retention & Deletion -->
+        <section id="retention" class="section-anchor dpa-section">
+            <div class="section-number">10</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">Data Retention & Deletion</h2>
+            <div class="legal-definition">
+                <p class="text-charcoal">
+                    Upon termination of services, personal data shall be deleted or returned at the Controller's request, unless retention is required by applicable laws or regulations.
+                </p>
+            </div>
+        </section>
+
+        <!-- Collapsible Additional Sections -->
+        <div class="mb-12">
+            <div class="space-y-4">
+                <!-- Section 11 -->
+                <details class="group bg-white border border-deepBlue/10 rounded-lg overflow-hidden">
+                    <summary class="cursor-pointer list-none px-6 py-4 bg-deepBlue/5 hover:bg-deepBlue/10 transition flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="text-lg font-bold text-safetyOrange">11</span>
+                            <span class="font-semibold text-deepBlue">Audits & Compliance</span>
+                        </div>
+                        <svg class="w-5 h-5 text-deepBlue group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <div class="px-6 py-4 border-t border-deepBlue/10">
+                        <p class="text-charcoal">The Controller may conduct audits or request compliance information, subject to reasonable notice and confidentiality obligations.</p>
+                    </div>
+                </details>
+
+                <!-- Section 12 -->
+                <details class="group bg-white border border-deepBlue/10 rounded-lg overflow-hidden">
+                    <summary class="cursor-pointer list-none px-6 py-4 bg-deepBlue/5 hover:bg-deepBlue/10 transition flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="text-lg font-bold text-safetyOrange">12</span>
+                            <span class="font-semibold text-deepBlue">Confidentiality</span>
+                        </div>
+                        <svg class="w-5 h-5 text-deepBlue group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <div class="px-6 py-4 border-t border-deepBlue/10">
+                        <p class="text-charcoal">All personal data processed under this Agreement shall be treated as confidential information.</p>
+                    </div>
+                </details>
+
+                <!-- Section 13 -->
+                <details class="group bg-white border border-deepBlue/10 rounded-lg overflow-hidden">
+                    <summary class="cursor-pointer list-none px-6 py-4 bg-deepBlue/5 hover:bg-deepBlue/10 transition flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="text-lg font-bold text-safetyOrange">13</span>
+                            <span class="font-semibold text-deepBlue">Liability</span>
+                        </div>
+                        <svg class="w-5 h-5 text-deepBlue group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <div class="px-6 py-4 border-t border-deepBlue/10">
+                        <p class="text-charcoal">Liability under this DPA shall be governed by the primary service agreement, subject to applicable data protection laws.</p>
+                    </div>
+                </details>
+
+                <!-- Section 14 -->
+                <details class="group bg-white border border-deepBlue/10 rounded-lg overflow-hidden">
+                    <summary class="cursor-pointer list-none px-6 py-4 bg-deepBlue/5 hover:bg-deepBlue/10 transition flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="text-lg font-bold text-safetyOrange">14</span>
+                            <span class="font-semibold text-deepBlue">Governing Law</span>
+                        </div>
+                        <svg class="w-5 h-5 text-deepBlue group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <div class="px-6 py-4 border-t border-deepBlue/10">
+                        <p class="text-charcoal">This DPA shall be governed by the laws of the Republic of Ghana, without prejudice to mandatory data protection laws.</p>
+                    </div>
+                </details>
+
+                <!-- Section 15 -->
+                <details class="group bg-white border border-deepBlue/10 rounded-lg overflow-hidden">
+                    <summary class="cursor-pointer list-none px-6 py-4 bg-deepBlue/5 hover:bg-deepBlue/10 transition flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="text-lg font-bold text-safetyOrange">15</span>
+                            <span class="font-semibold text-deepBlue">Order of Precedence</span>
+                        </div>
+                        <svg class="w-5 h-5 text-deepBlue group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </summary>
+                    <div class="px-6 py-4 border-t border-deepBlue/10">
+                        <p class="text-charcoal">In the event of conflict, this DPA shall prevail with respect to data protection matters.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <!-- Section 16: Contact Information -->
+        <section id="contact" class="section-anchor dpa-section">
+            <div class="section-number">16</div>
+            <h2 class="text-2xl font-bold text-deepBlue mb-4">Contact Information</h2>
+            <div class="bg-safetyOrange/5 p-8 rounded-xl border border-safetyOrange/20">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-deepBlue mb-4">Pesewani Tech</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-6 h-6 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                                <div>
+                                    <a href="mailto:dpo@pesewani.tech" class="text-deepBlue hover:text-safetyOrange font-medium text-lg">dpo@pesewani.tech</a>
+                                    <p class="text-sm text-charcoal">Data Protection Officer</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-6 h-6 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                                </svg>
+                                <div>
+                                    <span class="font-medium text-deepBlue">Compliance Support</span>
+                                    <p class="text-sm text-charcoal">For DPA inquiries and compliance matters</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-deepBlue mb-3">Response Commitment</h4>
+                        <p class="text-charcoal mb-2">We aim to respond to all DPA-related inquiries within 5 business days.</p>
+                        <p class="text-sm text-charcoal/70">
+                            For urgent data protection matters, please indicate "URGENT - DPA" in your email subject line.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Notice -->
+        <div class="legal-notice p-8 rounded-xl mt-16">
+            <div class="flex items-start gap-4">
+                <svg class="w-8 h-8 text-safetyOrange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3">Legal Notice</h3>
+                    <p class="text-white/90 mb-3">
+                        This Data Processing Agreement (DPA) is provided for informational purposes. The actual DPA signed between Pesewani Tech and its clients may contain additional terms and conditions specific to the services provided.
+                    </p>
+                    <div class="flex items-center gap-4 text-sm text-white/70">
+                        <span>Effective Date: 01/01/2026</span>
+                        <span>Version: 1.0</span>
+                        <span>Document ID: DPA-2026-01</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top" id="backToTop">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+            </svg>
+        </a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-deepBlue text-white/80 py-16 border-t border-white/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-12 pb-8 border-b border-white/20">
+                <h2 class="text-3xl font-heavy tracking-tighter mb-2"><span class="text-safetyOrange">PESEWANI.TECH</span></h2>
+                <p class="text-sm font-bold tracking-widest uppercase text-white/60">Smart ICT. Secure Spaces. Productive Workplaces.</p>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- About Us -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">About Us</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Company Overview</a></li>
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Mission & Vision</a></li>
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Core Values</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Services</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="shop-office.html" class="hover:text-safetyOrange transition">• Shops & Offices</a></li>
+                        <li><a href="ICT.HTML" class="hover:text-safetyOrange transition">• ICT Policy</a></li>
+                        <li><a href="Security-Solution.html" class="hover:text-safetyOrange transition">• Security Solutions</a></li>
+                        <li><a href="Ergonomics.html" class="hover:text-safetyOrange transition">• Ergonomics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Compliance -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Legal & Compliance</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Acceptable Use Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition border-l-2 border-safetyOrange pl-2">• Data Processing Agreement</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support & Contact + Trust & Security -->
+                <div>
+                    <div class="mb-8">
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Support & Contact</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Contact Us</a></li>
+                            <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Help / Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Trust & Security</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Security Practices</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Compliance</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Data Protection</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] font-heavy tracking-[0.2em] uppercase text-white/60 gap-4">
+                <span>© 2026 PESEWANI TECH</span>
+                <span>Data Processing Agreement v1.0 • Effective 01/01/2026</span>
+                <span>Last Updated: January 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+    </script>
+
+    <!-- DPA Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elements
+            const backToTop = document.getElementById('backToTop');
+            
+            // Back to top functionality
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+                
+                // Update active ToC link
+                const sections = document.querySelectorAll('.section-anchor');
+                const navLinks = document.querySelectorAll('.table-of-contents a');
+                
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (window.pageYOffset >= sectionTop) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Smooth scroll for ToC links
+            document.querySelectorAll('.table-of-contents a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Print functionality
+            function printDPA() {
+                window.print();
+            }
+            
+            // Download PDF functionality (simulated)
+            function downloadDPA() {
+                // Create a modal for download options
+                const modal = document.createElement('div');
+                modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50';
+                modal.innerHTML = `
+                    <div class="bg-white rounded-xl shadow-2xl max-w-md w-full p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-bold text-deepBlue">Download DPA</h3>
+                            <button class="p-2 hover:bg-deepBlue/5 rounded-lg transition" onclick="this.closest('div.fixed').remove()">
+                                <svg class="w-6 h-6 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="text-charcoal mb-6">Select your preferred format:</p>
+                        <div class="space-y-3">
+                            <button onclick="downloadPDF('dpa')" class="w-full px-4 py-3 bg-deepBlue text-white font-semibold rounded-lg hover:opacity-90 transition flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                                Download PDF Version
+                            </button>
+                            <button onclick="downloadWord('dpa')" class="w-full px-4 py-3 bg-safetyOrange text-white font-semibold rounded-lg hover:opacity-90 transition flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                                Download Word Version
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // Close modal when clicking outside
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.remove();
+                    }
+                });
+            }
+            
+            // Add global functions for download buttons
+            window.downloadPDF = function(type) {
+                alert('PDF download would start here. In a production environment, this would link to an actual PDF file.');
+                // In production: window.location.href = '/documents/dpa.pdf';
+            };
+            
+            window.downloadWord = function(type) {
+                alert('Word document download would start here. In a production environment, this would link to an actual .docx file.');
+                // In production: window.location.href = '/documents/dpa.docx';
+            };
+            
+            window.downloadDPA = downloadDPA;
+            
+            // Initialize all details elements to be closed by default
+            document.querySelectorAll('details').forEach(details => {
+                details.open = false;
+            });
+            
+            // Add expand/collapse all button
+            const expandAllBtn = document.createElement('button');
+            expandAllBtn.className = 'px-4 py-2 text-sm font-semibold bg-deepBlue/10 text-deepBlue rounded-lg hover:bg-deepBlue/20 transition';
+            expandAllBtn.textContent = 'Expand All Sections';
+            expandAllBtn.style.margin = '1rem 0';
+            
+            let allExpanded = false;
+            expandAllBtn.addEventListener('click', function() {
+                allExpanded = !allExpanded;
+                document.querySelectorAll('details').forEach(details => {
+                    details.open = allExpanded;
+                });
+                expandAllBtn.textContent = allExpanded ? 'Collapse All Sections' : 'Expand All Sections';
+            });
+            
+            // Insert button before the collapsible sections
+            const collapsibleContainer = document.querySelector('.space-y-4');
+            if (collapsibleContainer) {
+                collapsibleContainer.parentNode.insertBefore(expandAllBtn, collapsibleContainer);
+            }
+        });
+    </script>
+</body>
+</html>

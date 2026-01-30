@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Solutions | Pesewani.tech - Home & Office Security Systems</title>
+    <link rel="icon" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="LOGO 2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="LOGO 2.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F59E0B" />
+    <meta name="msapplication-TileColor" content="#F59E0B" />
+    <meta name="theme-color" content="#0F2A44" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#0F2A44',
+                        tealBlue: '#1FA2A6',
+                        safetyOrange: '#F59E0B',
+                        safetyOrangeHover: '#D97706',
+                        charcoal: '#1F2933',
+                        softGray: '#F5F7FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        heavy: ['Syncopate', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1F2933; background-color: #F5F7FA; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: #0F2A44; }
+        .font-heavy { font-family: 'Syncopate', sans-serif; text-transform: uppercase; }
+        
+        .security-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid #0F2A44;
+            background-color: #FFFFFF;
+        }
+        
+        .security-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(15, 42, 68, 0.15);
+        }
+        
+        .protection-card {
+            background: linear-gradient(135deg, #0F2A44 0%, #1FA2A6 100%);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .protection-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(15, 42, 68, 0.25);
+        }
+        
+        .fade-up { 
+            opacity: 0; 
+            transform: translateY(20px) scale(.98); 
+            transition: opacity .7s cubic-bezier(.2,.9,.2,1), transform .7s cubic-bezier(.2,.9,.2,1); 
+            will-change: opacity, transform; 
+        }
+        .fade-up.in-view { opacity: 1; transform: none; }
+        
+        .security-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            background-color: #0F2A44;
+            color: white;
+            font-size: 28px;
+        }
+        
+        .checklist li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+        }
+        
+        .checklist li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #F59E0B;
+            font-weight: bold;
+        }
+        
+        .security-feature {
+            padding: 20px;
+            border-radius: 12px;
+            background-color: white;
+            border-left: 4px solid #0F2A44;
+            margin-bottom: 20px;
+        }
+        
+        .monitoring-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: #1FA2A6;
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        .process-step {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .process-step:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-color: #0F2A44;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 14px;
+        }
+        
+        .process-step.step-1:before { content: '1'; }
+        .process-step.step-2:before { content: '2'; }
+        .process-step.step-3:before { content: '3'; }
+        .process-step.step-4:before { content: '4'; }
+        
+        .coverage-map {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .coverage-item {
+            text-align: center;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        @media (max-width: 768px) {
+            .coverage-map {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Color-specific styling for your exact color scheme */
+        .text-deepBlue { color: #0F2A44; }
+        .bg-deepBlue { background-color: #0F2A44; }
+        .border-deepBlue { border-color: #0F2A44; }
+        
+        .text-tealBlue { color: #1FA2A6; }
+        .bg-tealBlue { background-color: #1FA2A6; }
+        .border-tealBlue { border-color: #1FA2A6; }
+        
+        .text-safetyOrange { color: #F59E0B; }
+        .bg-safetyOrange { background-color: #F59E0B; }
+        .border-safetyOrange { border-color: #F59E0B; }
+        
+        .text-charcoal { color: #1F2933; }
+        
+        .bg-softGray { background-color: #F5F7FA; }
+        
+        .bg-white { background-color: #FFFFFF; }
+    </style>
+</head>
+<body class="bg-softGray">
+   <nav class="absolute inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm">
+    <div class="mx-auto max-w-7xl px-6">
+        <div class="flex justify-between h-20 items-center">
+            <div class="flex items-center gap-10">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-heavy tracking-tighter text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="index.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Home</a>
+                    <div class="relative group">
+                        <button class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase flex items-center gap-2">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block bg-white border border-deepBlue/10 shadow-2xl rounded-lg overflow-hidden min-w-[280px] z-50">
+                            <div class="p-1">
+                                <a href="shop-office.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Shops & Office Setup
+                                </a>
+                                <a href="Security-Solution.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Security Solutions
+                                </a>
+                                <a href="ICT.HTML" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    ICT Governance & Data Policy
+                                </a>
+                                <a href="Healthcare.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Healthcare ICT Solutions
+                                </a>
+                                <a href="Ergonomics.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                    <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                    Ergonomics
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </div> <a href="Industries.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Industries </a>
+                    <a href="about.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">About Us</a>
+                    <a href="Contact.html" class="text-[10px] font-heavy tracking-[0.3em] text-charcoal hover:text-safetyOrange transition uppercase">Contact</a>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-2">
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest bg-safetyOrange text-white hover:skew-x-[-12deg] transition-transform">GET_STARTED</a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="mobileMenuBtn" aria-expanded="false" class="p-2 text-safetyOrange">
+                    <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke-width="3"/></svg>
+                    <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="3"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="h-[2px] w-full bg-gradient-to-r from-safetyOrange via-transparent to-transparent opacity-30"></div>
+
+    <!-- Mobile menu panel -->
+    <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-40 -translate-y-full transform transition-transform duration-300">
+        <div class="absolute inset-0 bg-black/85"></div>
+        <div class="relative max-w-md mx-auto mt-20 bg-white border border-deepBlue/10 rounded-2xl overflow-hidden shadow-2xl">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl font-heavy text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                    </div>
+                    <button id="mobileClose" class="p-2 text-charcoal hover:text-deepBlue">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" stroke-width="2"/></svg>
+                    </button>
+                </div>
+
+                <nav class="flex flex-col gap-2">
+                    <a href="index.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Home</a>
+                    
+                    <div class="relative group">
+                        <button class="w-full text-left text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition flex items-center justify-between">
+                            Services
+                            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </button>
+                        <div class="hidden group-hover:block pl-4 bg-deepBlue/5 rounded-lg mt-1">
+                            <a href="shop-office.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Shops & Office Setup</a>
+                            <a href="ICT.HTML" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">ICT Governance & Data Policy</a>
+                            <a href="Security-Solution.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Security Solutions</a>
+                            <a href="Healthcare.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Healthcare ICT Solutions</a>
+                            <a href="Ergonomics.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Ergonomics</a>
+                        </div>
+                    </div>
+
+                    <a href="Industries.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Industries</a>
+                    <a href="about.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">About Us</a>
+                    <a href="Contact.html" class="text-sm font-heavy tracking-widest text-charcoal uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Contact</a>
+                </nav>
+
+                <div class="mt-6 flex flex-col gap-3">
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 rounded-lg text-center hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest bg-safetyOrange text-white rounded-lg text-center hover:skew-x-[-8deg] transition-transform">GET_STARTED</a>
+                </div>
+
+                <div class="mt-6 text-xs text-charcoal font-mono tracking-widest">© PESEWANI.TECH</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+    </script>
+</nav>
+
+    
+    <!-- Hero Section -->
+    <header class="relative py-24 lg:py-32 bg-deepBlue overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-deepBlue to-tealBlue/20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl">
+                <div class="inline-block px-4 py-2 bg-tealBlue/20 rounded-full mb-8" data-anim data-anim-delay="0s">
+                    <span class="text-tealBlue text-sm font-heavy tracking-widest">SECURITY SOLUTIONS</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-heavy leading-tight mb-8 text-white" data-anim data-anim-delay="0.06s">
+                    Home & Office <span class="text-safetyOrange">Security Solutions</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-12 leading-relaxed max-w-3xl" data-anim data-anim-delay="0.12s">
+                    Security You Can See. Protection You Can Trust. We design and install reliable security systems that give you control, visibility, and peace of mind whether at home or at work.
+                </p>
+                <div class="flex flex-wrap gap-4" data-anim data-anim-delay="0.18s">
+                    <a href="#assessment" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-safetyOrange hover:bg-safetyOrangeHover transition transform hover:scale-105">
+                        Get a Security Assessment
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </a>
+                    <a href="#solutions" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl font-semibold text-white border-2 border-white hover:bg-white hover:text-deepBlue transition">
+                        View Security Solutions
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Overview Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-anim data-anim-delay="0.06s">
+                    <div class="inline-flex items-center gap-3 mb-8">
+                        <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                        <span class="text-tealBlue font-heavy text-xs tracking-[0.3em]">COMPLETE PROTECTION</span>
+                    </div>
+                    
+                    <h2 class="text-4xl font-heavy mb-8 leading-tight text-deepBlue" data-anim data-anim-delay="0.12s">
+                        Modern Security for Modern Threats
+                    </h2>
+                    
+                    <div class="space-y-6 text-charcoal text-lg leading-relaxed" data-anim data-anim-delay="0.18s">
+                        <p>
+                            Our security solutions provide <span class="text-deepBlue font-semibold">visibility, control, and peace of mind</span> through modern surveillance, access control, and monitoring systems.
+                        </p>
+                        <p>
+                            We combine predictive threat modeling with scalable continuous 24/7 protection and rapid on-site response capabilities to keep your premises secure.
+                        </p>
+                        <p>
+                            Whether you need to protect a family home, retail store, corporate office, or industrial facility, we have the expertise and technology to deliver comprehensive security solutions.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-10 grid grid-cols-2 gap-6" data-anim data-anim-delay="0.24s">
+                        <div class="bg-softGray p-6 rounded-xl border border-deepBlue/20">
+                            <div class="text-3xl font-bold text-deepBlue mb-2">24/7</div>
+                            <div class="text-sm font-heavy text-tealBlue tracking-widest">MONITORING</div>
+                        </div>
+                        <div class="bg-softGray p-6 rounded-xl border border-deepBlue/20">
+                            <div class="text-3xl font-bold text-deepBlue mb-2">Rapid</div>
+                            <div class="text-sm font-heavy text-tealBlue tracking-widest">RESPONSE</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative" data-anim data-anim-delay="0.30s">
+                    <div class="bg-deepBlue p-10 rounded-2xl text-white shadow-xl">
+                        <h3 class="text-2xl font-heavy mb-8">Why Professional Security Systems Matter</h3>
+                        
+                        <div class="space-y-6 mb-10">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-tealBlue flex items-center justify-center flex-shrink-0">
+                                    <span class="text-white">🛡️</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Deterrence & Prevention</h4>
+                                    <p class="text-gray-300">Visible security systems prevent 90% of intrusion attempts before they happen</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-tealBlue flex items-center justify-center flex-shrink-0">
+                                    <span class="text-white">👁️</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Real-time Awareness</h4>
+                                    <p class="text-gray-300">Monitor your premises from anywhere, anytime with remote access capabilities</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-tealBlue flex items-center justify-center flex-shrink-0">
+                                    <span class="text-white">🚨</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Immediate Response</h4>
+                                    <p class="text-gray-300">Automated alerts and rapid response protocols minimize damage and loss</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-tealBlue flex items-center justify-center flex-shrink-0">
+                                    <span class="text-white">📊</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Evidence Collection</h4>
+                                    <p class="text-gray-300">High-quality recordings provide crucial evidence for investigations and insurance claims</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-8 border-t border-white/20">
+                            <p class="text-tealBlue font-semibold text-lg italic">
+                                "Peace of mind isn't a luxury—it's what professional security systems deliver."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Security Solutions -->
+    <section id="solutions" class="py-24 bg-softGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    Complete <span class="text-tealBlue">Security Solutions</span>
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    Comprehensive security systems tailored to your specific needs and environment.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Solution 1 -->
+                <div class="security-card p-8 rounded-2xl" data-anim data-anim-delay="0.18s">
+                    <div class="security-icon">
+                        📹
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">CCTV Surveillance Systems</h3>
+                    <p class="text-charcoal mb-6">High-definition video surveillance with remote monitoring capabilities for complete visibility.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• IP & Analog camera systems</li>
+                        <li>• 4K Ultra HD resolution</li>
+                        <li>• Night vision & thermal imaging</li>
+                        <li>• Weatherproof outdoor cameras</li>
+                        <li>• Mobile app remote viewing</li>
+                        <li>• Cloud & local storage options</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 2 -->
+                <div class="security-card p-8 rounded-2xl" data-anim data-anim-delay="0.24s">
+                    <div class="security-icon">
+                        🔑
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Access Control Systems</h3>
+                    <p class="text-charcoal mb-6">Control who enters your premises and when with sophisticated access management.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Biometric fingerprint readers</li>
+                        <li>• RFID card & key fob systems</li>
+                        <li>• Keypad entry systems</li>
+                        <li>• Smart lock integration</li>
+                        <li>• Time-based access rules</li>
+                        <li>• Visitor management systems</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 3 -->
+                <div class="security-card p-8 rounded-2xl" data-anim data-anim-delay="0.30s">
+                    <div class="security-icon">
+                        🚨
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Alarm & Intrusion Systems</h3>
+                    <p class="text-charcoal mb-6">Immediate detection and alerting for unauthorized entry or suspicious activity.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Motion detection sensors</li>
+                        <li>• Door & window sensors</li>
+                        <li>• Glass break detectors</li>
+                        <li>• Siren & strobe alarms</li>
+                        <li>• GSM alarm communicators</li>
+                        <li>• Professional monitoring</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 4 -->
+                <div class="security-card p-8 rounded-2xl" data-anim data-anim-delay="0.36s">
+                    <div class="security-icon">
+                        🏠
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Smart Home Security</h3>
+                    <p class="text-charcoal mb-6">Integrated smart security systems for modern homes and apartments.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Smart doorbell cameras</li>
+                        <li>• Smart lock systems</li>
+                        <li>• Window & door sensors</li>
+                        <li>• Smart lighting integration</li>
+                        <li>• Voice control compatibility</li>
+                        <li>• Automated security scenes</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 5 -->
+                <div class="security-card p-8 rounded-2xl" data-anim data-anim-delay="0.42s">
+                    <div class="security-icon">
+                        📡
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Remote Monitoring</h3>
+                    <p class="text-charcoal mb-6">24/7 professional monitoring and remote access to your security systems.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Professional monitoring center</li>
+                        <li>• Mobile app notifications</li>
+                        <li>• Live video streaming</li>
+                        <li>• Two-way audio communication</li>
+                        <li>• Emergency response coordination</li>
+                        <li>• Activity reports & alerts</li>
+                    </ul>
+                </div>
+                
+                <!-- Solution 6 -->
+                <div class="security-card p-8 rounded-2xl" data-anim data-anim-delay="0.48s">
+                    <div class="security-icon">
+                        🔧
+                    </div>
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Maintenance & Upgrades</h3>
+                    <p class="text-charcoal mb-6">Ongoing support, maintenance, and system upgrades to ensure optimal performance.</p>
+                    <ul class="text-sm text-charcoal space-y-2">
+                        <li>• Regular system inspections</li>
+                        <li>• Firmware & software updates</li>
+                        <li>• Equipment maintenance</li>
+                        <li>• System expansion & upgrades</li>
+                        <li>• Emergency repair services</li>
+                        <li>• Annual maintenance plans</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Benefits Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    <span class="text-tealBlue">Benefits</span> of Professional Security
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    Protect what matters with comprehensive security solutions that deliver tangible results.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="protection-card p-8 rounded-2xl" data-anim data-anim-delay="0.18s">
+                    <div class="text-4xl mb-6">🚫</div>
+                    <h3 class="text-xl font-heavy mb-4">Theft & Intrusion Deterrence</h3>
+                    <p>Visible security systems prevent unauthorized access and criminal activity before it happens, protecting your assets and property.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="protection-card p-8 rounded-2xl" data-anim data-anim-delay="0.24s">
+                    <div class="text-4xl mb-6">👁️</div>
+                    <h3 class="text-xl font-heavy mb-4">Real-time Monitoring</h3>
+                    <p>Stay connected to your premises 24/7 with remote access to live video feeds and instant notifications of any suspicious activity.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="protection-card p-8 rounded-2xl" data-anim data-anim-delay="0.30s">
+                    <div class="text-4xl mb-6">🔒</div>
+                    <h3 class="text-xl font-heavy mb-4">Secure Access Control</h3>
+                    <p>Manage who enters your premises and when, with sophisticated access systems that eliminate unauthorized entry risks.</p>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="protection-card p-8 rounded-2xl" data-anim data-anim-delay="0.36s">
+                    <div class="text-4xl mb-6">⏰</div>
+                    <h3 class="text-xl font-heavy mb-4">24/7 Security Awareness</h3>
+                    <p>Continuous protection through automated systems and professional monitoring that never sleeps, ensuring constant security coverage.</p>
+                </div>
+                
+                <!-- Benefit 5 -->
+                <div class="protection-card p-8 rounded-2xl" data-anim data-anim-delay="0.42s">
+                    <div class="text-4xl mb-6">⚡</div>
+                    <h3 class="text-xl font-heavy mb-4">Rapid On-site Response</h3>
+                    <p>Immediate alert systems and coordinated response protocols that minimize damage and ensure quick resolution of security incidents.</p>
+                </div>
+                
+                <!-- Benefit 6 -->
+                <div class="protection-card p-8 rounded-2xl" data-anim data-anim-delay="0.48s">
+                    <div class="text-4xl mb-6">💼</div>
+                    <h3 class="text-xl font-heavy mb-4">Insurance Advantages</h3>
+                    <p>Professional security systems often qualify for reduced insurance premiums and provide crucial evidence for claims processing.</p>
+                </div>
+            </div>
+            
+            <!-- Additional Benefits -->
+            <div class="mt-16 bg-softGray p-10 rounded-2xl border border-tealBlue/20" data-anim data-anim-delay="0.54s">
+                <h3 class="text-2xl font-heavy mb-8 text-deepBlue text-center">Additional Security Advantages</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-tealBlue text-xl">📈</span>
+                        </div>
+                        <p class="font-semibold text-deepBlue">Increased Property Value</p>
+                        <p class="text-sm text-charcoal">Security systems enhance property desirability and value</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-tealBlue text-xl">😌</span>
+                        </div>
+                        <p class="font-semibold text-deepBlue">Peace of Mind</p>
+                        <p class="text-sm text-charcoal">Knowing your property is protected reduces stress and worry</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-tealBlue text-xl">👨‍👩‍👧‍👦</span>
+                        </div>
+                        <p class="font-semibold text-deepBlue">Family Safety</p>
+                        <p class="text-sm text-charcoal">Protect your loved ones with comprehensive home security</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-4">
+                            <span class="text-tealBlue text-xl">🏢</span>
+                        </div>
+                        <p class="font-semibold text-deepBlue">Business Continuity</p>
+                        <p class="text-sm text-charcoal">Minimize disruptions and protect business operations</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Implementation Process -->
+    <section class="py-24 bg-softGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    Our <span class="text-tealBlue">Security Implementation</span> Process
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    A systematic approach to designing, installing, and maintaining your security system.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Step 1 -->
+                <div class="process-step step-1" data-anim data-anim-delay="0.18s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Security Assessment & Planning</h3>
+                    <p class="text-charcoal mb-4">We conduct a comprehensive security assessment to identify vulnerabilities and design an optimal protection strategy.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-6">
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Assessment Activities</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Site security survey</li>
+                                <li>• Vulnerability assessment</li>
+                                <li>• Risk analysis</li>
+                                <li>• Entry point evaluation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Planning Deliverables</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Security system design</li>
+                                <li>• Equipment specifications</li>
+                                <li>• Installation roadmap</li>
+                                <li>• Budget and timeline</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="process-step step-2" data-anim data-anim-delay="0.24s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">System Design & Customization</h3>
+                    <p class="text-charcoal mb-4">Creating tailored security solutions that address your specific risks, layout, and protection requirements.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-6">
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Design Components</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Camera placement strategy</li>
+                                <li>• Access control design</li>
+                                <li>• Alarm system configuration</li>
+                                <li>• Integration planning</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Customization Features</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• User-specific access levels</li>
+                                <li>• Custom monitoring protocols</li>
+                                <li>• Integration with existing systems</li>
+                                <li>• Scalable architecture</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="process-step step-3" data-anim data-anim-delay="0.30s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Professional Installation</h3>
+                    <p class="text-charcoal mb-4">Expert installation with minimal disruption, ensuring optimal performance and system reliability.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-6">
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Installation Services</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• Equipment installation</li>
+                                <li>• Cable routing & management</li>
+                                <li>• System configuration</li>
+                                <li>• Network integration</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Quality Assurance</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• System testing & calibration</li>
+                                <li>• Performance verification</li>
+                                <li>• Coverage optimization</li>
+                                <li>• Documentation completion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="process-step step-4" data-anim data-anim-delay="0.36s">
+                    <h3 class="text-2xl font-heavy mb-4 text-deepBlue">Training & Ongoing Support</h3>
+                    <p class="text-charcoal mb-4">Comprehensive training and continuous support to ensure you get maximum value from your security investment.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 ml-6">
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Training Program</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• System operation training</li>
+                                <li>• Mobile app instruction</li>
+                                <li>• Emergency procedures</li>
+                                <li>• Maintenance basics</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-deepBlue mb-2">Support Services</h4>
+                            <ul class="text-sm text-charcoal space-y-2">
+                                <li>• 24/7 technical support</li>
+                                <li>• Regular maintenance</li>
+                                <li>• System upgrades</li>
+                                <li>• Emergency response</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center" data-anim data-anim-delay="0.42s">
+                <div class="inline-block bg-softGray p-10 rounded-2xl border border-deepBlue/20 max-w-3xl mx-auto">
+                    <p class="text-2xl font-heavy text-deepBlue mb-6">
+                        "Security isn't just about installing cameras—it's about creating a comprehensive protection ecosystem that adapts to evolving threats and provides real peace of mind."
+                    </p>
+                    <p class="text-tealBlue font-heavy tracking-widest text-sm">— OUR SECURITY PHILOSOPHY</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Industries & Applications -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heavy mb-6 text-deepBlue" data-anim data-anim-delay="0.06s">
+                    <span class="text-tealBlue">Industries</span> We Protect
+                </h2>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                    Tailored security solutions for diverse environments and protection needs.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Industry 1 -->
+                <div class="bg-softGray p-8 rounded-2xl text-center" data-anim data-anim-delay="0.18s">
+                    <div class="w-16 h-16 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-tealBlue text-2xl">🏠</span>
+                    </div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Residential Homes</h3>
+                    <p class="text-charcoal">Complete home security systems for families, apartments, and private residences.</p>
+                </div>
+                
+                <!-- Industry 2 -->
+                <div class="bg-softGray p-8 rounded-2xl text-center" data-anim data-anim-delay="0.24s">
+                    <div class="w-16 h-16 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-tealBlue text-2xl">🏪</span>
+                    </div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Retail Stores</h3>
+                    <p class="text-charcoal">Theft prevention, inventory protection, and customer safety for retail environments.</p>
+                </div>
+                
+                <!-- Industry 3 -->
+                <div class="bg-softGray p-8 rounded-2xl text-center" data-anim data-anim-delay="0.30s">
+                    <div class="w-16 h-16 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-tealBlue text-2xl">🏢</span>
+                    </div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Corporate Offices</h3>
+                    <p class="text-charcoal">Access control, surveillance, and asset protection for business premises.</p>
+                </div>
+                
+                <!-- Industry 4 -->
+                <div class="bg-softGray p-8 rounded-2xl text-center" data-anim data-anim-delay="0.36s">
+                    <div class="w-16 h-16 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-tealBlue text-2xl">🏭</span>
+                    </div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Industrial Facilities</h3>
+                    <p class="text-charcoal">Perimeter security, equipment protection, and safety monitoring for industrial sites.</p>
+                </div>
+                
+                <!-- Industry 5 -->
+                <div class="bg-softGray p-8 rounded-2xl text-center" data-anim data-anim-delay="0.42s">
+                    <div class="w-16 h-16 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-tealBlue text-2xl">🏫</span>
+                    </div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Educational Institutions</h3>
+                    <p class="text-charcoal">Campus security, access control, and emergency response for schools and universities.</p>
+                </div>
+                
+                <!-- Industry 6 -->
+                <div class="bg-softGray p-8 rounded-2xl text-center" data-anim data-anim-delay="0.48s">
+                    <div class="w-16 h-16 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-tealBlue text-2xl">🏥</span>
+                    </div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Healthcare Facilities</h3>
+                    <p class="text-charcoal">Patient safety, medication security, and access control for medical environments.</p>
+                </div>
+                
+                <!-- Industry 7 -->
+                <div class="bg-softGray p-8 rounded-2xl text-center" data-anim data-anim-delay="0.54s">
+                    <div class="w-16 h-16 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-tealBlue text-2xl">🏨</span>
+                    </div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Hospitality</h3>
+                    <p class="text-charcoal">Guest safety, property protection, and access management for hotels and resorts.</p>
+                </div>
+                
+                <!-- Industry 8 -->
+                <div class="bg-softGray p-8 rounded-2xl text-center" data-anim data-anim-delay="0.60s">
+                    <div class="w-16 h-16 rounded-full bg-tealBlue/20 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-tealBlue text-2xl">📦</span>
+                    </div>
+                    <h3 class="text-xl font-heavy mb-4 text-deepBlue">Warehouses & Storage</h3>
+                    <p class="text-charcoal">Inventory protection, access control, and perimeter security for storage facilities.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-deepBlue p-10 rounded-2xl text-white" data-anim data-anim-delay="0.66s">
+                <h3 class="text-2xl font-heavy mb-8 text-center">24/7 Monitoring Coverage</h3>
+                <div class="coverage-map">
+                    <div class="coverage-item">
+                        <div class="text-3xl font-bold text-tealBlue mb-2">24/7</div>
+                        <p class="text-white font-semibold">Live Monitoring</p>
+                    </div>
+                    <div class="coverage-item">
+                        <div class="text-3xl font-bold text-tealBlue mb-2">Rapid</div>
+                        <p class="text-white font-semibold">Response Dispatch</p>
+                    </div>
+                    <div class="coverage-item">
+                        <div class="text-3xl font-bold text-tealBlue mb-2">Instant</div>
+                        <p class="text-white font-semibold">Mobile Alerts</p>
+                    </div>
+                    <div class="coverage-item">
+                        <div class="text-3xl font-bold text-tealBlue mb-2">Remote</div>
+                        <p class="text-white font-semibold">System Access</p>
+                    </div>
+                    <div class="coverage-item">
+                        <div class="text-3xl font-bold text-tealBlue mb-2">Predictive</div>
+                        <p class="text-white font-semibold">Threat Modeling</p>
+                    </div>
+                    <div class="coverage-item">
+                        <div class="text-3xl font-bold text-tealBlue mb-2">Scalable</div>
+                        <p class="text-white font-semibold">Protection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section id="assessment" class="py-24 bg-deepBlue relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-deepBlue to-tealBlue/30"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-heavy mb-8 text-white" data-anim data-anim-delay="0.06s">
+                Secure Your <span class="text-safetyOrange">Premises Today</span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-3xl mx-auto" data-anim data-anim-delay="0.12s">
+                Get a comprehensive security assessment and customized protection plan for your home or business.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center" data-anim data-anim-delay="0.18s">
+                <a href="Contact.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white bg-safetyOrange hover:bg-safetyOrangeHover transition transform hover:scale-105">
+                    Get a Security Assessment
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                    </svg>
+                </a>
+                <a href="tel:+233XXXXXXXXX" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-white border-2 border-white hover:bg-white hover:text-deepBlue transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    Emergency Security Line
+                </a>
+            </div>
+            
+            <div class="mt-16 bg-white/10 p-8 rounded-2xl border border-white/20" data-anim data-anim-delay="0.24s">
+                <h3 class="text-2xl font-heavy mb-6 text-white">What's Included in Your Security Assessment</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-safetyOrange flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-semibold">Vulnerability Analysis</p>
+                        <p class="text-gray-300 text-sm">Comprehensive security risk assessment</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-safetyOrange flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-semibold">Custom Solution Design</p>
+                        <p class="text-gray-300 text-sm">Tailored security system recommendations</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full bg-safetyOrange flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <p class="text-white font-semibold">Implementation Plan</p>
+                        <p class="text-gray-300 text-sm">Clear timeline and installation schedule</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-deepBlue text-white/80 py-16 border-t border-white/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-12 pb-8 border-b border-white/20">
+                <h2 class="text-3xl font-heavy tracking-tighter mb-2"><span class="text-safetyOrange">PESEWANI.TECH</span></h2>
+                <p class="text-sm font-bold tracking-widest uppercase text-white/60">Smart ICT. Secure Spaces. Productive Workplaces.</p>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- About Us -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">About Us</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Company Overview</a></li>
+                        <li><a href="about.html#mission" class="hover:text-safetyOrange transition">• Mission & Vision</a></li>
+                        <li><a href="about.html#values" class="hover:text-safetyOrange transition">• Core Values</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Services</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="shop-office.html" class="hover:text-safetyOrange transition">• Shops & Offices</a></li>
+                        <li><a href="ICT.HTML" class="hover:text-safetyOrange transition">• ICT Policy</a></li>
+                        <li><a href="Security-Solution.html" class="text-safetyOrange hover:text-safetyOrange transition">• Security Solutions</a></li>
+                        <li><a href="Ergonomics.html" class="hover:text-safetyOrange transition">• Ergonomics</a></li>
+                        <li><a href="Healthcare.html" class="hover:text-safetyOrange transition">• Healthcare ICT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Compliance -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Legal & Compliance</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Acceptable Use</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support & Contact + Trust & Security -->
+                <div>
+                    <div class="mb-8">
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Support & Contact</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Contact Us</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Help / Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Trust & Security</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Security Practices</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Compliance</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Data Protection</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] font-heavy tracking-[0.2em] uppercase text-white/60">
+                <span class="mb-4 md:mb-0">© 2026 PESEWANI TECH</span>
+                <span>Professional Security Solutions for Homes & Offices</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+        
+        // Animation observer
+        (function () {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) e.target.classList.add('in-view');
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('[data-anim]').forEach(el => {
+                el.classList.add('fade-up');
+                io.observe(el);
+                
+                // Add delay based on data attribute
+                const delay = el.getAttribute('data-anim-delay');
+                if (delay) {
+                    el.style.transitionDelay = delay;
+                }
+            });
+        })();
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Pulse animation for monitoring badge
+        const monitoringBadge = document.querySelector('.monitoring-badge');
+        if (monitoringBadge) {
+            setInterval(() => {
+                monitoringBadge.style.animation = 'none';
+                setTimeout(() => {
+                    monitoringBadge.style.animation = 'pulse 2s infinite';
+                }, 10);
+            }, 4000);
+        }
+    </script>
+</body>
+</html>

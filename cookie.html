@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy | Pesewani.tech</title>
+    <link rel="icon" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGO 2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="LOGO 2.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="LOGO 2.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F59E0B" />
+    <meta name="msapplication-TileColor" content="#F59E0B" />
+    <meta name="theme-color" content="#0F2A44" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlue: '#0F2A44',
+                        tealBlue: '#1FA2A6',
+                        safetyOrange: '#F59E0B',
+                        safetyOrangeHover: '#D97706',
+                        charcoal: '#1F2933',
+                        softGray: '#F5F7FA',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; color: #1F2933; background-color: #F5F7FA; }
+        h1, h2, h3 { font-family: 'Poppins', sans-serif; color: #0F2A44; }
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap');
+        .font-heavy { font-family: 'Syncopate', sans-serif; text-transform: uppercase; }
+        
+        .cookie-type-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 4px solid;
+        }
+        
+        .cookie-type-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(15, 42, 68, 0.1);
+        }
+        
+        .cookie-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .compliance-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(31, 162, 166, 0.1);
+            border: 1px solid rgba(31, 162, 166, 0.2);
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .legal-basis-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 0.5rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #0F2A44;
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 40;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background: #F59E0B;
+            transform: translateY(-2px);
+        }
+        
+        .section-anchor {
+            scroll-margin-top: 8rem;
+        }
+        
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .cookie-table th,
+        .cookie-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(15, 42, 68, 0.1);
+        }
+        
+        .cookie-table th {
+            background: rgba(15, 42, 68, 0.05);
+            font-weight: 600;
+            color: #0F2A44;
+        }
+        
+        .cookie-table tr:hover {
+            background: rgba(245, 158, 11, 0.05);
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: #F59E0B;
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(30px);
+        }
+        
+        .cookie-consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid rgba(15, 42, 68, 0.1);
+            padding: 1.5rem;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .cookie-consent-banner.show {
+            transform: translateY(0);
+        }
+        
+        .print-button {
+            transition: all 0.2s ease;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-softGray">
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent-banner">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                        <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12zm1-10a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                        </svg>
+                        <h4 class="font-semibold text-deepBlue">Cookie Preferences</h4>
+                    </div>
+                    <p class="text-sm text-charcoal">
+                        We use cookies to enhance your experience, analyze site traffic, and improve our services. 
+                        By clicking "Accept All", you consent to our use of cookies. You can customize your preferences.
+                    </p>
+                </div>
+                <div class="flex gap-3">
+                    <button id="acceptAllCookies" class="px-4 py-2 bg-safetyOrange text-white text-sm font-semibold rounded-lg hover:bg-safetyOrangeHover transition">
+                        Accept All
+                    </button>
+                    <button id="customizeCookies" class="px-4 py-2 bg-white text-deepBlue text-sm font-semibold rounded-lg border border-deepBlue/20 hover:bg-deepBlue/5 transition">
+                        Customize
+                    </button>
+                    <button id="rejectAllCookies" class="px-4 py-2 bg-white text-charcoal text-sm font-semibold rounded-lg border border-deepBlue/20 hover:bg-deepBlue/5 transition">
+                        Reject All
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div id="cookieSettingsModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/50">
+        <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-deepBlue">Cookie Settings</h3>
+                        <p class="text-charcoal text-sm mt-1">Manage your cookie preferences</p>
+                    </div>
+                    <button id="closeCookieSettings" class="p-2 hover:bg-deepBlue/5 rounded-lg transition">
+                        <svg class="w-6 h-6 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="space-y-6">
+                    <!-- Strictly Necessary -->
+                    <div class="p-4 border border-safetyOrange/30 rounded-lg bg-safetyOrange/5">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-safetyOrange/20 flex items-center justify-center">
+                                    <span class="text-safetyOrange font-bold">✓</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-deepBlue">Strictly Necessary Cookies</h4>
+                                    <p class="text-sm text-charcoal">Always active - required for website functionality</p>
+                                </div>
+                            </div>
+                            <div class="text-sm text-charcoal italic">Cannot be disabled</div>
+                        </div>
+                        <p class="text-sm text-charcoal/70">
+                            Essential for authentication, security, and system integrity. These cookies do not store personal data.
+                        </p>
+                    </div>
+                    
+                    <!-- Performance & Analytics -->
+                    <div class="p-4 border border-tealBlue/30 rounded-lg">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-tealBlue/20 flex items-center justify-center">
+                                    <span class="text-tealBlue font-bold">📊</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-deepBlue">Performance & Analytics Cookies</h4>
+                                    <p class="text-sm text-charcoal">Help us understand how users interact with our platforms</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="performanceCookies" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <p class="text-sm text-charcoal/70 mb-3">
+                            Used to analyze page views, error rates, and user behavior. Data is aggregated and anonymized.
+                        </p>
+                    </div>
+                    
+                    <!-- Functional Cookies -->
+                    <div class="p-4 border border-deepBlue/30 rounded-lg">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-deepBlue/20 flex items-center justify-center">
+                                    <span class="text-deepBlue font-bold">⚙️</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-deepBlue">Functional Cookies</h4>
+                                    <p class="text-sm text-charcoal">Remember your preferences and settings</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="functionalCookies" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <p class="text-sm text-charcoal/70 mb-3">
+                            Enable enhanced functionality such as language settings, theme preferences, and configurations.
+                        </p>
+                    </div>
+                    
+                    <!-- Security Cookies -->
+                    <div class="p-4 border border-red-200 rounded-lg">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center">
+                                    <span class="text-red-600 font-bold">🛡️</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-deepBlue">Security Cookies</h4>
+                                    <p class="text-sm text-charcoal">Protect against fraud and maintain system integrity</p>
+                                </div>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="securityCookies" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <p class="text-sm text-charcoal/70 mb-3">
+                            Used across our SaaS, POS, and cybersecurity platforms to detect fraud, prevent attacks, and maintain security.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 flex justify-end gap-3">
+                    <button id="saveCookiePreferences" class="px-6 py-3 bg-safetyOrange text-white font-semibold rounded-lg hover:bg-safetyOrangeHover transition">
+                        Save Preferences
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-deepBlue/10">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-10">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-heavy tracking-tighter text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                    </div>
+                    <div class="hidden md:flex items-center gap-6">
+                        <a href="index.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Home</a>
+                        <div class="relative group">
+                            <button class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase flex items-center gap-2">
+                                Services
+                                <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                                </svg>
+                            </button>
+                            <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 hidden group-hover:block bg-white border border-deepBlue/10 shadow-2xl rounded-lg overflow-hidden min-w-[280px] z-50">
+                                <div class="p-1">
+                                    <a href="shop-office.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        Shops & Office Setup
+                                    </a>
+                                    <a href="Security-Solution.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        Security Solutions
+                                    </a>
+                                    <a href="ICT.HTML" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        ICT Governance & Data Policy
+                                    </a>
+                                    <a href="Healthcare.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        Healthcare ICT Solutions
+                                    </a>
+                                    <a href="Ergonomics.html" class="flex items-center gap-3 px-4 py-3 text-[11px] font-heavy tracking-wider text-deepBlue hover:bg-safetyOrange/10 hover:text-safetyOrange transition rounded-md group/item">
+                                        <span class="w-2 h-2 rounded-full bg-safetyOrange group-hover/item:scale-150 transition-transform"></span>
+                                        Ergonomics
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="Industries.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">Industries</a>
+                        <a href="about.html" class="text-[10px] font-heavy tracking-[0.3em] text-deepBlue hover:text-safetyOrange transition uppercase">About Us</a>
+                        <a href="Contact.html" class="text-[10px] font-heavy tracking-[0.3em] text-charcoal hover:text-safetyOrange transition uppercase">Contact</a>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center gap-2">
+                    <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                    <a href="#" class="px-6 py-2 text-[10px] font-heavy tracking-widest bg-safetyOrange text-white hover:skew-x-[-12deg] transition-transform">GET_STARTED</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" aria-expanded="false" class="p-2 text-safetyOrange">
+                        <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" stroke-width="3"/></svg>
+                        <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="3"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu panel -->
+        <div id="mobileMenu" class="hidden md:hidden fixed inset-0 z-40 -translate-y-full transform transition-transform duration-300">
+            <div class="absolute inset-0 bg-black/85"></div>
+            <div class="relative max-w-md mx-auto mt-20 bg-white border border-deepBlue/10 rounded-2xl overflow-hidden shadow-2xl">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <span class="text-xl font-heavy text-deepBlue">PESEWANI<span class="text-safetyOrange">.TECH</span></span>
+                        </div>
+                        <button id="mobileClose" class="p-2 text-charcoal hover:text-deepBlue">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12" stroke-width="2"/></svg>
+                        </button>
+                    </div>
+
+                    <nav class="flex flex-col gap-2">
+                        <a href="index.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Home</a>
+                        
+                        <div class="relative group">
+                            <button class="w-full text-left text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition flex items-center justify-between">
+                                Services
+                                <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                                </svg>
+                            </button>
+                            <div class="hidden group-hover:block pl-4 bg-deepBlue/5 rounded-lg mt-1">
+                                <a href="shop-office.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Shops & Office Setup</a>
+                                <a href="ICT.HTML" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">ICT Governance & Data Policy</a>
+                                <a href="Security-Solution.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Security Solutions</a>
+                                <a href="Healthcare.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Healthcare ICT Solutions</a>
+                                <a href="Ergonomics.html" class="block text-xs font-heavy tracking-widest text-charcoal uppercase px-4 py-2 rounded hover:text-safetyOrange transition">Ergonomics</a>
+                            </div>
+                        </div>
+
+                        <a href="Industries.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Industries</a>
+                        <a href="about.html" class="text-sm font-heavy tracking-widest text-deepBlue uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">About Us</a>
+                        <a href="Contact.html" class="text-sm font-heavy tracking-widest text-charcoal uppercase px-4 py-3 rounded-lg hover:bg-deepBlue/5 transition">Contact</a>
+                    </nav>
+
+                    <div class="mt-6 flex flex-col gap-3">
+                        <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest text-deepBlue border border-deepBlue/20 rounded-lg text-center hover:bg-deepBlue hover:text-white transition">LOGIN</a>
+                        <a href="#" class="px-6 py-3 text-[12px] font-heavy tracking-widest bg-safetyOrange text-white rounded-lg text-center hover:skew-x-[-8deg] transition-transform">GET_STARTED</a>
+                    </div>
+
+                    <div class="mt-6 text-xs text-charcoal font-mono tracking-widest">© PESEWANI.TECH</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-16 bg-deepBlue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="inline-flex items-center gap-3 mb-6">
+                    <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                    <span class="text-safetyOrange font-heavy text-xs tracking-[0.3em]">
+                        COOKIE POLICY
+                    </span>
+                    <span class="h-[1px] w-12 bg-safetyOrange"></span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-4 text-white">
+                    Cookie Policy
+                </h1>
+                
+                <p class="text-gray-100 max-w-3xl mx-auto mb-8 text-lg">
+                    How we use cookies and similar technologies across our platforms and services
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <div class="text-sm text-gray-300">
+                        <span class="font-bold">Effective Date:</span> 1st January 2026
+                    </div>
+                    <div class="text-sm text-gray-300">
+                        <span class="font-bold">Version:</span> 1.0
+                    </div>
+                    <button onclick="window.print()" class="print-button px-6 py-2 text-sm font-semibold bg-white/20 text-white border border-white/30 hover:bg-white/30 transition rounded-lg flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                        </svg>
+                        Print Policy
+                    </button>
+                    <button id="manageCookiesBtn" class="px-6 py-2 text-sm font-semibold bg-safetyOrange text-white hover:bg-safetyOrangeHover transition rounded-lg flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                        </svg>
+                        Manage Cookies
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <div class="sticky top-20 z-30 bg-white/90 backdrop-blur-sm border-y border-deepBlue/10 hidden md:block">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <div class="table-of-contents flex gap-6 overflow-x-auto text-sm">
+                <a href="#what-are-cookies" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">1. What Are Cookies?</a>
+                <a href="#types-of-cookies" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">2. Types of Cookies</a>
+                <a href="#legal-basis" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">3. Legal Basis</a>
+                <a href="#managing-cookies" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">4. Managing Cookies</a>
+                <a href="#third-party-cookies" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">5. Third-Party Cookies</a>
+                <a href="#updates" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">6. Updates</a>
+                <a href="#contact" class="whitespace-nowrap hover:text-safetyOrange transition border-l-2 border-transparent pl-2">7. Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Compliance Badges -->
+        <div class="mb-12">
+            <h3 class="text-lg font-semibold text-deepBlue mb-4">Compliant With:</h3>
+            <div class="flex flex-wrap gap-3">
+                <div class="compliance-badge">
+                    <svg class="w-5 h-5 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Ghana Data Protection Act, 2012 (Act 843)</span>
+                </div>
+                <div class="compliance-badge">
+                    <svg class="w-5 h-5 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>EU General Data Protection Regulation (GDPR)</span>
+                </div>
+                <div class="compliance-badge">
+                    <svg class="w-5 h-5 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>UK GDPR</span>
+                </div>
+                <div class="compliance-badge">
+                    <svg class="w-5 h-5 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>International Privacy Standards</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: What Are Cookies? -->
+        <section id="what-are-cookies" class="section-anchor mb-12">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-safetyOrange/10 flex items-center justify-center">
+                    <span class="text-2xl font-bold text-safetyOrange">1</span>
+                </div>
+                <h2 class="text-3xl font-bold text-deepBlue">What Are Cookies?</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-charcoal text-lg mb-6">
+                            Cookies are small text files stored on your device when you visit a website. They help websites function efficiently, enhance user experience, and provide analytical insights.
+                        </p>
+                        <div class="flex items-center gap-3 text-sm text-charcoal/70">
+                            <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Small text files stored on your device</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-charcoal/70 mt-2">
+                            <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Enable efficient website functionality</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-charcoal/70 mt-2">
+                            <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Enhance user experience and provide insights</span>
+                        </div>
+                    </div>
+                    <div class="bg-deepBlue/5 p-6 rounded-lg">
+                        <div class="text-center">
+                            <div class="text-6xl mb-4">🍪</div>
+                            <p class="text-sm text-charcoal italic">
+                                "Cookies help websites remember your preferences and improve your browsing experience."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Types of Cookies -->
+        <section id="types-of-cookies" class="section-anchor mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-safetyOrange/10 flex items-center justify-center">
+                    <span class="text-2xl font-bold text-safetyOrange">2</span>
+                </div>
+                <h2 class="text-3xl font-bold text-deepBlue">Types of Cookies We Use</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Strictly Necessary -->
+                <div class="cookie-type-card border-l-safetyOrange bg-white p-6 rounded-lg shadow-sm">
+                    <div class="cookie-badge bg-safetyOrange/20 text-safetyOrange">Essential</div>
+                    <h3 class="text-xl font-semibold text-deepBlue mb-3 mt-2">Strictly Necessary Cookies</h3>
+                    <p class="text-charcoal text-sm mb-4">
+                        These cookies are essential for the operation of our Services, including authentication, security, and system integrity.
+                    </p>
+                    <div class="text-xs text-charcoal/70">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Authentication & Security</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>System Integrity</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Required for Operation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance & Analytics -->
+                <div class="cookie-type-card border-l-tealBlue bg-white p-6 rounded-lg shadow-sm">
+                    <div class="cookie-badge bg-tealBlue/20 text-tealBlue">Analytics</div>
+                    <h3 class="text-xl font-semibold text-deepBlue mb-3 mt-2">Performance & Analytics Cookies</h3>
+                    <p class="text-charcoal text-sm mb-4">
+                        Used to understand how users interact with our platforms (e.g., page views, error rates). Data is aggregated and anonymized where possible.
+                    </p>
+                    <div class="text-xs text-charcoal/70">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Page View Analysis</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Error Rate Monitoring</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-tealBlue" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Aggregated & Anonymized</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Functional Cookies -->
+                <div class="cookie-type-card border-l-deepBlue bg-white p-6 rounded-lg shadow-sm">
+                    <div class="cookie-badge bg-deepBlue/20 text-deepBlue">Functional</div>
+                    <h3 class="text-xl font-semibold text-deepBlue mb-3 mt-2">Functional Cookies</h3>
+                    <p class="text-charcoal text-sm mb-4">
+                        Enable enhanced functionality such as remembering preferences, language settings, and configurations.
+                    </p>
+                    <div class="text-xs text-charcoal/70">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-deepBlue" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Remember Preferences</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-deepBlue" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Language Settings</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-deepBlue" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Enhanced Functionality</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Cookies -->
+                <div class="cookie-type-card border-l-red-500 bg-white p-6 rounded-lg shadow-sm">
+                    <div class="cookie-badge bg-red-500/20 text-red-600">Security</div>
+                    <h3 class="text-xl font-semibold text-deepBlue mb-3 mt-2">Security Cookies</h3>
+                    <p class="text-charcoal text-sm mb-4">
+                        Used across our SaaS, POS, and cybersecurity platforms to detect fraud, prevent attacks, and maintain system integrity.
+                    </p>
+                    <div class="text-xs text-charcoal/70">
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Fraud Detection</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Attack Prevention</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>System Integrity</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Legal Basis -->
+        <section id="legal-basis" class="section-anchor mb-12">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-safetyOrange/10 flex items-center justify-center">
+                    <span class="text-2xl font-bold text-safetyOrange">3</span>
+                </div>
+                <h2 class="text-3xl font-bold text-deepBlue">Legal Basis for Use</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-8">
+                <p class="text-charcoal text-lg mb-8">
+                    We rely on multiple legal bases for the use of cookies and similar technologies:
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="legal-basis-chip">
+                        <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold">User Consent</span>
+                    </div>
+                    <div class="legal-basis-chip">
+                        <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold">Legitimate Interest</span>
+                    </div>
+                    <div class="legal-basis-chip">
+                        <svg class="w-5 h-5 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold">Legal Obligation</span>
+                    </div>
+                </div>
+                
+                <div class="mt-8 p-6 bg-deepBlue/5 rounded-lg">
+                    <h4 class="font-semibold text-deepBlue mb-3">Legitimate Interests Include:</h4>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Security and fraud prevention</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>System performance optimization</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Service delivery and functionality</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Compliance with regulatory requirements</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Managing Cookies -->
+        <section id="managing-cookies" class="section-anchor mb-12">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-safetyOrange/10 flex items-center justify-center">
+                    <span class="text-2xl font-bold text-safetyOrange">4</span>
+                </div>
+                <h2 class="text-3xl font-bold text-deepBlue">Managing Cookies</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-deepBlue mb-4">Browser Settings</h3>
+                        <p class="text-charcoal mb-6">
+                            Users may control or delete cookies through their browser settings. Most browsers allow you to:
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-safetyOrange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Block or allow all cookies</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-safetyOrange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Delete existing cookies</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-safetyOrange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Set preferences for specific websites</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-safetyOrange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Auto-delete cookies when closing browser</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-red-50 border border-red-100 rounded-lg p-6 mb-6">
+                            <div class="flex items-center gap-3 mb-3">
+                                <svg class="w-6 h-6 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                                </svg>
+                                <h4 class="font-semibold text-deepBlue">Important Note</h4>
+                            </div>
+                            <p class="text-charcoal">
+                                <strong>Disabling cookies may affect platform functionality.</strong> Some features may not work properly if cookies are blocked, particularly:
+                            </p>
+                            <ul class="mt-3 space-y-2">
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                                    <span>Authentication and login systems</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                                    <span>Shopping carts and e-commerce functions</span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm">
+                                    <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                                    <span>Personalized settings and preferences</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <button id="openCookieSettings" class="w-full px-6 py-3 bg-safetyOrange text-white font-semibold rounded-lg hover:bg-safetyOrangeHover transition flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                            </svg>
+                            Manage Your Cookie Preferences
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Third-Party Cookies -->
+        <section id="third-party-cookies" class="section-anchor mb-12">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-safetyOrange/10 flex items-center justify-center">
+                    <span class="text-2xl font-bold text-safetyOrange">5</span>
+                </div>
+                <h2 class="text-3xl font-bold text-deepBlue">Third-Party Cookies</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-8">
+                <p class="text-charcoal text-lg mb-8">
+                    We may allow trusted third-party services to place cookies in accordance with their own privacy policies. These include:
+                </p>
+                
+                <div class="overflow-x-auto">
+                    <table class="cookie-table">
+                        <thead>
+                            <tr>
+                                <th>Service Type</th>
+                                <th>Purpose</th>
+                                <th>Privacy Policy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-medium">Analytics Providers</td>
+                                <td>Website usage analysis and improvement</td>
+                                <td>Respective provider policies</td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Security Monitoring</td>
+                                <td>Fraud detection and security enhancement</td>
+                                <td>Respective provider policies</td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Cloud Providers</td>
+                                <td>Service delivery and infrastructure</td>
+                                <td>Respective provider policies</td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium">Payment Processors</td>
+                                <td>Transaction security and processing</td>
+                                <td>Respective provider policies</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mt-8 p-6 bg-deepBlue/5 rounded-lg">
+                    <h4 class="font-semibold text-deepBlue mb-3">Third-Party Cookie Control</h4>
+                    <p class="text-charcoal mb-3">
+                        For information about how third-party services use cookies and to manage your preferences, please refer to their respective privacy policies.
+                    </p>
+                    <p class="text-sm text-charcoal/70">
+                        We carefully select third-party providers who adhere to privacy standards and provide opt-out mechanisms where available.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Updates -->
+        <section id="updates" class="section-anchor mb-12">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-safetyOrange/10 flex items-center justify-center">
+                    <span class="text-2xl font-bold text-safetyOrange">6</span>
+                </div>
+                <h2 class="text-3xl font-bold text-deepBlue">Updates to This Policy</h2>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-charcoal text-lg mb-6">
+                            We may update this Cookie Policy periodically to reflect changes in technology, regulations, or business practices.
+                        </p>
+                        
+                        <div class="bg-yellow-50 border border-yellow-100 rounded-lg p-6">
+                            <div class="flex items-center gap-3 mb-3">
+                                <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                                </svg>
+                                <h4 class="font-semibold text-deepBlue">Stay Informed</h4>
+                            </div>
+                            <p class="text-charcoal">
+                                Users are responsible for regularly reviewing this Cookie Policy. Continued use of our Services after updates constitutes acceptance of the revised policy.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-deepBlue mb-4">How We Notify You</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-safetyOrange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <div>
+                                    <span class="font-medium">Policy Updates Posted Here</span>
+                                    <p class="text-sm text-charcoal/70 mt-1">Changes will be posted on this page with a revised effective date</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-safetyOrange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <div>
+                                    <span class="font-medium">Email Notifications</span>
+                                    <p class="text-sm text-charcoal/70 mt-1">For significant changes affecting user rights</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-safetyOrange mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <div>
+                                    <span class="font-medium">Banner Notices</span>
+                                    <p class="text-sm text-charcoal/70 mt-1">On our websites for major policy updates</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Contact -->
+        <section id="contact" class="section-anchor mb-16">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-safetyOrange/10 flex items-center justify-center">
+                    <span class="text-2xl font-bold text-safetyOrange">7</span>
+                </div>
+                <h2 class="text-3xl font-bold text-deepBlue">Contact Information</h2>
+            </div>
+            
+            <div class="bg-safetyOrange/5 p-8 rounded-xl border border-safetyOrange/20">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-deepBlue mb-4">Pesewani Tech</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3">
+                                <svg class="w-6 h-6 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                                <div>
+                                    <a href="mailto:privacy@pesewani.tech" class="text-deepBlue hover:text-safetyOrange font-medium text-lg">privacy@pesewani.tech</a>
+                                    <p class="text-sm text-charcoal">For privacy and cookie-related inquiries</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <svg class="w-6 h-6 text-safetyOrange" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M7 2a2 2 0 00-2 2v12a2 2 0 002 2h6a2 2 0 002-2V4a2 2 0 00-2-2H7zm3 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                                </svg>
+                                <div>
+                                    <span class="font-medium text-deepBlue">Data Protection Officer</span>
+                                    <p class="text-sm text-charcoal">Available for data protection inquiries</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-deepBlue mb-3">Response Time</h4>
+                        <p class="text-charcoal mb-2">We aim to respond to all privacy and cookie inquiries within 7 business days.</p>
+                        <p class="text-sm text-charcoal/70">
+                            For urgent matters regarding data protection or security, please indicate "URGENT" in your email subject line.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Disclaimer -->
+        <div class="bg-deepBlue text-white p-8 rounded-xl">
+            <div class="flex items-start gap-4">
+                <svg class="w-8 h-8 text-safetyOrange flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-3">Important Legal Disclaimer</h3>
+                    <p class="text-white/90 mb-3">
+                        This Cookie Policy is provided for compliance and transparency and does not replace legal advice. 
+                        Users are encouraged to seek independent legal counsel for specific compliance questions or interpretations regarding cookie usage and data protection.
+                    </p>
+                    <div class="flex items-center gap-4 text-sm text-white/70">
+                        <span>Last updated: January 2026</span>
+                        <span>Version: 1.0</span>
+                        <span>Effective: 1st January 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top" id="backToTop">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+            </svg>
+        </a>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-deepBlue text-white/80 py-16 border-t border-white/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Header -->
+            <div class="text-center mb-12 pb-8 border-b border-white/20">
+                <h2 class="text-3xl font-heavy tracking-tighter mb-2"><span class="text-safetyOrange">PESEWANI.TECH</span></h2>
+                <p class="text-sm font-bold tracking-widest uppercase text-white/60">Smart ICT. Secure Spaces. Productive Workplaces.</p>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- About Us -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">About Us</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Company Overview</a></li>
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Mission & Vision</a></li>
+                        <li><a href="about.html" class="hover:text-safetyOrange transition">• Core Values</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Services</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="shop-office.html" class="hover:text-safetyOrange transition">• Shops & Offices</a></li>
+                        <li><a href="ICT.HTML" class="hover:text-safetyOrange transition">• ICT Policy</a></li>
+                        <li><a href="Security-Solution.html" class="hover:text-safetyOrange transition">• Security Solutions</a></li>
+                        <li><a href="Ergonomics.html" class="hover:text-safetyOrange transition">• Ergonomics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Compliance -->
+                <div>
+                    <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Legal & Compliance</h4>
+                    <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Acceptable Use Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition border-l-2 border-safetyOrange pl-2">• Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-safetyOrange transition">• Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support & Contact + Trust & Security -->
+                <div>
+                    <div class="mb-8">
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Support & Contact</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Contact Us</a></li>
+                            <li><a href="Contact.html" class="hover:text-safetyOrange transition">• Help / Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-heavy text-xs mb-6 tracking-widest uppercase border-b border-safetyOrange pb-3">Trust & Security</h4>
+                        <ul class="space-y-3 text-[11px] font-semibold tracking-wide uppercase">
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Security Practices</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Compliance</a></li>
+                            <li><a href="#" class="hover:text-safetyOrange transition">• Data Protection</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] font-heavy tracking-[0.2em] uppercase text-white/60 gap-4">
+                <span>© 2026 PESEWANI TECH</span>
+                <span>Cookie Policy v1.0 • Effective 1st January 2026</span>
+                <span>Last Updated: January 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+            const mobileClose = document.getElementById('mobileClose');
+
+            function openMenu() {
+                menu.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    menu.classList.remove('-translate-y-full');
+                    menu.classList.add('translate-y-0');
+                });
+                iconOpen.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+            function closeMenu() {
+                menu.classList.remove('translate-y-0');
+                menu.classList.add('-translate-y-full');
+                iconOpen.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+                btn.setAttribute('aria-expanded', 'false');
+                setTimeout(() => {
+                    if (!menu.classList.contains('translate-y-0')) menu.classList.add('hidden');
+                }, 320);
+            }
+
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                expanded ? closeMenu() : openMenu();
+            });
+
+            mobileClose.addEventListener('click', closeMenu);
+
+            menu.querySelectorAll('a[href^="#"], a[href="#"]').forEach(a => {
+                a.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') closeMenu();
+            });
+        })();
+    </script>
+
+    <!-- Cookie Consent and Settings Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elements
+            const consentBanner = document.getElementById('cookieConsent');
+            const settingsModal = document.getElementById('cookieSettingsModal');
+            const closeSettingsBtn = document.getElementById('closeCookieSettings');
+            const acceptAllBtn = document.getElementById('acceptAllCookies');
+            const customizeBtn = document.getElementById('customizeCookies');
+            const rejectAllBtn = document.getElementById('rejectAllCookies');
+            const manageCookiesBtn = document.getElementById('manageCookiesBtn');
+            const openCookieSettingsBtn = document.getElementById('openCookieSettings');
+            const savePreferencesBtn = document.getElementById('saveCookiePreferences');
+            const backToTop = document.getElementById('backToTop');
+            
+            // Cookie functions
+            function getCookie(name) {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+                return null;
+            }
+            
+            function setCookie(name, value, days) {
+                let expires = "";
+                if (days) {
+                    const date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Strict";
+            }
+            
+            // Check if user has already made a choice
+            function checkCookieConsent() {
+                const consent = getCookie('pesewani_cookie_consent');
+                if (consent === null) {
+                    // Show banner after a delay
+                    setTimeout(() => {
+                        consentBanner.classList.add('show');
+                    }, 1000);
+                }
+            }
+            
+            // Initialize
+            checkCookieConsent();
+            
+            // Event Listeners
+            acceptAllBtn.addEventListener('click', function() {
+                setCookie('pesewani_cookie_consent', 'all', 365);
+                setCookie('pesewani_performance_cookies', 'true', 365);
+                setCookie('pesewani_functional_cookies', 'true', 365);
+                setCookie('pesewani_security_cookies', 'true', 365);
+                consentBanner.classList.remove('show');
+                showToast('All cookies accepted');
+            });
+            
+            rejectAllBtn.addEventListener('click', function() {
+                setCookie('pesewani_cookie_consent', 'rejected', 365);
+                setCookie('pesewani_performance_cookies', 'false', 365);
+                setCookie('pesewani_functional_cookies', 'false', 365);
+                setCookie('pesewani_security_cookies', 'false', 365);
+                consentBanner.classList.remove('show');
+                showToast('Non-essential cookies rejected');
+            });
+            
+            customizeBtn.addEventListener('click', function() {
+                consentBanner.classList.remove('show');
+                settingsModal.classList.remove('hidden');
+            });
+            
+            manageCookiesBtn.addEventListener('click', function() {
+                settingsModal.classList.remove('hidden');
+            });
+            
+            openCookieSettingsBtn.addEventListener('click', function() {
+                settingsModal.classList.remove('hidden');
+            });
+            
+            closeSettingsBtn.addEventListener('click', function() {
+                settingsModal.classList.add('hidden');
+            });
+            
+            savePreferencesBtn.addEventListener('click', function() {
+                const performance = document.getElementById('performanceCookies').checked;
+                const functional = document.getElementById('functionalCookies').checked;
+                const security = document.getElementById('securityCookies').checked;
+                
+                setCookie('pesewani_cookie_consent', 'custom', 365);
+                setCookie('pesewani_performance_cookies', performance.toString(), 365);
+                setCookie('pesewani_functional_cookies', functional.toString(), 365);
+                setCookie('pesewani_security_cookies', security.toString(), 365);
+                
+                settingsModal.classList.add('hidden');
+                showToast('Cookie preferences saved');
+            });
+            
+            // Close modal when clicking outside
+            settingsModal.addEventListener('click', function(e) {
+                if (e.target === settingsModal) {
+                    settingsModal.classList.add('hidden');
+                }
+            });
+            
+            // Toast notification function
+            function showToast(message) {
+                const toast = document.createElement('div');
+                toast.className = 'fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-deepBlue text-white px-6 py-3 rounded-lg shadow-lg z-50 transition-all duration-300 opacity-0 translate-y-4';
+                toast.textContent = message;
+                document.body.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.classList.remove('opacity-0', 'translate-y-4');
+                    toast.classList.add('opacity-100', 'translate-y-0');
+                }, 10);
+                
+                setTimeout(() => {
+                    toast.classList.remove('opacity-100', 'translate-y-0');
+                    toast.classList.add('opacity-0', 'translate-y-4');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }
+            
+            // Back to top functionality
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+                
+                // Update active ToC link
+                const sections = document.querySelectorAll('.section-anchor');
+                const navLinks = document.querySelectorAll('.table-of-contents a');
+                
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (window.pageYOffset >= sectionTop) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Smooth scroll for ToC links
+            document.querySelectorAll('.table-of-contents a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Initialize toggle switches from cookie values
+            function initializeCookieSettings() {
+                const performance = getCookie('pesewani_performance_cookies');
+                const functional = getCookie('pesewani_functional_cookies');
+                const security = getCookie('pesewani_security_cookies');
+                
+                if (performance !== null) {
+                    document.getElementById('performanceCookies').checked = performance === 'true';
+                }
+                if (functional !== null) {
+                    document.getElementById('functionalCookies').checked = functional === 'true';
+                }
+                if (security !== null) {
+                    document.getElementById('securityCookies').checked = security === 'true';
+                }
+            }
+            
+            initializeCookieSettings();
+        });
+    </script>
+</body>
+</html>
